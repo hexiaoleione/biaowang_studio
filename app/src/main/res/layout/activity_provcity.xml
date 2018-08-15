@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+ <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/zilan"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" >
+
+          <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="25.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:background="@color/transparent"
+            android:drawableLeft="@drawable/back1"
+            android:text="返回"
+            android:textColor="@color/white"
+            android:textSize="16.0sp" />
+
+          <Button
+              android:id="@+id/btnright"
+              android:layout_width="wrap_content"
+              android:layout_height="25.0dip"
+              android:layout_alignParentRight="true"
+              android:layout_centerVertical="true"
+              android:layout_marginRight="20dp"
+              android:background="@color/transparent"
+              android:text="确定"
+              android:visibility="gone"
+              android:textColor="@color/white"
+              android:textSize="16.0sp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:padding="8dp" >
+
+        <ListView
+            android:id="@+id/listProvince"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2.0"
+            android:paddingRight="10.0dip"
+            android:scrollbars="none"
+            android:textSize="18.0sp" >
+        </ListView>
+
+        <ListView
+            android:id="@+id/listCity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2.0"
+            android:paddingRight="10.0dip"
+            android:scrollbars="none"
+            android:textSize="18.0sp" >
+        </ListView>
+
+        <ListView
+            android:id="@+id/listTown"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2.0"
+            android:paddingRight="10.0dip"
+            android:paddingTop="20.0dip"
+            android:scrollbars="none"
+            android:textSize="18.0sp" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

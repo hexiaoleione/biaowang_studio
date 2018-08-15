@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graywhite"
+    android:orientation="vertical" >
+
+<RelativeLayout 
+    android:id="@+id/re"
+      android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:visibility="gone"
+    >
+<TextView
+         android:id="@+id/weijiao"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginLeft="15dp"
+         android:textColor="@color/black"
+         android:text="＜＜未缴费镖件" />
+     <TextView
+         android:id="@+id/huochang"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentRight="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginRight="15dp"
+         android:textColor="@color/black"
+         android:text="货场管理＞＞" />
+
+    </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/view_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           android:layout_below="@+id/re"
+            android:background="@color/graywhite"
+            android:orientation="vertical" >
+
+            <include layout="@layout/view_load_failed" />
+
+            <include layout="@layout/null_message" />
+
+            <com.handmark.pulltorefresh.library.PullToRefreshListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                 android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:dividerHeight="15dp"
+                android:listSelector="#00000000"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+
+</RelativeLayout>

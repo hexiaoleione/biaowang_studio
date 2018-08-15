@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="#fa7024"
+            android:orientation="horizontal" >
+
+             <ImageView
+                android:id="@+id/btnLeft"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/xintouxiang" />
+
+            <TextView
+                android:id="@+id/btnRight"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@+id/btnLeft"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/white"
+                android:text=""
+                android:background="@drawable/huodong_bg"
+                 />
+
+            <TextView
+                android:layout_width="35dip"
+                android:layout_height="35dip"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+               android:background="@drawable/biao_ic"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    <com.hex.express.iwant.customer.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+           android:clickable="false"
+        android:layout_below="@+id/tabs" />
+
+</LinearLayout>

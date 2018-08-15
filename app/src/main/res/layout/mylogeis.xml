@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/mylis_car_bg"
+            android:orientation="vertical" >
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="18dp"
+                android:background="@color/dividerColor" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/star_green44" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/down_red44" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/item_dizhi1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:text="dizhi" />
+
+                        <TextView
+                            android:id="@+id/item_quhuo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="23dp"
+                            android:layout_marginTop="3dp"
+                            android:gravity="bottom"
+                            android:text="上门取货"
+                            android:textColor="@color/orange1" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@color/dividerColor" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/item_dizhi2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="15dp"
+                            android:text="ddddddd" />
+
+                        <TextView
+                            android:id="@+id/item_songhuo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginRight="23dp"
+                            android:gravity="bottom"
+                            android:text="送货上门"
+                            android:textColor="@color/orange1" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@color/dividerColor" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="43dp" >
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@+id/button2"
+                    android:layout_alignBottom="@+id/button2"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="60dp"
+                    android:background="@drawable/search_bar60" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="66dp"
+                    android:background="@drawable/hotheat_bar" />
+
+                <TextView
+                    android:id="@+id/item_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignBottom="@+id/button2"
+                    android:layout_alignTop="@+id/button2"
+                    android:layout_centerHorizontal="true"
+                    android:text="1212212" />
+
+                <TextView
+                    android:id="@+id/item_xin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:layout_alignBaseline="@+id/button2"
+                    android:layout_alignBottom="@+id/button2"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="18dp"
+                    android:text="12112" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_marginTop="45dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="收货人：" />
+
+                <TextView
+                    android:id="@+id/item_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="电话：" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/view1"
+                android:layout_marginTop="23dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/item_wupin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="物品：" />
+
+                <TextView
+                    android:id="@+id/item_zhongliang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="重量：" />
+
+                <TextView
+                    android:id="@+id/item_tiji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="体积：" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_above="@+id/linearLayout2"
+                android:layout_centerHorizontal="true"
+                android:background="@color/dividerColor" />
+
+        </RelativeLayout>
+
+<ImageView 
+    android:id="@+id/item_weizhifu"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+              android:layout_marginTop="10dp"
+              android:layout_marginLeft="10dp"
+                android:background="@drawable/no_money_imgs"/>
+  </RelativeLayout>
+</LinearLayout>

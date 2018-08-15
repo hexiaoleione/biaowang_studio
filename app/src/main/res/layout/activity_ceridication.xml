@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+       android:background="@color/graywhite" >
+       
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/orange1"
+         android:id="@+id/relativeLayout1">
+
+        <Button
+            android:id="@+id/btnLefts"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:background="@drawable/back1" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="物流注册"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+ <com.hex.express.iwant.views.MyViewpager
+        android:id="@+id/cerid_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ceridlot" />
+ <RelativeLayout android:id="@+id/ceridlot" android:layout_width="match_parent" android:layout_height="35dp" android:background="@drawable/sun_map_bg" android:layout_alignParentLeft="true" android:layout_below="@+id/relativeLayout1">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:orientation="horizontal">
+         <Button android:id="@+id/cerid_person" android:layout_width="wrap_content" android:layout_height="20dp" android:layout_weight="1" android:background="@null" android:paddingLeft="5dp" android:paddingRight="5dp" android:text="个人" android:textColor="@color/orange1" android:textSize="16dp"/>
+         <Button android:id="@+id/cerid_company" android:layout_width="wrap_content" android:layout_height="20dp" android:layout_weight="1" android:background="@null" android:paddingLeft="5dp" android:paddingRight="5dp" android:text="物流公司" android:textSize="16dp"/>
+     </LinearLayout>
+ </RelativeLayout>
+</RelativeLayout>

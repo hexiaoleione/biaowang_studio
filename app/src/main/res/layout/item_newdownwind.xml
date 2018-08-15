@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/time_r"
+    android:background="@color/white" >
+<TextView
+        android:id="@+id/tv_publishTime"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="xxxx-xx-xx  xx:xx"
+        android:textColor="@color/red"
+        android:textSize="12sp" />
+
+<TextView
+    android:id="@+id/tv_collection"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignBottom="@+id/tv_publishTime"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="40dp"
+    android:text="代收款"
+    android:textColor="@color/red"
+    android:textSize="12sp"
+    android:textStyle="bold" />
+ <TextView
+        android:id="@+id/tv_wancheng"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+       android:layout_alignBottom="@+id/tv_publishTime"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="25dp"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textColor="@color/red"
+        android:textSize="15sp" />
+ <ImageView
+        android:id="@+id/imgtv_wancheng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignBottom="@+id/tv_publishTime"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="25dp"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:background="@drawable/new_bg_yibeiqiang"
+         />
+
+<TextView
+    android:id="@+id/tv_nameOfGood"
+    android:layout_width="wrap_content"
+    android:layout_height="16dp"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/tv_publishTime"
+      android:layout_marginLeft="20dp"
+    android:text="物品：发送的物品"
+    android:layout_marginTop="10dp"
+    android:textSize="14sp" />
+
+<TextView
+    android:id="@+id/tv_transferMoney"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignTop="@+id/tv_nameOfGood"
+     android:layout_marginRight="40dp"
+      android:layout_alignParentRight="true"
+    android:gravity="center_horizontal"
+    android:text="费用：xx元"
+    android:textColor="@color/red"
+    android:textSize="12sp" />
+
+<TextView
+    android:id="@+id/tv_guige"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/tv_nameOfGood"
+    android:layout_below="@+id/tv_nameOfGood"
+    android:gravity="center_vertical"
+       android:layout_marginTop="5dp"
+    android:text="单间规格:用户未填写"
+    android:singleLine="false"
+    android:textSize="14sp" />
+<TextView
+    android:id="@+id/tv_zhong"
+    android:layout_width="wrap_content"
+    android:layout_height="16dp"
+    android:layout_alignLeft="@+id/tv_guige"
+    android:layout_below="@+id/tv_guige"
+    android:gravity="center_vertical"
+       android:layout_marginTop="5dp"
+    android:text="重量"
+    android:textSize="14sp" />
+
+<TextView
+    android:id="@+id/tv_jianshu"
+    android:layout_width="wrap_content"
+    android:layout_height="16dp"
+    android:layout_alignBaseline="@+id/tv_zhong"
+    android:layout_alignBottom="@+id/tv_zhong"
+    android:layout_alignRight="@+id/tv_transferMoney"
+    android:gravity="center_vertical"
+    android:text="件数"
+    android:textSize="14sp" />
+
+    <com.hex.express.iwant.views.MarqueeTextView
+        android:focusable="false"
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignLeft="@id/tv_zhong"
+        android:layout_below="@id/tv_zhong"
+        android:layout_toLeftOf="@+id/tv_jianshu"
+        android:ellipsize="marquee"
+        android:focusableInTouchMode="true"
+           android:layout_marginTop="5dp"
+        android:lines="1"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="起始地：xx市xx区（县）xx街道xx小区"
+        android:textSize="14sp" />
+
+    <com.hex.express.iwant.views.MarqueeTextView
+        android:focusable="false"
+        android:id="@+id/tv_addressTo"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignLeft="@id/tv_address"
+        android:layout_below="@id/tv_address"
+        android:layout_toLeftOf="@+id/tv_jianshu"
+        android:ellipsize="marquee"
+        android:focusableInTouchMode="true"
+        android:lines="1"
+           android:layout_marginTop="5dp"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="目的地：xx市xx区（县）xx街道xx小区"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/iv_imgdingwei"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/tv_addressTo"
+        android:layout_alignRight="@+id/tv_jianshu"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/new_jieditu" />
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignLeft="@id/tv_addressTo"
+        android:layout_below="@id/tv_addressTo"
+        android:text="距离：xxkm"
+        android:textSize="14sp"
+           android:layout_marginTop="5dp"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/tv_ramker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_distance"
+        android:layout_alignRight="@+id/tv_collection"
+        android:layout_below="@id/tv_distance"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:singleLine="false"
+        android:text="备注："
+        android:textColor="@color/red"
+        android:textSize="14sp" />
+
+<ImageView
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_alignLeft="@+id/tv_ramker"
+    android:layout_below="@+id/tv_ramker"
+    android:visibility="invisible"
+    android:background="@drawable/new_jiedan_bg" />
+
+<ImageView
+    android:id="@+id/iv_jiedan"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tv_ramker"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/new_jiedan_bg" />
+<View
+                             android:id="@+id/view2"
+                             android:layout_width="match_parent"
+                               android:layout_below="@+id/iv_jiedan"
+                               android:layout_marginTop="15dp"
+                             android:layout_height="1dp"
+                             android:background="@color/dividerColor" />
+
+<ImageView
+    android:id="@+id/iv_phone"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_above="@+id/view2"
+    android:layout_alignLeft="@+id/iv_imgdingwei"
+    android:background="@drawable/new_phone" />
+
+  </RelativeLayout>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/graywhite" >
+
+    <com.hex.express.iwant.views.TitleBarView
+        android:id="@+id/tbv_show"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="@color/zilan"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/btn_Left"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:paddingBottom="14dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="14dp"
+                android:paddingTop="14dp"
+                android:src="@drawable/back1" />
+
+            <TextView
+                android:id="@+id/btn_Right"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@+id/btnLeft"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="操作指南"
+                android:textColor="@color/whites"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+        <LinearLayout
+        android:id="@+id/ll_gongneng"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="功能介绍"
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical" />
+
+        <View 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:background="@null"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/img_right"
+            android:layout_centerVertical="true"/>
+    </LinearLayout>
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#33aaaaaa"/>
+      <LinearLayout
+        android:id="@+id/ll_yonghu"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="用户发单手册"
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical" />
+
+        <View 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:background="@null"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/img_right"
+            android:layout_centerVertical="true"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#33aaaaaa"/>
+    <LinearLayout
+        android:id="@+id/ll_biaoshi"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="镖师接单手册"
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical" />
+
+        <View 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:background="@null"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/img_right"
+            android:layout_centerVertical="true"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#33aaaaaa"/>
+    <LinearLayout
+        android:id="@+id/ll_wulius"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="物流接单手册"
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical" />
+
+        <View 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:background="@null"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/img_right"
+            android:layout_centerVertical="true"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#33aaaaaa"/>
+    <LinearLayout
+        android:id="@+id/ll_qita"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="其他功能详解"
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical" />
+
+        <View 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:background="@null"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/img_right"
+            android:layout_centerVertical="true"/>
+    </LinearLayout>
+     <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#33aaaaaa"/>
+    <LinearLayout
+        android:id="@+id/ll_caozuos"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="操作视频"
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical" />
+
+        <View 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:background="@null"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/img_right"
+            android:layout_centerVertical="true"/>
+    </LinearLayout>
+    
+    
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

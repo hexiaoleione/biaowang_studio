@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:orientation="vertical"
+       tools:context=".HXMainActivity"
+       android:background="@color/graywhite"
+      >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="@color/orange1"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/btnLeft"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:contentDescription="@null"
+            android:padding="7.5dp"
+            android:src="@drawable/selector_user_main__icon" />
+<!--cong_bar  orange7044_img -->
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBaseline="@+id/btnLeft"
+            android:layout_alignBottom="@+id/btnLeft"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/cong_bar"
+             />
+<!-- hannan   img2-->
+        <ImageView
+            android:layout_width="35dip"
+            android:layout_height="35dip"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/hannan" 
+            />
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/realtabcontent"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        />
+
+    <android.support.v4.app.FragmentTabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </android.support.v4.app.FragmentTabHost>
+</LinearLayout>

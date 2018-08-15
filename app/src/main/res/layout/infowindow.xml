@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="160dp"
+    android:background="@drawable/text_radius_white">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/wu_cou" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_icon"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/iv_icon"
+        android:text="网点名称:"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_name_com"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_name"
+        android:layout_toRightOf="@id/tv_name"
+        android:text="顺风快递"
+        android:paddingRight="50dp" 
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_name"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="5dp"
+        android:text="联系电话: "
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_phone_de"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_phone"
+        android:layout_toRightOf="@+id/tv_phone"
+        android:text="977455667676 "
+        android:paddingRight="50dp" 
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_phone"
+        android:layout_below="@id/tv_phone"
+        android:layout_marginTop="5dp"
+        android:text="距离:"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_distance_de"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_distance"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/tv_distance"
+        android:text="5.0km"
+        android:textColor="@color/black"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/tv_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_icon"
+        android:layout_marginLeft="10dp"
+        android:text="顺风快递"
+        android:textSize="14sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_name1"
+        android:layout_below="@id/tv_name1"
+        android:layout_marginTop="5dp"
+        android:text="地址: "
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_address_de"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_address"
+        android:layout_marginBottom="3dp"
+        android:layout_toRightOf="@+id/tv_address"
+        android:text="生命科学园创意园湖广会馆共和国刚刚好 "
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_address_de"
+        android:background="#f9f0e7"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/iv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginLeft="82dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:layout_alignLeft="@+id/tv_distance"
+            android:layout_below="@+id/tv_address_de"
+            android:background="@drawable/text_radius_blue"
+            android:text="联系网点"
+            android:textSize="14sp"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

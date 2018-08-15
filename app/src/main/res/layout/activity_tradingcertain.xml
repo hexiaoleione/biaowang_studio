@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/graywhite"
+    >
+    
+<RelativeLayout
+            android:id="@+id/infor_shows"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="@color/zilan"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/btnLeft"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:paddingBottom="14dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="14dp"
+                android:paddingTop="14dp"
+                android:src="@drawable/back1" />
+
+            <TextView
+                android:id="@+id/btnRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btnLeft"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/white"
+                android:text="声明"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="确认交易"
+                android:textColor="@color/whites"
+                android:textSize="16sp" />
+        </RelativeLayout>
+   <ScrollView 
+        android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+       >
+   <LinearLayout 
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+          android:layout_marginTop="10dp"
+          android:background="@color/white"
+       >
+	<RelativeLayout 
+    android:layout_width="match_parent"
+       android:layout_height="100dp"
+       android:layout_marginLeft="20dp"
+       android:layout_marginRight="20dp"
+       android:layout_marginTop="10dp"
+    >
+     <ToggleButton
+        android:id="@+id/tradi_tog"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_horizontal"
+        android:button="@drawable/toggle_btn"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentRight="true"
+        android:checked="true"
+        android:text=""
+        android:textOff=""
+        android:textOn="" />
+
+      <TextView
+          android:id="@+id/tradi_dan"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/tradi_tog"
+          android:layout_alignBottom="@+id/tradi_tog"
+          android:layout_alignParentLeft="true"
+          android:textSize="15sp"
+          android:text="是否担保交易" />
+
+      <TextView
+          android:id="@+id/tradi_tishi"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:textColor="@color/graywhite2"
+          android:text="   1.如果使用担保交易，运费将在货物安全到达后，由平台支付给物流公司。
+   2.如果选择非担保交易，货物运输过程中出现任何情况与平台无关。" />
+
+	</RelativeLayout>
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+       android:layout_marginRight="20dp"
+      android:background="@color/grayview1" 
+      android:layout_marginTop="20dp"
+      />
+  <RelativeLayout 
+    android:layout_width="match_parent"
+       android:layout_height="120dp"
+       android:layout_marginLeft="20dp"
+       android:layout_marginRight="20dp"
+       android:layout_marginTop="10dp"
+    >
+     <ToggleButton
+        android:id="@+id/tradi_tog2"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_horizontal"
+        android:button="@drawable/toggle_btn"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentRight="true"
+        android:checked="false"
+        android:text=""
+        android:textOff=""
+        android:textOn="" />
+      <TextView
+          android:id="@+id/tradi_dan2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/tradi_tog2"
+          android:layout_alignBottom="@+id/tradi_tog2"
+          android:layout_alignParentLeft="true"
+          android:textSize="15sp"
+          android:text="是否投保" />
+      <TextView
+          android:id="@+id/tradi_tishi2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+           android:textColor="@color/graywhite2"
+          android:text="如果您选择投保，保险公司将根据货物价值收取相应的保费，您的货物将由华泰财产保险有限公司进行承保，如果货物出现任何丢失破损等问题，可拨打华泰财险全国客服电话95509，如不投保，货物出现任何问题，平台将不承担任何责任。" />
+	</RelativeLayout>
+	
+  <RelativeLayout
+      android:id="@+id/rela_jia"
+      android:layout_width="match_parent"
+      android:layout_height="35dp"
+      android:background="@color/white"
+      android:layout_marginTop="10dp"
+      android:gravity="center|left"
+       android:visibility="gone"
+       >
+
+      <ImageView
+          android:id="@+id/imageView422"
+          android:layout_width="5dp"
+          android:layout_height="5dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="5dp"
+          android:src="@drawable/red_xinghao" />
+
+      <TextView
+          android:id="@+id/textView1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_marginLeft="2dp"
+          android:layout_toRightOf="@+id/imageView422"
+          android:text="货物价值：" />
+
+      <EditText
+          android:id="@+id/jiazhi"
+          android:layout_width="100dp"
+          android:layout_height="20dp"
+          android:layout_alignParentTop="true"
+          android:layout_toRightOf="@+id/textView1"
+          android:background="@null"
+          android:inputType="number"
+          android:paddingLeft="3dp"
+          android:ems="10" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_alignBottom="@+id/jiazhi"
+            android:layout_toRightOf="@+id/textView1"
+            android:background="@color/grayviews" />
+
+     <TextView
+         android:id="@+id/yyy"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="3dp"
+    android:layout_toRightOf="@+id/jiazhi"
+    android:text="元" />
+     <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="3dp"
+    android:layout_toRightOf="@+id/yyy"
+    android:textColor="@color/orange"
+    android:textSize="11sp"
+    android:text="" />
+
+        <TextView
+            android:id="@+id/baolv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView422"
+            android:layout_alignParentBottom="true"
+            android:text="（保险费=货物价值×3‰）"
+            android:textColor="@color/orange"
+            android:textSize="10sp" 
+            android:visibility="gone"
+            />
+
+  </RelativeLayout>
+  <RelativeLayout
+      android:id="@+id/rela_wupin"
+      android:layout_width="match_parent"
+      android:layout_height="55dp"
+      android:background="@color/white"
+      android:layout_marginTop="10dp"
+      android:gravity="center|left"
+      android:visibility="gone"
+       >
+
+      <ImageView
+          android:id="@+id/imag2"
+          android:layout_width="5dp"
+          android:layout_height="5dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="5dp"
+          android:src="@drawable/red_xinghao" />
+
+      <TextView
+          android:id="@+id/textVi1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_marginLeft="2dp"
+          android:layout_toRightOf="@+id/imag2"
+          android:text="请勾选投保物品种类：" />
+
+<RadioGroup
+    android:id="@+id/radioGroup_wupin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_marginLeft="10dp"
+    android:orientation="horizontal" >
+
+    <RadioButton
+        android:id="@+id/check_chang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/graywhite2"
+        android:text="常规货物" />
+<!-- android:checked="true" -->
+    <RadioButton
+        android:id="@+id/check_guoshu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:textSize="12sp"
+             android:textColor="@color/graywhite2"
+       
+        android:text="蔬菜" />
+
+    <RadioButton
+        android:id="@+id/check_lengcang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:textSize="12sp"
+             android:textColor="@color/graywhite2"
+        android:text="水果" />
+
+    <RadioButton
+        android:id="@+id/check_yisui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:textSize="12sp"
+             android:textColor="@color/graywhite2"
+        android:text="牲畜及禽鱼" />
+</RadioGroup>
+
+<TextView
+    android:id="@+id/textsheng"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_toRightOf="@+id/textVi1"
+    android:textColor="@color/orange1"
+    android:visibility="gone"
+    android:text="(声明)" />
+
+  </RelativeLayout>
+<RelativeLayout
+      android:id="@+id/rela_baoxian"
+      android:layout_width="match_parent"
+      android:layout_height="55dp"
+      android:background="@color/white"
+      android:layout_marginTop="10dp"
+      android:gravity="center|left"
+      android:visibility="gone"
+       >
+
+      <ImageView
+          android:id="@+id/imag4"
+          android:layout_width="5dp"
+          android:layout_height="5dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="5dp"
+          android:src="@drawable/red_xinghao" />
+
+      <TextView
+          android:id="@+id/textVi12"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_marginLeft="2dp"
+          android:layout_toRightOf="@+id/imag4"
+          android:text="请勾选投承保类型：" />
+      <TextView
+    android:id="@+id/textsheng2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_toRightOf="@+id/textVi12"
+    android:textColor="@color/orange1"
+    android:visibility="gone"
+    android:text="(声明)" />
+<RadioGroup
+    android:id="@+id/radioGroup_baoxian"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_marginLeft="10dp"
+    android:orientation="horizontal" >
+
+    <RadioButton
+        android:id="@+id/check_jiben"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+         android:textColor="@color/graywhite2"
+        android:text="基本险" />
+    <!--  android:checked="true" -->
+    <RadioButton
+        android:id="@+id/check_zonghe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:textSize="12sp"
+             android:textColor="@color/graywhite2"
+        android:text="综合险" />
+
+</RadioGroup>
+
+  </RelativeLayout>
+      <LinearLayout
+          android:id="@+id/bbbao"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+		    android:layout_marginTop="10dp"
+		    android:layout_marginLeft="15dp"
+		   android:visibility="gone"
+		     >
+
+		    <ImageView
+		        android:id="@+id/imgbao"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:visibility="gone"
+		        android:background="@drawable/weixuanzhong" />
+
+		  <!--   <TextView
+		        android:id="@+id/tebao"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentTop="true"
+		        android:layout_marginLeft="5dp"
+		        android:text="我已阅读并同意《" /> -->
+		    <CheckBox
+                             android:id="@+id/checkbox_ming"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_alignParentTop="true"
+                             android:text=" 我已阅读并同意"
+                             android:textColor="@color/black"
+                             style="@style/CustomCheckboxTheme"
+                           />
+		     <TextView
+		         android:id="@+id/toubao"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentTop="true"
+		        android:layout_marginLeft="5dp"
+		        android:textColor="@color/red"
+		        android:text="《投保协议》" />
+		      <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentTop="true"
+		        android:layout_marginLeft="5dp"
+		        
+		        android:text="" />
+		</LinearLayout>
+  
+<RelativeLayout
+    android:id="@+id/rela_zhao"
+      android:layout_width="match_parent"
+      android:layout_height="65dp"
+      android:background="@color/white"
+      android:gravity="center|left"
+      android:visibility="gone"
+       >
+
+      <ImageView
+          android:id="@+id/imageView42"
+          android:layout_width="5dp"
+          android:layout_height="5dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="5dp"
+          android:src="@drawable/red_xinghao" 
+            />
+
+      <TextView
+          android:id="@+id/textView12"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_marginLeft="2dp"
+          android:layout_toRightOf="@+id/imageView42"
+          android:textSize="11sp"
+          android:text="请填写上门取货车辆的车牌号" />
+     <ImageView
+         android:id="@+id/idcardr"
+         android:layout_width="150dp"
+         android:layout_height="100dp"
+         android:layout_below="@+id/textView12"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="10dp"
+         android:background="@drawable/idcardzhi" 
+         android:visibility="gone"/>
+
+     
+
+     <RelativeLayout
+         android:id="@+id/input_layout"
+         android:layout_width="200dp"
+         android:layout_height="40dp"
+         android:layout_alignParentLeft="true"
+         android:layout_marginLeft="20dp"
+         android:layout_below="@+id/textView12" >
+
+         <EditText
+             android:id="@+id/input_et"
+             android:layout_width="match_parent"
+             android:layout_height="fill_parent"
+             android:layout_toLeftOf="@+id/input_arrow"
+             android:background="@null"
+             android:gravity="center_vertical"
+             android:hint="填写正确的车牌号，保险才能生效"
+             android:imeOptions="actionNext"
+             android:paddingLeft="5dp"
+             android:textSize="12sp" />
+
+         <ImageButton
+             android:id="@+id/input_arrow"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:layout_centerVertical="true"
+             android:background="@drawable/arrow_down"
+             android:contentDescription="@string/app_name"
+             android:onClick="onDownArrowClicked" />
+
+         
+
+     </RelativeLayout>
+     <TextView
+             android:id="@+id/textV"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentLeft="true"
+             android:layout_marginLeft="20dp"
+             android:text="填写正确的车牌号，保险才能理赔"
+             android:textColor="@color/orange"
+             android:textSize="11sp" />
+  </RelativeLayout>
+<LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginTop="20dp"
+      android:layout_marginBottom="30dp"
+    >
+     <Button
+       android:id="@+id/but_nosumit"
+       android:layout_width="150dp"
+       android:layout_height="35dp"
+     style="@style/btnnewhuisss"
+       android:textColor="@color/white"
+       android:text="暂不支付" />
+    <Button
+       android:id="@+id/butsumit"
+       android:layout_width="150dp"
+       android:layout_height="35dp"
+       android:layout_marginLeft="20dp"
+       style="@style/btnnew"
+       android:layout_marginRight="10dp"
+       android:text=" 支 付 " />
+  
+</LinearLayout>
+
+</LinearLayout>
+</ScrollView>
+   
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/graywhite"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp"
+        android:text="2016-05-26"
+        android:textColor="@color/theme_gray" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="12dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="3dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:text="货主评价:"
+            android:textColor="@color/theme_gray" />
+
+        <RatingBar
+            android:id="@+id/rab_couriersscore"
+            style="@style/ratingbar"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="2.60"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="3.5"
+            android:stepSize="0.5" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_time"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:gravity="center_vertical"
+        android:text="镖师是一个帅哥，帮我搬东西，人很Nice，不错以后发东西就找他了，呵呵哒！"
+        android:textColor="@color/theme_black"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/text_message"
+        android:background="@drawable/shape_gray_sliode" />
+
+</RelativeLayout>

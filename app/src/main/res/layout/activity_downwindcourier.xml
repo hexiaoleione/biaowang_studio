@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.hex.express.iwant.views.TitleBarView
+        android:id="@+id/tbv_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/downwindsendaddress" />
+
+        <EditText
+            android:id="@+id/edt_downwindsendaddressinput"
+            style="@style/text_normal_box"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/downwindsendaddressinput"
+            android:padding="5dp"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/downwindrecaddress" />
+
+        <EditText
+            android:id="@+id/edt_downwindrecaddressinput"
+            style="@style/text_normal_box"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/downwindrecaddressinput"
+            android:padding="5dp"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/downwindmathweight" />
+
+        <EditText
+            android:id="@+id/edt_downwindmathweightinput"
+            style="@style/text_normal_box"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:hint="@string/downwindmathweightinput"
+            android:padding="5dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/mathweightinput" />
+    </LinearLayout>
+	<Button 
+	    android:id="@+id/btn_next"
+	    android:layout_marginTop="25dp"
+	    style="@style/btn"
+	    android:layout_gravity="center"
+	    android:layout_width="150dp"
+	    android:layout_height="30dp"
+	    android:textSize="15sp"
+	    android:text="@string/nextstep"
+	    />
+</LinearLayout>

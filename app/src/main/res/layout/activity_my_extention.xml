@@ -1,0 +1,178 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hex.express.iwant.activities.MyExtentionActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="#fa7024"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/btnLeft"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="@null"
+            android:paddingBottom="14dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="14dp"
+            android:paddingTop="14dp"
+            android:src="@drawable/back1" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="推广收入"
+            android:textColor="@color/whites"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/btnRight"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@null"
+            android:paddingBottom="10dp"
+            android:paddingLeft="24dp"
+            android:layout_marginRight="15dp"
+            android:text=""
+            android:background="@drawable/heip_bar40_03"
+            android:paddingTop="10dp"/>
+    </RelativeLayout>
+<LinearLayout 
+    android:id="@+id/mye_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    
+    >
+     <fragment
+        android:id="@+id/ptrl_viewpager_content"
+        android:name="com.hex.express.iwant.viewpager.CycleViewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp" />
+
+      <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+   			 android:layout_height="wrap_content"
+   			 android:text="推广收益(仅顺风):"
+   			 android:textSize="18sp"
+   			 android:textColor="@color/orange"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+   			 android:layout_height="wrap_content"
+   			 android:text="(仅顺风): "
+   			 android:textSize="13sp"
+   			  android:textColor="@color/orange"
+   			 android:visibility="gone"
+            />
+        
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent" 
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        />
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="25dp"
+          android:orientation="horizontal" >
+
+          <View
+              android:id="@+id/view1"
+              android:layout_width="1dp"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_centerHorizontal="true"
+           
+          />
+
+          <TextView
+              android:id="@+id/ptrl_number"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_marginRight="36dp"
+              android:layout_toLeftOf="@+id/view1"
+              android:text="推广人数"
+              android:textSize="18sp" />
+
+          <TextView
+              android:id="@+id/ptrl_money"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="32dp"
+                android:layout_centerVertical="true"
+              android:layout_toRightOf="@+id/view1"
+              android:text="推广收入"
+              android:textSize="18sp"
+               />
+
+      </RelativeLayout>
+<View
+        android:layout_width="match_parent" 
+        android:layout_height="1dp"
+         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+           android:background="@color/grayview"
+        />
+    <include layout="@layout/null_message" />
+
+    <include layout="@layout/view_load_failed" />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/ptrl_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:divider="@color/transparent"
+        android:listSelector="#00000000"
+        android:scrollbars="none" />
+</LinearLayout>
+<LinearLayout 
+    android:id="@+id/mye_nolayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     android:gravity="center_vertical"
+    android:visibility="gone"
+    >
+  	  <ImageView 
+               android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@drawable/zaiwushuju"/>
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:layout_marginTop="10dp"
+              android:text="您还没有推广用户，赶快去推广吧!"
+              android:textSize="15sp"
+              android:textColor="@color/grayviews"
+               />
+          
+    </LinearLayout>
+</LinearLayout>

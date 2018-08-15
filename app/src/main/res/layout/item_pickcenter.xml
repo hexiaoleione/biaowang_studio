@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/send_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="大脑韩"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/send_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="2013-05-08"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="20dp" >
+
+        <ImageView
+            android:id="@+id/img_fa"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:src="@drawable/fa" />
+
+        <TextView
+            android:id="@+id/send_address"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@id/img_fa"
+            android:gravity="center_vertical"
+            android:text="北京沙河"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/img_shou"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/img_fa"
+            android:layout_below="@id/img_fa"
+            android:padding="5dp"
+            android:src="@drawable/shou" />
+
+        <TextView
+            android:id="@+id/send_addressTo"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@id/img_fa"
+            android:layout_toRightOf="@id/img_shou"
+            android:gravity="center_vertical"
+            android:text="北京沙河"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/send_good"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@id/send_addressTo"
+            android:layout_below="@id/send_addressTo"
+            android:gravity="center_vertical"
+            android:text="北京沙河"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/img_order"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignBottom="@id/send_good"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/selector_pick_qiang" />
+
+        <TextView
+            android:id="@+id/send_range"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@id/send_good"
+            android:layout_below="@id/send_good"
+            android:gravity="center_vertical"
+            android:text="北京沙河d "
+            android:textSize="13sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/grayview" />
+
+</LinearLayout>

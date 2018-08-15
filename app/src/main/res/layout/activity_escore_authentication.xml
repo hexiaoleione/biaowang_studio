@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+      <com.hex.express.iwant.views.TitleBarView
+        android:id="@+id/tbv_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="请绑定持卡人本人的银行卡"
+        android:textColor="@color/grayslate"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        style="@style/text_normal_box"
+        android:layout_width="fill_parent"
+        android:layout_height="91dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_white_rounded"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="fill_parent"
+                android:background="@color/transparent"
+                android:gravity="center|left"
+                android:text="持卡人"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edt_registebankName"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:gravity="center|left"
+                android:textSize="12sp" />
+             <ImageButton
+                android:id="@+id/img_name"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/green_o" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/gray_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:background="@color/transparent"
+                android:gravity="center|left"
+                android:text="支付宝账号"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edt_bankCade"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.0"
+                android:background="@color/transparent"
+                android:gravity="left|center"
+                android:inputType="number"
+                android:maxLength="20"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/img_camer"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:padding="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/carm_bar48"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+      <Button
+        android:id="@+id/btn_nextstep"
+        android:layout_width="260dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/selector_orange_to_gray_rouded"
+        android:text="提交"
+        android:textColor="@drawable/selector_text_white_to_gray" />
+
+</LinearLayout>

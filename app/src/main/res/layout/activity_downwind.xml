@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:id="@+id/lout1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/orange1" >
+
+                <Button
+                    android:id="@+id/btnLeft"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20.0dip"
+                    android:background="@drawable/back1" />
+
+                <TextView
+                    android:id="@+id/text_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="顺风专递"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_text_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:paddingRight="20dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="智能排序"
+                        android:textColor="@color/white" 
+                        android:visibility="gone"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_right"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                          android:visibility="gone"
+                        android:background="@drawable/right_barb" 
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lout2"
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_below="@id/lout1"
+                android:background="@drawable/map_biao_bg" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/owner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@null"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="我是货主"
+                        android:textColor="@color/orange1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/escort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@null"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="我是镖师"
+                        android:textColor="@color/orange1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_owner"
+                    android:layout_width="80dp"
+                    android:layout_height="95dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/text_radius_whiteorange"
+                    android:orientation="vertical"
+                    android:padding="1dp"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/text_recently"
+                        style="@style/btn_orgener_white_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="离我最近"
+                        android:textSize="10sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/grayview" />
+
+                    <TextView
+                        android:id="@+id/text_time"
+                        style="@style/btn_orgener_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="出发时间最早"
+                        android:textSize="10sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/grayview" />
+
+                    <TextView
+                        android:id="@+id/text_favorable"
+                        style="@style/btn_orgener_white_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="好评率最高"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_escort"
+                    android:layout_width="80dp"
+                    android:layout_height="95dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/text_radius_whiteorange"
+                    android:orientation="vertical"
+                    android:padding="1dp"
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        android:id="@+id/text_recently_escort"
+                        style="@style/btn_orgener_white_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="离我最近"
+                        android:textSize="10sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/grayview1" />
+
+                    <TextView
+                        android:id="@+id/text_time_escort"
+                        style="@style/btn_orgener_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="出发时间最早"
+                        android:textSize="10sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/grayview1" />
+
+                    <TextView
+                        android:id="@+id/text_favorable_escort"
+                        style="@style/btn_orgener_white_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="好评率最高"
+                        android:textSize="10sp" />
+
+                    <!--
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/grayview" />
+
+                    <TextView
+                        android:id="@+id/text_other_escort"
+                        style="@style/btn_orgener_white_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:gravity="center"
+                        android:text="新增按钮"
+                        android:textSize="10sp" />  -->
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/owner_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/lout2"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <include layout="@layout/null_message" />
+
+                <include layout="@layout/view_load_failed" />
+
+                <com.handmark.pulltorefresh.library.PullToRefreshListView
+                    android:id="@+id/owner_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@null"
+                    android:dividerHeight="10dp"
+                    android:listSelector="#00000000"
+                    android:scrollbars="none" />
+                <com.handmark.pulltorefresh.library.PullToRefreshListView
+                    android:id="@+id/escort_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@null"
+                    android:dividerHeight="10dp"
+                    android:listSelector="#00000000"
+                    android:scrollbars="none" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_postDownwindTask"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/queding_bar"
+        android:text="我要发件"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+    <Button
+        android:id="@+id/btn_escort"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/queding_bar"
+        android:text="我要发件"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

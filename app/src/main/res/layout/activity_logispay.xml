@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#22000000" >
+<RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp" >
+
+        <TextView
+            android:id="@+id/pay_exts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+			android:background="@drawable/closewhitebar_48"
+			android:layout_marginRight="20dp"/>
+         </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/lout_showdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/paymentbg_328"
+        android:layout_marginTop="10dp" 
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        >
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_radius_whitegray"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp" >
+        <TextView 
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="交易类型"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/graywhite1"
+            
+            />
+
+        <TextView
+            android:id="@+id/logispay_fangshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+             android:textColor="@color/black"
+            android:text="顺风速递" />
+
+         </RelativeLayout>
+          <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:background="@drawable/text_radius_whitegray"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp" >
+        <TextView 
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="费用"
+            android:layout_marginLeft="30dp"
+             android:textColor="@color/graywhite1"
+            />
+
+        <TextView
+            android:id="@+id/logispay_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+             android:textColor="@color/black"
+            android:text="" />
+
+         </RelativeLayout>
+         <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:background="@drawable/text_radius_whitegray"
+        android:layout_marginLeft="15dp"
+         android:layout_marginRight="15dp"
+        android:layout_marginTop="8dp" >
+        <TextView 
+            
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保险费用"
+            android:layout_marginLeft="30dp"
+             android:textColor="@color/graywhite1"
+             
+            />
+
+        <TextView
+            android:id="@+id/logispay_baos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+             android:textColor="@color/black"
+            android:text="" />
+
+         </RelativeLayout>
+
+
+<RelativeLayout 
+  			  android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+			<ToggleButton
+			    android:id="@+id/down_toggs"
+			    android:layout_width="50dp"
+			    android:layout_height="25dp"
+			    android:layout_alignParentRight="true"
+			    android:layout_centerVertical="true"
+			    android:layout_marginRight="20dp"
+			    android:button="@drawable/toggle_btn"
+			    android:checked="false" />
+
+   </RelativeLayout>
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/text_radius_whitegray"
+        android:layout_marginTop="20dp" 
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        
+         >
+        <TextView 
+            android:id="@+id/logispay_wu"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂不支持现金券"
+            android:layout_marginLeft="30dp"
+             android:textColor="@color/graywhite1"
+            />
+
+       
+
+         </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+             >
+
+            <TextView
+                android:id="@+id/logispay_moneys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/textView1"
+                android:layout_marginRight="20dp"
+                android:text=""
+                 android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/logispay_moneys"
+                android:text="共计："
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+            
+        
+ </LinearLayout>
+ <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+     <ImageView
+                android:id="@+id/pay_surplus"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                 android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/underclick_03" />
+            <ImageView
+                android:id="@+id/pay_wenxin"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/weixin_clik" />
+
+            <ImageView
+                android:id="@+id/pay_zhifubao"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/zhifubao_clik" />
+
+            
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lout_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+            <Button 
+                android:id="@+id/logis_paybtn"
+                 style="@style/btn"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="确定支付"
+                />
+            
+    </LinearLayout>
+
+</LinearLayout>

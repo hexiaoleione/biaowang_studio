@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent01"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_white_rounded"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_orange_topright_topleft_rounded" >
+
+            <TextView
+                android:id="@+id/tv_titleOfWarning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="添加连号订单"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/img_cancel03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="16dp"
+                android:src="@drawable/x_white" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_white_rounded5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <EditText
+                android:id="@+id/et_firstnumber"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:background="@null"
+                android:hint="请输入首单号或者扫描"
+                android:inputType="numberDecimal"
+                android:lines="1"
+                android:paddingLeft="4dp"
+                android:state_enabled="true"
+                android:state_focused="true"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/iv_scan"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="扫描"
+                android:textColor="#64adfd"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_white_rounded5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <EditText
+                android:id="@+id/et_endnumber"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:background="@null"
+                android:hint="请输入末单号或者扫描"
+                android:inputType="numberDecimal"
+                android:lines="1"
+                android:paddingLeft="4dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/iv_eddscan"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="扫描"
+                android:textColor="#64adfd"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_white_rounded5dp"
+            android:padding="5dp" >
+
+            <EditText
+                android:id="@+id/et_money"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:background="@null"
+                android:hint="运费"
+                android:inputType="numberDecimal"
+                android:lines="1"
+                android:paddingLeft="4dp"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_allnum"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="4dp"
+                android:background="@null"
+                android:hint="单数"
+                android:inputType="numberDecimal"
+                android:lines="1"
+                android:paddingLeft="4dp"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_allmoney"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="4dp"
+                android:background="@null"
+                android:hint="总金额"
+                android:inputType="numberDecimal"
+                android:lines="1"
+                android:paddingLeft="4dp"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnsave"
+            android:layout_width="120dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/selector_orange_to_gray_rouded"
+            android:text="添加"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<RelativeLayout
+    android:id="@+id/infor_shows"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:background="@color/zilan"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/btnLeft"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:contentDescription="@null"
+        android:src="@drawable/back1" />
+
+    <TextView
+        android:id="@+id/btnRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnLeft"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:text="说明"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="13dp"
+        android:layout_height="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:background="@drawable/xiajiaobiao" />
+
+    <TextView
+        android:id="@+id/my_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="意外险"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+</RelativeLayout>
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    
+    >
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="通过平台投保，保费300元，同意购买后，平台垫付保费，每日首次接单时扣除2元计入保费，每日只扣一次，自购买之日起，一年内缴够150次则不再扣费。"
+        />
+</RelativeLayout>
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    
+    >
+
+   <LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+     android:layout_alignParentRight="true"
+       android:layout_alignParentTop="true"
+       android:layout_marginRight="35dp"
+    android:orientation="vertical"
+    >
+   <TextView
+       android:id="@+id/yayya"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       
+       android:background="@drawable/insurebaoxian"
+       android:layout_gravity="center"
+       android:textColor="@color/grayviews" />
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   android:layout_alignParentLeft="true"
+       android:layout_alignParentTop="true"
+       android:layout_marginLeft="35dp"
+    android:orientation="vertical"
+    >
+   <TextView
+       android:id="@+id/yay"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       
+       android:background="@drawable/insurebaoxianxuzhi"
+       android:layout_gravity="center"
+       android:textColor="@color/grayviews" />
+</LinearLayout>
+</RelativeLayout>
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    >
+
+    <TextView
+        android:id="@+id/yaban"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:padding="2dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:gravity="center"
+            style="@style/btnnewinsure"
+        android:text="正在办理中..." />
+
+</RelativeLayout>
+<LinearLayout  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"  
+        android:gravity="bottom"  
+        android:orientation="vertical">
+
+   
+  
+        <RelativeLayout 
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+        android:layout_marginBottom="40dp"
+         android:gravity="bottom"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/insuran_bgd"/>
+        
+    </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

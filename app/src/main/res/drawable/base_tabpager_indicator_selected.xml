@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- drawable目录下的item属性，必须有drawable属性 -->
+    <item android:state_selected="true" android:drawable="@color/base_drawable" />
+    <item android:state_pressed="true" android:drawable="@color/base_drawable"  />
+    <item android:state_focused="true" android:drawable="@color/base_drawable"  />
+    <item android:drawable="@android:color/black"/>
+</selector>

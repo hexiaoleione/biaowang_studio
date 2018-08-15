@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+<RelativeLayout
+    android:id="@+id/infor_shows"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:background="#fa7024"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/btnLeft"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:contentDescription="@null"
+        android:src="@drawable/xintouxiang" />
+
+    <TextView
+        android:id="@+id/btnRight"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/btnLeft"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/huodong_bg"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/my_orderse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="我接的镖" />
+
+    <TextView
+        android:id="@+id/my_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/textView1"
+        android:text="我发的镖"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="13dp"
+        android:layout_height="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:background="@drawable/xiajiaobiao" />
+
+</RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:layout_below="@+id/tabs" />
+
+    <com.hex.express.iwant.customer.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/infor_shows" >
+    </com.hex.express.iwant.customer.PagerSlidingTabStrip>
+<LinearLayout
+        android:id="@+id/my_xuanze"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dip"
+        android:background="@drawable/text_radius_whiteorange"
+        android:orientation="vertical"
+        android:padding="1dp"
+        android:visibility="gone"
+         >
+
+        <TextView
+            android:id="@+id/my_jiebiao"
+            style="@style/btn_orgener_white_top"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="我发的镖"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:background="@color/grayview1" />
+
+        <TextView
+            android:id="@+id/my_fabiao"
+            style="@style/btn_orgener_white"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="我接的镖"
+            android:textSize="14sp" />
+    </LinearLayout>
+</RelativeLayout>
+</FrameLayout>
+</LinearLayout>

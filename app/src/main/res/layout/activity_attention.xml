@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+      android:background="@color/graywhite1" >
+ <com.hex.express.iwant.views.TitleBarView
+        android:id="@+id/mylis_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+<RelativeLayout
+    android:id="@+id/attfujin"
+    android:layout_width="match_parent"
+    android:layout_height="50dp" 
+    android:background="@color/white"
+     android:layout_marginTop="10dp">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="附近货源" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_toRightOf="@+id/imageView1"
+        android:textSize="12sp"
+          android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="关注当前位置附近的资源" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/wuliu_lingdang_13" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/wuliu_lingdang_07" />
+
+</RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/attdingdian"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+        android:background="@color/white"
+    android:layout_marginTop="10dp" >
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/wuliu_lingdang_12" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView2"
+          android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="定点货源" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/imageView2"
+          android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="关注城市之间的资源"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/wuliu_lingdang_13" />
+</RelativeLayout>
+
+
+    <RelativeLayout
+	android:id="@+id/attdiqu"
+    android:layout_width="match_parent"
+    android:layout_height="50dp" 
+        android:background="@color/white"
+     android:layout_marginTop="10dp">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/wuliu_lingdang_16" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView3"
+          android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="地区货源" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_toRightOf="@+id/imageView3"
+          android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="12sp"
+        android:text="关注指定区域资源" />
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/wuliu_lingdang_13" />
+
+</RelativeLayout>
+
+    
+
+</LinearLayout>

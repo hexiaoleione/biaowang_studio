@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <com.hex.express.iwant.views.TitleBarView
+        android:id="@+id/tbv_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@id/tbv_show"
+        android:background="#33aaaaaa"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="附近快递员(点击下列快递员选择添加到您的快递员库)" />
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_show" >
+
+        <com.handmark.pulltorefresh.library.PullToRefreshSwipeListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:background="#ffffff"
+            android:divider="#ffffff"
+            android:dividerHeight="10dp"
+            android:scrollbars="@null" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_show"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="不好意思，您的附近没有快递员 "
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

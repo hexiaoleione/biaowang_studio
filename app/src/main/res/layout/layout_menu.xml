@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/zilan"
+    android:orientation="vertical" >
+
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout 
+      android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+            >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp" 
+        android:background="#2d2d42"
+        android:paddingTop="10dp">
+
+        <!-- <com.infzm.slidingmenu.demo.view.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/wwj_748"
+            app:border_color="#FFffffff"
+            app:border_width="1dp" /> -->
+            <ImageView
+                android:id="@+id/img_head"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+               android:layout_gravity="center_horizontal"
+                android:background="@drawable/ren4" />
+
+        <TextView
+            android:id="@+id/txt_username"
+            android:layout_width="wrap_content"
+            android:layout_height="28.0dip"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/img_head"
+            android:gravity="center_vertical"
+            android:paddingLeft="15.0dip"
+            android:text="."
+            android:textColor="@color/white"
+            android:textSize="14.0sp" />
+
+         <TextView
+             android:id="@+id/txt_fen"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:layout_marginRight="24dp"
+             android:drawableLeft="@drawable/new_fenxiang"
+             android:gravity="center_vertical"
+             android:layout_centerVertical="true"
+             android:padding="2dp"
+             android:paddingLeft="15.0dip"
+             android:text="    "
+             android:textColor="@color/white"
+             android:textSize="14.0sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/saomiao"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="加盟商扫描登录"
+        android:drawableLeft="@drawable/ce_newsaomiao"
+        android:textColor="@color/white"
+        android:textSize="16.0sp" />
+
+
+    <TextView
+         android:id="@+id/ll_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="账户余额"
+        android:textColor="@color/white"
+        android:drawableLeft="@drawable/ce_newqianbao"
+        
+       
+        android:textSize="16.0sp" />
+
+
+    
+    <TextView
+         android:id="@+id/tvDiscussto"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="我的接单"
+        android:textColor="@color/white"
+         android:drawableLeft="@drawable/ce_newjiedan"
+         
+        android:textSize="16.0sp" />
+    <TextView
+         android:id="@+id/tvDiscussMeeting"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="我的发单"
+        android:textColor="@color/white"
+        android:drawableLeft="@drawable/ce_newfahuo"
+         
+        android:textSize="16.0sp" />
+ <TextView
+         android:id="@+id/tvdaifu"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="代付记录"
+        android:textColor="@color/white"
+         android:drawableLeft="@drawable/ce_newdaifu"
+        android:textSize="16.0sp" />
+    
+    <TextView
+         android:id="@+id/tvMyFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="活动"
+        android:visibility="gone"
+        android:textColor="@color/white"
+          android:drawableLeft="@drawable/ce_newhuodong"
+        android:textSize="16.0sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+          android:visibility="gone"
+        android:layout_gravity="center" >
+
+        <TextView
+            android:id="@+id/tvMyComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView1"
+            android:clickable="true"
+            android:drawablePadding="1.0dip"
+            android:gravity="center_vertical"
+            android:paddingRight="10.0dip"
+            android:text="消息中心"
+            android:textColor="@color/white"
+            
+            android:textSize="16.0sp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/ce_newxiaoxi" />
+
+    </RelativeLayout>
+
+    <TextView
+         android:id="@+id/ll_realname"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="角色认证"
+        android:textColor="@color/white"
+          android:drawableLeft="@drawable/ce_newrenzheng"
+        android:textSize="16.0sp" />
+
+     <TextView
+         android:id="@+id/ll_phone"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="我要理赔"
+        android:textColor="@color/white"
+          android:drawableLeft="@drawable/ce_newlipei"
+        android:textSize="16.0sp" />
+     <TextView
+         android:id="@+id/ll_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="意见反馈"
+        android:textColor="@color/white"
+          android:drawableLeft="@drawable/ce_newfahuo"
+          android:visibility="gone"
+        android:textSize="16.0sp" />
+      <TextView
+          android:id="@+id/ll_caozuo"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="操作指南"
+        android:textColor="@color/white"
+          android:drawableLeft="@drawable/ce_newcaozuo"
+        android:textSize="16.0sp" />
+       <TextView
+           android:id="@+id/ll_about"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="关于"
+        android:textColor="@color/white"
+          android:drawableLeft="@drawable/ce_newguanyu"
+        android:textSize="16.0sp" />
+       <LinearLayout 
+           android:layout_width="match_parent"
+           android:layout_height="100.0dip"
+           ></LinearLayout>
+       <TextView
+           android:id="@+id/ll_tui"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:clickable="true"
+        android:drawablePadding="1.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="10.0dip"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="16.0sp" />
+     <LinearLayout 
+           android:layout_width="match_parent"
+           android:layout_height="30.0dip"
+           ></LinearLayout>
+    </LinearLayout>
+	</ScrollView>
+</LinearLayout>

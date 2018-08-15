@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_margin="10dp"
+    android:descendantFocusability="blocksDescendants" >
+
+    <ImageView
+        android:id="@+id/courierHeadPath"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/wu_cou" />
+    
+    
+    <TextView 
+        android:id="@+id/courierName"
+        android:text="张晓路"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/courierHeadPath"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        android:layout_marginLeft="1dp"/>
+    
+    
+    <TextView 
+        android:id="@+id/allCount"
+        android:text="方式接单"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/courierHeadPath"
+        android:layout_below="@id/courierName"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"/>
+    
+    
+	<ImageView 
+	    android:id="@+id/iv_star"
+	    android:layout_height="14dp"
+	    android:layout_width="14dp"
+	    android:src="@drawable/top01"
+	    android:layout_toRightOf="@id/courierName"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="3dp"
+        android:visibility="gone"/>
+    <TextView 
+        android:id="@+id/todayCount"
+        android:text="时间"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/courierName"
+        android:layout_alignBaseline="@id/allCount"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"/>
+
+	<View
+	    android:layout_width="match_parent"
+	    android:layout_height="1dp"
+	    android:layout_below="@+id/courierHeadPath"
+	    android:layout_toRightOf="@+id/courierHeadPath"
+	    android:background="@color/grayview" />
+
+	<TextView
+	    android:id="@+id/todaymoney"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBaseline="@+id/courierName"
+	    android:layout_alignBottom="@+id/courierName"
+	    android:layout_toLeftOf="@+id/todaymoneyde"
+	    android:text="代理费："
+	    android:textSize="12sp" />
+
+	<TextView
+	    android:id="@+id/todaymoneyde"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/todayCount"
+	    android:layout_alignParentRight="true"
+	    android:text="7元"
+	    android:textColor="@color/orange1"
+	    android:textSize="14sp" />
+	
+</RelativeLayout>

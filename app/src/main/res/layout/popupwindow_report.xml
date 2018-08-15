@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:gravity="center"
+    android:orientation="vertical" 
+    android:background="#22000000"
+    >
+       <LinearLayout 
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_marginTop="5dp"
+        >
+        <LinearLayout 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="10dp"
+            >
+         <TextView
+             android:id="@+id/exit_re"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/closeongebar" />
+</LinearLayout>
+    </LinearLayout>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_white_rounded"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="上传货物照片"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+
+            <ImageView
+                  android:id="@+id/btn_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:background="@drawable/bg_shizikuang"
+                android:layout_marginBottom="10dp"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center"
+             >
+
+  <Button
+                android:id="@+id/btn_immediately"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/selector_orange_to_gray_rouded"
+                android:text="确 定"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                android:textSize="12sp"
+                 />
+
+            <Button
+                android:id="@+id/btn_no_immediatel"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/selector_orange_to_gray_rouded"
+                android:gravity="center"
+                android:text="暂不上传"
+                android:textColor="@color/white"
+                android:layout_marginBottom="5dp"
+                android:textSize="12sp"
+                android:layout_marginLeft="20dp"
+                android:visibility="gone"
+                 />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

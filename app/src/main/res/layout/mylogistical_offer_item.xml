@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center|left" >
+
+            <ImageView
+                android:id="@+id/offer_img_head"
+                android:layout_width="80dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/ren3" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/offer_img_head"
+    android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/ee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:layout_toRightOf="@+id/offer_img_head"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/logoffer_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="wdas"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/logoffer_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/logoffer_username"
+                    android:layout_alignBottom="@+id/logoffer_username"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="17dp"
+                    android:text="11111"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                 android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ee"
+                    android:layout_weight="1"
+                android:layout_toRightOf="@+id/offer_img_head"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/logoffer_addes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="wdas"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/logoffer_addsee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="17dp"
+                    android:text="11111"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+             <RelativeLayout
+                android:layout_width="match_parent"
+                 android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ee"
+                    android:layout_weight="1"
+                android:layout_toRightOf="@+id/offer_img_head"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/logoffer_baojia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="报价"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+</LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/offer_img_head"
+            android:paddingBottom="5dp" >
+
+                <Button
+                    android:id="@+id/offer_but"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="wdas"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/offer_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="18dp"
+                    android:text="11111"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+</LinearLayout>

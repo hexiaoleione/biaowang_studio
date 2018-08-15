@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/graywhite">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/orange1"
+         android:id="@+id/relativeLayout1">
+
+        <Button
+            android:id="@+id/btnLefts"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:background="@drawable/back1" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="物流注册"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+    <LinearLayout 
+        android:id="@+id/pesro_lin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/graywhite"
+        >
+<LinearLayout 
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+    <ImageView
+        android:id="@+id/imageViews"
+        android:layout_width="150dp"
+        android:layout_height="100dp" 
+        android:background="@drawable/qwq"
+        />
+    <TextView 
+            android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="10dp"
+        android:textColor="@color/red"
+        android:text="请上传有效驾驶证，并保证信息可见性"
+        />
+</LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/edt_cars"
+        android:gravity="center_horizontal"
+        android:text="车辆信息："
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/edt_cars"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/bg_white_rounded"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:textSize="12sp" />
+
+</RelativeLayout>
+
+    <RelativeLayout 
+     android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    android:orientation="horizontal"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/edt_car_phone"
+        android:gravity="center_horizontal"
+        android:text="车牌号  ："
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/edt_car_phone"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/bg_white_rounded"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:textSize="12sp" >
+
+        <requestFocus />
+    </EditText>
+
+    </RelativeLayout>
+<RelativeLayout 
+     android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    android:orientation="horizontal"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/edt_drive"
+        android:gravity="center_horizontal"
+        android:text="驾驶证号："
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/edt_drive"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/bg_white_rounded"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:textSize="12sp" />
+
+    </RelativeLayout>
+    <RelativeLayout 
+     android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    android:orientation="horizontal"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/edt_cyz"
+        android:text="从业资格证："
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/edt_cyz"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/bg_white_rounded"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:textSize="12sp" />
+
+    </RelativeLayout>
+    <LinearLayout 
+     android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_marginTop="20dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    >
+
+    <Button
+        android:id="@+id/sumit"
+        style="@style/btn"
+         android:layout_width="150dp"
+         android:layout_height="40dp"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+        
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

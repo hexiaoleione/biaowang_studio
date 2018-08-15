@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+   <com.hex.express.iwant.views.TitleBarView
+        android:id="@+id/lo_show"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+   <ScrollView 
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+   <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    > 
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginTop="10dp"
+    >
+    <TextView 
+      
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物信息"
+        android:textSize="20dp"
+        />
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发布时间"
+        android:textSize="13sp"
+        />
+      <TextView 
+          android:id="@+id/deta_fabutime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物信息"
+         android:textSize="13sp"
+        />
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物名称"
+         android:textSize="13sp"
+        />
+      <TextView 
+          android:id="@+id/huoname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物信息"
+         android:textSize="13sp"
+        />
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:id="@+id/deta_zhong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物重量"
+        android:layout_weight="1"
+         android:textSize="13sp"
+        />
+      <TextView 
+          android:id="@+id/deta_tiji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物体积"
+        android:layout_weight="1"
+         android:textSize="13sp"
+        />
+      
+</LinearLayout>
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+     android:layout_marginTop="10dp"
+    >
+       <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/star_green44"
+        android:id="@+id/textView1"/>
+
+      <TextView
+          android:id="@+id/quhuo"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="25dp"
+          android:text="需要取货"
+           android:textSize="13sp"
+          android:textColor="@color/orange1" />
+
+      <TextView
+          android:id="@+id/deta_fahuodizhi"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/quhuo"
+          android:layout_alignBottom="@+id/quhuo"
+          android:layout_toRightOf="@+id/textView1"
+          android:layout_centerVertical="true"
+           android:layout_marginLeft="5dp"
+            android:textSize="13sp"
+          android:text="22233" />
+      
+</RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="10dp" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/down_red44" />
+
+    <TextView
+        android:id="@+id/songhuo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="25dp"
+         android:textSize="13sp"
+        android:text="需要送货"
+        android:textColor="@color/orange1" />
+
+    <TextView
+        android:id="@+id/deta_dadaodizhi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+           android:layout_alignBaseline="@+id/songhuo"
+          android:layout_alignBottom="@+id/songhuo"
+         android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_marginLeft="5dp"
+         android:textSize="13sp"
+        android:text="22233" />
+
+</RelativeLayout>
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:id="@+id/deta_shouhuoname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物信息"
+        android:layout_weight="1"
+         android:textSize="13sp"
+        />
+      <TextView 
+          android:id="@+id/deta_lianxifangshi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物信息"
+        android:layout_weight="1"
+         android:textSize="13sp"
+        />
+      
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:id="@+id/deta_fahuotime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物信息"
+        android:layout_weight="1"
+         android:textSize="13sp"
+        />
+      <TextView 
+          android:id="@+id/deta_dadaotime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物信息"
+        android:layout_weight="1"
+         android:textSize="13sp"
+        />
+</LinearLayout>
+  <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:id="@+id/deta_beizhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="备注"
+         android:textSize="13sp"
+        />
+</LinearLayout>
+                 <View
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="5dp"
+                        android:background="@color/grayview" />
+                 <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物信息"
+        android:textSize="20dp"
+        />
+</LinearLayout>
+<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+             android:layout_marginTop="10dp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+             >
+
+            <ImageView
+                android:id="@+id/deta_img_headse"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+               
+                android:background="@drawable/ren3" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_toRightOf="@+id/deta_img_headse"
+    android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/ee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/deta_logoffer_usernames"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="wdas"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/deta_logoffer_times"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/deta_logoffer_usernames"
+                    android:layout_alignBottom="@+id/deta_logoffer_usernames"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="17dp"
+                    android:text="11111"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                 android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                 android:layout_weight="1"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/deta_cishus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="wdas"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/deta_pingjias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="17dp"
+                    android:text="11111"
+                     android:textSize="13sp" />
+
+            </RelativeLayout>
+             <RelativeLayout
+                android:layout_width="match_parent"
+                 android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                    android:layout_weight="1"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/deta_farens"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="公司法人"
+                     android:textSize="13sp"/>
+                <TextView
+                   android:id="@+id/deta_phones"
+                    android:layout_width="20dp"
+                    android:layout_height="25dp"
+                   android:layout_alignParentRight="true"
+                    android:layout_marginRight="17dp"
+  					android:background="@drawable/dianhua_50"
+                     />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                 android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/deta_lianxis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="wdas"
+                     android:textSize="13sp" />
+
+            </RelativeLayout>
+</LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+     android:layout_marginTop="10dp"
+    >
+
+    <TextView
+        android:id="@+id/deta_addse_tus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="16dp"
+            android:background="@drawable/dingwei_bar"
+            android:visibility="gone"
+      />
+
+    <TextView
+        android:id="@+id/deta_addses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+         android:textSize="13sp"
+        android:text="地址" />
+      
+</RelativeLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    >
+    <TextView 
+        android:id="@+id/deta_baojias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="报价"
+        android:textColor="@color/orange"
+        android:textSize="25sp"
+        />
+</LinearLayout>
+<RelativeLayout 
+		    android:id="@+id/lout11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+		    >
+		<CheckBox
+                        android:id="@+id/checkbox_deta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="12sp"
+                        android:text="是否为该物品投保" />
+		    <View
+                      	    android:id="@+id/v_ppsdeta"
+                      	    android:layout_width="100dp"
+                      	    android:layout_height="1dp"
+                      	    android:layout_below="@+id/checkbox_deta"
+                      	    android:layout_marginLeft="11dp"
+                      	    android:layout_toRightOf="@+id/checkbox_deta"
+                      	    android:background="@color/grayview" 
+                      	  android:visibility="gone"
+                      	    />
+
+                      	<EditText
+                      	    android:id="@+id/edt_pricesdeta"
+                      	    android:layout_width="wrap_content"
+                      	    android:layout_height="wrap_content"
+                      	    android:layout_alignParentTop="true"
+                      	    android:layout_toRightOf="@+id/checkbox_deta"
+                      	    android:background="@null"
+                      	   android:layout_marginLeft="5dp"
+                      	    android:ems="10"
+                      	    android:hint="  元"
+                      	    android:inputType="number" 
+                      	    android:visibility="gone">
+
+                      	    <requestFocus />
+                      	</EditText>
+
+		</RelativeLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    >
+    <Button 
+        android:id="@+id/deta_buts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/zhifubar"
+        />
+</LinearLayout>
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

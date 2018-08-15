@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/graywhite"
+     >
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="@color/zilan"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/btnLeft"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:paddingBottom="14dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="14dp"
+                android:paddingTop="14dp"
+                android:src="@drawable/back1" />
+
+            <TextView
+                android:id="@+id/btnRight"
+                android:layout_width="85dp"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@+id/btnLeft"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:visibility="gone"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="头像信息"
+                android:textColor="@color/whites"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    
+<LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/white"
+        >
+        
+        <ImageView 
+           android:id="@+id/img_headportrait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_new_tou"
+                   android:layout_gravity="center" 
+             />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请点击图片上传或者修改头像"
+            android:textColor="@color/grayviews"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+</LinearLayout>

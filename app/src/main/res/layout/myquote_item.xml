@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+ <com.hex.express.iwant.views.TitleBarView
+        android:id="@+id/specifics_show"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <ScrollView 
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+   <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    > 
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginTop="10dp"
+    >
+    <TextView 
+      
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物信息"
+        />
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发布时间"
+        />
+      <TextView 
+          android:id="@+id/specifics_fabutime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物信息"
+        />
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物名称"
+        />
+      <TextView 
+          android:id="@+id/specifics_huoname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物信息"
+        />
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:id="@+id/specifics_zhong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物重量"
+        android:layout_weight="1"
+        />
+      <TextView 
+          android:id="@+id/specifics_tiji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物体积"
+        android:layout_weight="1"
+        />
+      
+</LinearLayout>
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+     android:layout_marginTop="10dp"
+    >
+       <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/star_green44"
+        android:id="@+id/textView1"/>
+
+      <TextView
+          android:id="@+id/specifics_quhuo"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="25dp"
+          android:text="需要取货"
+          android:textColor="@color/orange1" />
+
+      <TextView
+          android:id="@+id/specifics_fahuodizhi"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/quhuo"
+          android:layout_alignBottom="@+id/quhuo"
+          android:layout_toRightOf="@+id/textView1"
+           android:layout_centerVertical="true"
+          android:text="22233" />
+      
+</RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="10dp" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/down_red44" />
+
+    <TextView
+        android:id="@+id/specifics_songhuo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="25dp"
+        android:text="需要送货"
+        android:textColor="@color/orange1" />
+
+    <TextView
+        android:id="@+id/specifics_dadaodizhi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+           android:layout_alignBaseline="@+id/songhuo"
+          android:layout_alignBottom="@+id/songhuo"
+         android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="22233" />
+
+</RelativeLayout>
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:id="@+id/specifics_shouhuoname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物信息"
+        android:layout_weight="1"
+        />
+      <TextView 
+          android:id="@+id/specifics_lianxifangshi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物信息"
+        android:layout_weight="1"
+        />
+      
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:id="@+id/specifics_fahuotime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物信息"
+        android:layout_weight="1"
+        />
+      <TextView 
+          android:id="@+id/specifics_dadaotime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="货物信息"
+        android:layout_weight="1"
+        />
+</LinearLayout>
+  <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+     android:layout_marginTop="10dp"
+    >
+    <TextView 
+        android:id="@+id/specifics_beizhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="备注"
+        />
+</LinearLayout>
+                 <View
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="5dp"
+                        android:background="@color/grayview" />
+                 <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物信息"
+        />
+</LinearLayout>
+<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+             android:layout_marginTop="10dp"
+            android:gravity="center|left" >
+
+            <ImageView
+                android:id="@+id/specifics_img_head"
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/ren3" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/specifics_img_head"
+    android:orientation="vertical" >
+            <RelativeLayout
+                android:id="@+id/ee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:layout_toRightOf="@+id/specifics_img_head"
+                android:paddingBottom="5dp" >
+
+                <TextView
+                    android:id="@+id/deta_logoffer_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="wdas"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/specifics_logoffer_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="17dp"
+                    android:text="11111"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                 android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ee"
+                 android:layout_weight="1"
+                android:layout_toRightOf="@+id/specifics_img_head"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/specifics_cishu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="wdas"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/specifics_pingjia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="17dp"
+                    android:text="11111"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+             <RelativeLayout
+                android:layout_width="match_parent"
+                 android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ee"
+                    android:layout_weight="1"
+                android:layout_toRightOf="@+id/specifics_img_head"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/deta_faren"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="公司法人"
+                    android:textSize="15sp" />
+                <TextView
+                   android:id="@+id/specifics_phone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                   android:layout_alignParentRight="true"
+                    android:layout_marginRight="17dp"
+  					android:background="@drawable/dianhua_50"
+                     />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                 android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/ee"
+                android:layout_weight="1"
+                android:layout_toRightOf="@+id/specifics_img_head"
+                android:paddingBottom="5dp" >
+
+
+                <TextView
+                    android:id="@+id/specifics_lianxi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="wdas"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+</LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+     android:layout_marginTop="10dp"
+    >
+
+    <TextView
+        android:id="@+id/specifics_addse_tu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="16dp"
+            android:background="@drawable/dingwei_bar"
+      />
+
+    <TextView
+        android:id="@+id/specifics_addse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="地址" />
+      
+</RelativeLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    >
+    <TextView 
+        android:id="@+id/specifics_baojia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物信息"
+        />
+</LinearLayout>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    >
+    <Button 
+        android:id="@+id/specifics_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/zhifubar"
+        />
+</LinearLayout>
+</LinearLayout>
+</ScrollView>
+
+</LinearLayout>

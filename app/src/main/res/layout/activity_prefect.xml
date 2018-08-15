@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graywhite"
+    android:orientation="vertical" >
+
+    <com.hex.express.iwant.views.TitleBarView
+        android:id="@+id/tbv_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <LinearLayout 
+         android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/graywhite"
+    android:orientation="vertical"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择车型"
+            android:textColor="@color/red"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            />
+ <LinearLayout 
+     android:id="@+id/lin_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+         android:gravity="center"
+     >
+     <LinearLayout 
+         android:id="@+id/pre_smallMinibus"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:gravity="center"
+          android:layout_marginLeft="10dp"
+          android:padding="5dp"
+          android:background="@drawable/corners_bg"
+         >
+     <ImageView
+                android:id="@+id/iv_xiaomian"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/xuanzhongoff" />
+     <TextView 
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:text="小型面包 "
+         />
+     </LinearLayout>
+      <LinearLayout 
+          android:id="@+id/pre_middleMinibus"
+          android:layout_width="wrap_content"
+         android:layout_height="35dp"
+          android:gravity="center"
+           android:layout_marginLeft="10dp"
+          android:padding="5dp"
+          android:background="@drawable/corners_bg"
+         >
+     <ImageView
+          android:id="@+id/iv_xiaomian2"
+            android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/xuanzhongoff" />
+     <TextView 
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="中型面包 "
+              android:layout_marginLeft="5dp"
+         />
+     </LinearLayout>
+      <LinearLayout 
+          android:id="@+id/pre_smallTruck"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:gravity="center"
+           android:layout_marginLeft="10dp"
+        android:padding="5dp"
+          android:background="@drawable/corners_bg"
+         >
+     <ImageView
+          android:id="@+id/iv_xiaomian3"
+                 android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/xuanzhongoff" />
+     <TextView 
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="小货车 "
+              android:layout_marginLeft="5dp"
+         />
+     </LinearLayout>
+     
+ </LinearLayout>
+ <LinearLayout 
+      android:id="@+id/lin_2"
+      android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+     >
+     <LinearLayout 
+           android:id="@+id/pre_middleTruck"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:gravity="center"
+          android:layout_marginLeft="10dp"
+          android:padding="5dp"
+          android:background="@drawable/corners_bg"
+         >
+     <ImageView
+          android:id="@+id/iv_xiaomian4"
+                 android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/xuanzhongoff" />
+     <TextView 
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="中货车    "
+              android:layout_marginLeft="5dp"
+         />
+     </LinearLayout>
+      <LinearLayout 
+          android:id="@+id/pre_car"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:gravity="center"
+          android:layout_marginLeft="10dp"
+          android:padding="5dp"
+          android:background="@drawable/corners_bg"
+         >
+     <ImageView
+          android:id="@+id/iv_xiaomian5"
+                 android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/xuanzhongoff" />
+     <TextView 
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="家用轿车 "
+              android:layout_marginLeft="5dp"
+         />
+     </LinearLayout>
+      <LinearLayout 
+          android:id="@+id/pre_other"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:gravity="center"
+          android:layout_marginLeft="10dp"
+          android:padding="5dp"
+          android:background="@drawable/corners_bg"
+         >
+     <ImageView
+          android:id="@+id/iv_xiaomian6"
+                 android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/xuanzhongoff" />
+     <TextView 
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="其他    "
+              android:layout_marginLeft="5dp"
+         />
+     </LinearLayout>
+ </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <com.hex.express.iwant.views.RoundCornerImageView
+            android:id="@+id/img_headportrait"
+            style="@style/image"
+            android:background="@drawable/qwq" />
+
+        <TextView
+            android:id="@+id/pre_tishi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="请上传驾驶证（无驾驶证者请上传身份证）"
+            android:textColor="@color/red" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="上传驾驶证者才可参加本次推荐认证镖师活动"
+            android:visibility="gone"
+            android:textColor="#f96f23" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/userinfoname"
+            android:gravity="right" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="40dp"
+            android:layout_toRightOf="@id/name"
+            android:background="@drawable/bg_white_rounded"
+            android:gravity="center"
+            android:hint="请输入姓名"
+            android:imeOptions="actionNext"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/userinfoidcardnumber"
+            android:gravity="right" />
+
+        <EditText
+            android:id="@+id/et_card"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="40dp"
+            android:layout_toRightOf="@id/no"
+            android:background="@drawable/bg_white_rounded"
+            android:gravity="center"
+            android:digits="0123456789xX"
+            android:hint="请输入身份证号"
+            android:imeOptions="actionDone"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="温馨提示：根据公安部门发快递实名制要求，请输入真实姓名和身份证号"
+        android:textColor="@color/red"
+        android:textSize="10sp" />
+
+    <!--  <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+         android:gravity="center_horizontal"
+        android:text="＊信息一经填写，将不能修改"
+        android:textColor="@color/red"
+        android:textSize="14sp" />-->
+
+    <TextView
+        android:id="@+id/btn_complete"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/zilan"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/white" />
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

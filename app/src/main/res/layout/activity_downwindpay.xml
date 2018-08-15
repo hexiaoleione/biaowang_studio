@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent" >
+
+    <LinearLayout
+        android:id="@+id/lout_showdown"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/text_radius_whitegray"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:text="消费金额："
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/pay_money"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                 android:textColor="@color/red"
+                android:text="40元"
+                android:textSize="16sp" />
+        </LinearLayout>
+        
+        <View 
+            android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="@color/gray"/>
+            <RelativeLayout 
+  			  android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+
+ 		<TextView
+ 		    android:id="@+id/pay_money_bao"
+ 		    android:layout_width="wrap_content"
+ 		    android:layout_height="20dp"
+ 		    android:layout_alignParentRight="true"
+ 		    android:layout_alignParentTop="true"
+ 		    android:layout_marginRight="30dp"
+ 		    android:gravity="center"
+ 		    android:text="保险费:"
+ 		    android:textColor="@color/red"
+ 		    android:textSize="16sp" />
+
+ 		<TextView
+ 		    android:id="@+id/pay_money_yun"
+ 		    android:layout_width="wrap_content"
+ 		    android:layout_height="20dp"
+ 		    android:layout_alignParentLeft="true"
+ 		    android:layout_alignParentTop="true"
+ 		    android:layout_marginLeft="25dp"
+ 		    android:gravity="center"
+ 		    android:text="运费："
+ 		    android:textColor="@color/red"
+ 		    android:textSize="16sp" />
+
+   </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+		<ImageView
+                android:id="@+id/pay_surplus"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/yue_120" />
+            <ImageView
+                android:id="@+id/pay_wenxin"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/weixin_120" />
+
+            <ImageView
+                android:id="@+id/pay_zhifubao"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/zhifu_120" />
+
+            
+        </LinearLayout>
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/lout_show"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+</LinearLayout>

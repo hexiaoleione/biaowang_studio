@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F0F0F0"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/zilan" >
+
+        <Button
+            android:id="@+id/btnLe"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:background="@drawable/back1" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="物流注册"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout1" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:id="@+id/rid1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:padding="5dp" >
+
+                    <ImageView
+                        android:id="@+id/newcer_jia"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/idcardzheng" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/newcer_jia"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:text="上传驾驶证" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rid2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rid1"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:padding="5dp" >
+
+                    <ImageView
+                        android:id="@+id/newcer_xing"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/idcardfan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/newcer_xing"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:text="上传行驶证" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rid3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rid2"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:padding="5dp" >
+
+                    <ImageView
+                        android:id="@+id/newcer_car"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/idcardzhi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/newcer_car"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:text="上传车牌照片" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                  android:layout_marginTop="10dp"
+                android:layout_below="@+id/relativeLayout2" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="25dp"
+                    android:text="姓    名："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/textView1"
+                    android:background="@drawable/edit_bg"
+                    android:inputType="text"
+                    android:hint="请输入真实姓名"
+                    android:paddingLeft="3dp" >
+                </EditText>
+            </RelativeLayout>
+            <RelativeLayout
+        android:id="@+id/resd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+        android:layout_below="@+id/relativeLayout4" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+            android:text="身份证号："
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/edit_card"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView2"
+            android:background="@drawable/edit_bg"
+           android:digits="0123456789xX"
+                  android:hint="请输入身份证号"
+            android:paddingLeft="3dp" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+             android:layout_marginTop="10dp"
+              android:layout_below="@+id/resd"
+              android:textSize="12sp"
+            android:text="温馨提示：根据公安部物流寄递实名制要求，请输入真实姓名和身份证号码"
+            android:textColor="@color/orange1"
+             />
+      <Button
+        android:id="@+id/comps_emit"
+        style="@style/btnnew"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/resd"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text=" 提 交 "
+        android:textSize="12sp" />
+      <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+             android:layout_marginTop="20dp"
+              android:layout_below="@+id/comps_emit"
+              android:textSize="12sp"
+            android:text=" "
+            android:textColor="@color/orange1"
+             />
+        </RelativeLayout>
+    </ScrollView>
+
+    
+
+  
+
+    
+
+</RelativeLayout>

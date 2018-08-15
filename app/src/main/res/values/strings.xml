@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="today">今日</string>
+    <string name="lastList">往期列表</string>
+    <string name="discussMeetting">讨论集会</string>
+    <string name="myFavorities">我的收藏</string>
+    <string name="myComments">我的评论</string>
+    <string name="settings">设置</string>
+    <string name="tts_toast_format" formatted="false">缓冲进度为%d%%，播放进度为%d%%</string>
+    <string name="text_begin">请开始说话…</string>
+    <string name="text_begin_recognizer">开始音频流识别</string>
+    <string name="text_upload_contacts">上传联系人</string>
+    <string name="text_upload_userwords">上传用户词表</string>
+    <string name="text_upload_success">上传成功</string>
+    <string name="pref_key_translate">translate</string>
+    <string name="preference_key_iat_rate">iat_rate</string>
+    <string name="preference_title_iat_rate">录音采样率</string>
+    <string name="preference_default_iat_rate">rate16k</string>
+    <string name="preference_default_isr_engine">sms</string>
+    <string name="preference_default_iat_engine">sms</string>
+    <string name="preference_dialog_title_isr_engine">选择识别引擎</string>
+    <string name="preference_key_isr_rate">isr_rate</string>
+    <string name="preference_title_isr_rate">识别采样率</string>
+    <string name="preference_default_poi_province">全选</string>
+    <string name="preference_default_poi_city">全选</string>
+    <string name="preference_key_poi_province">poi_province</string>
+    <string name="preference_dialog_title_poi_province">选择地图搜索省份</string>
+    <string name="preference_key_poi_city">poi_city</string>
+    <string name="preference_title_poi_city">地图搜索城市</string>
+    <string name="app_id">59acb492</string>
+    <string name="preference_key_iat_engine">iat_engine</string>
+    <string name="preference_dialog_title_iat_engine">选择听写引擎</string>
+
+    <string-array name="preference_entries_iat_engine">
+        <item>短信转写</item>
+        <item>地图搜索</item>
+        <item>热词搜索</item>
+        <item>视频搜索</item>
+    </string-array>
+    <string-array name="preference_values_iat_engine">
+        <item>sms</item>
+        <item>poi</item>
+        <item>vsearch</item>
+        <item>video</item>
+    </string-array>
+
+    <string name="preference_title_iat">听写设置</string>
+
+    <string-array name="preference_values_poi_city">
+        <item>全选</item>
+    </string-array>
+
+    <string name="preference_title_iat_engine">听写引擎</string>
+
+    <string-array name="language_entries">
+        <item>普通话</item>
+        <item>粤语</item>
+        <item>英语</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>mandarin</item>
+        <item>cantonese</item>
+        <item>en_us</item>
+    </string-array>
+    <string-array name="punc_entries">
+        <item>有标点</item>
+        <item>无标点</item>
+    </string-array>
+    <string-array name="punc_values">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="dwa_entries">
+        <item>开启</item>
+        <item>关闭</item>
+    </string-array>
+    <string-array name="stream_entries">
+        <item>通话</item>
+        <item>系统</item>
+        <item>铃声</item>
+        <item>音乐</item>
+        <item>闹铃</item>
+        <item>通知</item>
+    </string-array>
+    <string-array name="stream_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="pref_key_iat_show">iat_show</string>
+    <string name="pref_title_iat_show">显示听写界面</string>
+    <string name="pref_title_translate">翻译</string>
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
+    <string name="app_name">镖王</string>
+ <!-- 我是镖王 -->
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="back"></string>
+    <string name="title">镖王</string>
+    <string name="sender">寄件人</string>
+    <string name="addressee">收件人</string>
+    <!-- 主页面Button的名字 -->
+    <string name="onkeysend">一键快递</string>
+    <string name="cometopick">来抢单吧</string>
+    <string name="downwindcourier">顺风专递</string>
+    <string name="downwindfreight">顺风货运</string>
+    <string name="publishing_tasks">发布任务</string>
+    <string name="accept_tasks">接受任务</string>
+    <string name="sendexp">发快递</string>
+    <string name="sendfreight">发货运</string>
+    <string name="sendtasks">派任务</string>
+    <!-- 登录界面的名字 -->
+    <string name="pleaseenter_username">请输入您的手机号</string>
+    <string name="username">请输入您的手机号</string>
+    <string name="userpassword">密码</string>
+    <string name="findpassword">找回密码</string>
+    <string name="login">登  录</string>
+    <string name="registe">注册</string>
+    <string name="hurryregiste">快速注册</string>
+    <string name="thirdpartylogin">第三方账号快速登录</string>
+    <!-- 注册页面 -->
+    <string name="registemobile">手机号</string>
+    <string name="introducer">请输入推荐人的手机号(选填)</string>
+    <string name="registephonenumber">11位手机号</string>
+    <string name="registesmscode">验证码</string>
+    <string name="registecode">4位数字</string>
+    <string name="registegetsmscode">获取验证码</string>
+    <string name="nextstep">下一步</string>
+    <string name="next1">注册1/2</string>
+    <string name="next2">注册2/2</string>
+    <string name="next3">完善实名信息</string>
+    <string name="setpwd">请设置密码</string>
+    <string name="password">密码</string>
+    <string name="pwdlength">6-20位字母和数字组合</string>
+    <string name="setimg">点击设置头像</string>
+    <string name="setname">请输入昵称</string>
+    <string name="complete">完成</string>
+    <string name="replaceimage">更换头像</string>
+    <string name="camera">拍照</string>
+    <string name="photofromalbum">从相册上传</string>
+    <string name="cancel">取消</string>
+    <string name="jump">跳过</string>
+    <!-- 找回密码 -->
+    <string name="findnext1">找回密码1/2</string>
+    <string name="findnext2">找回密码2/2</string>
+    <!-- 一键发布界面的button的名字 -->
+    <string name="sendperson">寄件人信息</string>
+    <string name="sendpersonname">寄件人姓名</string>
+    <string name="sendpersonmobile">寄件人手机号</string>
+    <string name="sendpersonaddress">详细地址</string>
+    <string name="getaddress">获取定位</string>
+    <string name="addcouriers">添加快递员</string>
+    <string name="oksend">确认发布</string>
+    <!-- 快递员库 -->
+    <string name="titlecouriername">快递员库</string>
+    <string name="expname">顺丰快递</string>
+    <string name="score">评分:</string>
+    <string name="couriername">姓名:</string>
+    <string name="couriernamesl">张三丰</string>
+    <string name="couriermobile">手机号:</string>
+    <string name="couriermobilesl">13800138000</string>
+    <!-- 添加快递员 -->
+    <string name="name">姓&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;名:</string>
+    <string name="mobile">手&#160;&#160;机&#160;&#160;号:</string>
+    <string name="expnam">快递公司:</string>
+    <string name="btnadd">添加</string>
+    <string name="couriermessage">快递员信息</string>
+    <string name="selectcouriers">可选快递员</string>
+    <string name="selectcouriersname">请输入快递员姓名</string>
+    <string name="selectcouriersmobile">请输入快递员手机号</string>
+    <string name="selectexpname">请选择快递公司</string>
+    <!-- 快递公司页面 -->
+    <string name="expName">快递公司</string>
+    <!-- 顺风专递 -->
+    <string name="downwindtitle">顺风专递</string>
+    <string name="downwindsendaddress">寄件地址：</string>
+    <string name="downwindsendaddressinput">请输入寄件地址</string>
+    <string name="downwindrecaddress">收件地址：</string>
+    <string name="downwindrecaddressinput">请输入收件地址</string>
+    <string name="downwindmathweight">重&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;量：</string>
+    <string name="downwindmathweightinput">请输入物品重量</string>
+    <string name="mathweightinput">kg</string>
+    <!-- 提交订单 -->
+    <string name="submitordertitle">提交订单</string>
+    <string name="submitordertotalmoney">总价：</string>
+    <string name="submitorderdistance">距离：</string>
+    <string name="submitordertotalweight">总重：</string>
+    <string name="submitorderremarks">备&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;注：</string>
+    <string name="submitorderremarksinput">请输入备注（非必填项）</string>
+    <string name="submitorderpaymoney">还需支付：</string>
+    <string name="submitorderyuan">元</string>
+    <string name="submitorderpayyuan">0000</string>
+    <string name="submitordertotalsendername">寄件人姓名</string>
+    <string name="submitordertotalsendermobile">寄件人手机号码</string>
+    <string name="submitordertotalrecname">收件人姓名</string>
+    <string name="submitordertotalrecmobile">收件人手机号码</string>
+    <string name="submitordertotaladdress">xxx市xxx区xxx路xxx楼</string>
+    <!-- 个人中心 -->
+    <string name="usercnetername">个人中心</string>
+    <string name="cneterusername">用户名</string>
+    <string name="trake">充值</string>
+    <string name="card">现金券</string>
+    <string name="wallet">钱包</string>
+    <string name="ecoin">积分</string>
+    <string name="ordermanagement">订单管理</string>
+    <string name="myexp">我的快递</string>
+    <string name="myfreight">我的物流</string>
+    <string name="mytasks">我的任务</string>
+    <string name="certificationcenter">认证中心</string>
+    <string name="roleAuthentication">角色认证</string>
+    <string name="courierauthentication">快递员</string>
+    <string name="incomeOfUnders">推广收入</string>
+    <string name="logisticsdriverauthentication">物流司机</string>
+    <string name="orderabout">系统设置</string>
+    <string name="logoff">切换账户</string>
+    <string name="resetpwd">重置密码</string>
+    <string name="about">关于</string>
+    <string name="balancemoney">0.00</string>
+    <string name="balancemoney2">元</string>
+    <!-- card页面 -->
+    <string name="cardtitle">我的现金券</string>
+    <string name="wallettitle">钱包</string>
+    <!-- 抢单大厅页面 -->
+    <string name="picktitle">抢单大厅</string>
+    <string name="pickaddress">北京</string>
+    <!-- 地址页面 -->
+    <string name="addresstitle">地&#160;&#160;址</string>
+    <string name="addresshint">请输入地址关键字</string>
+    <string name="usethisaddress">使用当前位置</string>
+    <string name="thisaddress">生命科学园北清创意园3-2-210室</string>
+    <string name="addresslist">地址列表</string>
+    <!-- 钱包界面 -->
+    <string name="mywallettitle">我的钱包</string>
+    <string name="wallethistory">流水详情</string>
+    <!-- 来抢单吧页面 -->
+    <string name="cometopicktitle">来抢单吧</string>
+    <string name="cometopicksender">寄件人信息</string>
+    <string name="cometopickaddressee">收件人信息</string>
+    <string name="cometopicksendername">姓&#160;&#160;名</string>
+    <string name="cometopicksendermobile">手机号</string>
+    <string name="cometopicksenderaddress">地&#160;&#160;址：</string>
+    <string name="cometopicksenderaddresslist">请选择地址</string>
+    <string name="cometopickmathname">物品名称：</string>
+    <string name="cometopickmathnameinput">请输入物品名称</string>
+    <!-- 用户信息界面 -->
+    <string name="userinfotitle">个人信息</string>
+    <string name="userinfoname">姓名</string>
+    <string name="inputuserinfoname">请输入姓名</string>
+    <string name="userinfoidcardnumber">身份证号</string>
+    <string name="inputuserinfoidcardnumber">请输入身份证号</string>
+    <string name="uploadimage">请上传手持身份证照片</string>
+    <string name="userinfonotice">温馨提示:根据公安部发快递实名制要求,请输入真实的姓名和身份证号</string>
+    <!-- 扫描界面 -->
+    <string name="scan_tip">请将条码置于扫描框内,系统会自动扫描</string>
+    <string name="scan_retry">扫描出错，请重试</string>
+    <string name="scan_title">正在扫描...</string>
+    <string name="scan_faile">扫描失败!</string>
+    <!-- 积分界面 -->
+    <string name="ecointitle">我的积分</string>
+    <string name="ecoinnow">当前积分:</string>
+    <string name="ecoinhistory">历史明细</string>
+    <string name="ecoinexchange">积分说明</string>
+    <string name="ecoinshope">积分商城</string>
+    <string name="ecoinmoney">0</string>
+    <!-- 历史积分界面 -->
+    <string name="ecoinhistoryway">邀请注册</string>
+    <string name="ecoinhistorymoney">100</string>
+    <string name="ecoinhistorytime">2016-03-16 10:09:11</string>
+    <!-- 消息页面 -->
+    <string name="messagetitle">我的消息</string>
+    <string name="dialogtitle">温馨提示</string>
+    <string name="dialogok">确定</string>
+    <string name="dialogcancel">取消</string>
+    <string name="know">不连接</string>
+    <string name="goset">去连接</string>
+    <!-- 吐司的言语 -->
+    <string name="nameandpwdnotnull">用户名或密码不能为空</string>
+    <string name="mobileandsmscodenotnull">手机号或验证码不能为空</string>
+    <string name="mobileisnotvolid">请输入正确的手机号码</string>
+    <string name="smscodeisnotvolid">请输入正确的4位数字验证码</string>
+    <string name="pwdnotnull">密码不能为空</string>
+    <string name="pwdshortandlong">密码长度小于6位或大于20位</string>
+    <string name="namenotnull">用户名不能为空</string>
+    <string name="nameisnotvoladnull">昵称不能为空</string>
+    <string name="passwordisnotvolid">密码格式不正确,请输入6-20位数字和字母组合</string>
+    <string name="couriernamenotnull">快递员姓名不能为空</string>
+    <string name="couriermobilenotnull">快递员手机号码不能为空</string>
+    <string name="expnamenotnull">快递公司不能为空</string>
+    <string name="isnull">暂无数据</string>
+    <string name="infonameisnotnull">姓名不能为空</string>
+    <string name="idcardisnotnull">身份证号不能为空</string>
+    <string name="idcardisnotvolid">身份证号格式不正确</string>
+    <string name="sendaddressisnotnull">寄件人地址不能为空</string>
+    <string name="recaddressisnotnull">收件人地址不能为空</string>
+    <string name="mathweightisnotnull">物品重量不能为空</string>
+    <string name="intenetisnotnull">当前无网络连接,请连接网络</string>
+    <string name="exitapp">再按一次退出程序</string>
+    <!-- 镖件详情 -->
+    <string name="enterPassword">请输入交易密码</string>
+    <string name="tip">提示：</string>
+    <string name="contactReceiver">交易密码请联系收件人</string>
+    <string name="sweetTips">温馨提示</string>
+    <string name="goodsConfirm">确认收货</string>
+    <string name="checkToReceive">已验收</string>
+    <string name="succeededofReceive">收货成功</string>
+    <string name="tipone">1.根据公安部规定禁止运递易燃易爆以及一切与毒品有关的物品。</string>
+    <string name="tiptwo">2.请认真检查货物是否完整，是否符合安全规定。</string>
+    <string name="tipstree">3.请认真货主身份信息，是否与平台信息一致。</string>
+    <string name="tip_warn">根据《中华人民共和国反恐怖主义法》规定，发快递须实名制，若您所填信息不真实或不完善，请尽快修改和完善，感谢您的配合。</string>
+    <string name="tipsde">请在规定时间内到达。</string>
+
+    <!-- 扫码 -->
+    <string name="placeHolder">placeHolder</string>
+    <string name="seekbar_add">+</string>
+    <string name="seekbar_minus">-</string>
+    <string name="create">生成</string>
+    <string name="scan_failed">扫描失败</string>
+    <string name="bottom_hint">建议与镜头保持10CM距离，尽量避免逆光和阴影</string>
+    <string name="top_hint">将条形码或二维码置于取景框内系统会自动扫描</string>
+    <string name="msg_camera_framework_bug">抱歉，Android相机出现问题。您可能需要重启设备。</string>
+    <string name="button_ok">确定</string>
+    <string name="app_picker_name">应用</string>
+    <string name="bookmark_picker_name">书签</string>
+    <string name="button_add_calendar">添加事件至日历</string>
+    <string name="button_add_contact">添加联系人</string>
+    <string name="button_book_search">打开图书搜索</string>
+    <string name="button_cancel">取消</string>
+    <string name="button_custom_product_search">自定义搜索</string>
+    <string name="button_dial">拨号</string>
+    <string name="button_email">发送email</string>
+    <string name="button_get_directions">获取地址</string>
+    <string name="button_mms">发送彩信</string>
+    <string name="button_open_browser">打开浏览器</string>
+    <string name="button_product_search">打开产品搜索</string>
+    <string name="button_search_book_contents">搜索图书内容</string>
+    <string name="button_share_app">共享应用</string>
+    <string name="button_share_bookmark">分享书签</string>
+    <string name="button_share_by_email">通过email分享</string>
+    <string name="button_share_by_sms">通过短信分享</string>
+    <string name="button_share_clipboard">分享剪切板</string>
+    <string name="button_share_contact">分享联系人</string>
+    <string name="button_show_map">显示地图</string>
+    <string name="button_sms">发送短信</string>
+    <string name="button_web_search">网页搜索</string>
+    <string name="button_wifi">连接到网络</string>
+    <string name="history_clear_one_history_text">删除</string>
+    <string name="history_clear_text">删除历史</string>
+    <string name="history_email_title">条码扫描器历史</string>
+    <string name="history_empty">空的</string>
+    <string name="history_empty_detail">没有条码扫描已记录</string>
+    <string name="history_send">发送历史</string>
+    <string name="history_title">历史</string>
+    <string name="menu_help">帮助</string>
+    <string name="menu_history">历史</string>
+    <string name="menu_settings">设置</string>
+    <string name="msg_default_format">格式</string>
+    <string name="msg_default_meta">元数据</string>
+    <string name="msg_default_mms_subject">Hi</string>
+    <string name="msg_default_status">请将条码或二维码置于取景框内扫描。  </string>
+    <string name="msg_default_time">时间</string>
+    <string name="msg_default_type">类型</string>
+    <string name="msg_google_books">Google</string>
+    <string name="msg_google_product">Google</string>
+    <string name="msg_intent_failed">抱歉，无法打开所需软件。 条码内容可能无效。</string>
+    <string name="msg_redirect">重定向</string>
+    <string name="msg_sbc_book_not_searchable">抱歉，无法找到此图书。</string>
+    <string name="msg_sbc_failed">抱歉，搜索时遇到错误。</string>
+    <string name="msg_sbc_no_page_returned">无页面返回</string>
+    <string name="msg_sbc_page">页面</string>
+    <string name="msg_sbc_results">结果</string>
+    <string name="msg_sbc_searching_book">搜索图书…</string>
+    <string name="msg_sbc_snippet_unavailable">摘录不可用</string>
+    <string name="msg_share_explanation">您可以通过在自己的手机上显示条码，并使用其它手机扫描此条码的方式进行分享</string>
+    <string name="msg_share_text">或键入一些文字</string>
+    <string name="msg_sure">你肯定吗？</string>
+    <string name="msg_unmount_usb">抱歉，SD卡不可访问。</string>
+    <string name="preferences_actions_title">找到条码时</string>
+    <string name="preferences_bulk_mode_summary">连续扫描并保存多个条形码</string>
+    <string name="preferences_bulk_mode_title">批量扫描模式</string>
+    <string name="msg_bulk_mode_scanned">批量扫描：找到条码，已保存</string>
+    <string name="preferences_copy_to_clipboard_title">复制到剪切板</string>
+    <string name="preferences_custom_product_search_summary" formatted="false">替换：％s=内容，％f=格式，％t=类型</string>
+    <string name="preferences_custom_product_search_title">自定义搜索网址</string>
+    <string name="preferences_decode_1D_title">扫描 一维条码</string>
+    <string name="preferences_decode_Data_Matrix_title">扫描 DM码</string>
+    <string name="preferences_decode_QR_title">扫描 QR码</string>
+    <string name="preferences_disable_continuous_focus_summary">只使用标准对焦模式</string>
+    <string name="preferences_front_light_auto">自动</string>
+    <string name="preferences_front_light_off">待用</string>
+    <string name="preferences_front_light_on">活跃</string>
+    <string name="preferences_front_light_summary">闪光灯打开方式</string>
+    <string name="preferences_front_light_title">闪光灯</string>
+    <string name="preferences_general_title">一般设置</string>
+    <string name="preferences_invert_scan_summary">黑色背景上的白色条形码扫描。在某些设备上。</string>
+    <string name="preferences_invert_scan_title">反向扫描</string>
+    <string name="preferences_name">设置</string>
+    <string name="preferences_play_beep_title">提示音</string>
+    <string name="preferences_remember_duplicates_summary">在历史记录中保存重复记录</string>
+    <string name="preferences_remember_duplicates_title">记住重复</string>
+    <string name="preferences_result_title">结果设置</string>
+    <string name="preferences_scanning_title">条码类型选择</string>
+    <string name="preferences_supplemental_summary">尝试检索关于条码内容的更多信息</string>
+    <string name="preferences_supplemental_title">检索更多信息</string>
+    <string name="preferences_try_bsplus">尝试条码扫描器+</string>
+    <string name="preferences_try_bsplus_summary">增强新的功能和接口</string>
+    <string name="preferences_vibrate_title">振动</string>
+    <string name="result_address_book">找到联系人信息</string>
+    <string name="result_calendar">找到日历事件</string>
+    <string name="result_email_address">找到email地址</string>
+    <string name="result_geo">找到地理坐标</string>
+    <string name="result_isbn">找到图书</string>
+    <string name="result_product">找到产品</string>
+    <string name="result_sms">找到短信地址</string>
+    <string name="result_tel">找到电话号码</string>
+    <string name="result_text">找到纯文本</string>
+    <string name="result_uri">找到URL</string>
+    <string name="result_wifi">发现网络配置</string>
+    <string name="sbc_name">Google图书搜索</string>
+    <string name="wifi_changing_network">请求连接到网络\u2026</string>
+    <string name="wifi_ssid_label">网络SSID</string>
+    <string name="wifi_type_label">类型</string>
+    <string name="activity_courier_identification">CourierIdentificationActivity</string>
+    <string name="title_activity_cidentification">CIdentificationActivity</string>
+
+    <!-- 快递员认证 -->
+    <string name="courier_identification">快递员认证</string>
+    <string name="select_expressCompany">请选择快递公司</string>
+    <string name="enter_netName">请输入网点名称</string>
+    <string name="enter_netphone">请输入网点座机</string>
+    <string name="enter_netNo">网点编号(选填)</string>
+    <string name="enter_courierNo">快递员工号(选填)</string>
+    <string name="title_activity_my_extention">MyExtentionActivity</string>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+        <attr name="selectedTabTextColor" format="color" />
+    </declare-styleable>
+
+    <!-- 20160606-mac svn测试 -->
+
+
+    <!-- 20160606-mac svn测试 02 -->
+
+</resources>

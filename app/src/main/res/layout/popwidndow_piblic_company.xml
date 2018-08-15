@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/graywhite">
+    
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             >
+            
+    
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/linearlayout_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_orange_topright_topleft_rounded" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/decorateimg_120"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:layout_centerHorizontal="true"
+                android:text="一帆风顺"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/car240bg"
+        android:orientation="vertical" >
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="280dp"
+          android:layout_gravity="center"
+          android:layout_marginBottom="10dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:layout_marginTop="20dp"
+          android:background="@drawable/linearl_bg"
+          android:orientation="vertical" >
+
+          <Button
+              android:id="@+id/btnsaves"
+              android:layout_width="120dp"
+              android:layout_height="36dp"
+              android:layout_above="@+id/textView2"
+              android:layout_centerHorizontal="true"
+              android:layout_marginBottom="18dp"
+              android:background="@drawable/selector_orange_to_gray_rouded"
+              android:text="立即前往"
+              android:textColor="@color/white"
+              android:textSize="14sp" />
+
+          <TextView
+              android:id="@+id/textView2"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignLeft="@+id/btnsaves"
+              android:layout_alignParentBottom="true"
+              android:text="残忍拒绝，"
+              android:textColor="@color/black" />
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_toRightOf="@+id/textView2"
+              android:text="将扣除违约金"
+              android:textColor="@color/black"
+              android:textSize="10sp" />
+
+          <TextView
+              android:id="@+id/textView3"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="5dp"
+              android:text="通知"
+              android:textColor="@color/red"
+              android:textSize="15sp" />
+
+          <TextView
+              android:id="@+id/textView4"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="25dp"
+              android:text="2016-10-10"
+              android:textColor="@color/black"
+              android:textSize="13sp" />
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentLeft="true"
+              android:layout_below="@+id/textView4"
+              android:layout_marginRight="10dp"
+              android:layout_marginLeft="10dp"
+              android:text="工厂停工，商店关门，政府停顿，股市无法交易，有钱人拖家带口奔向海外本地老百姓急于把货币换成食物"
+              android:textColor="@color/black" />
+      </RelativeLayout>
+
+          </LinearLayout>
+    </LinearLayout>
+
+<ImageView
+    android:id="@+id/img_cancel03"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:padding="16dp"
+    android:src="@drawable/x_white" />
+    </RelativeLayout>
+</FrameLayout>

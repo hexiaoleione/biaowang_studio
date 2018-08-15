@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#22000000"
+    android:orientation="vertical" >
+    
+<RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+             >
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:text="请选择需要车型"
+              android:textColor="#ff5b00"
+              android:layout_marginTop="15dp"
+              android:textStyle="bold"
+              android:textSize="20sp" />
+
+        <RelativeLayout
+                    android:id="@+id/lout9999"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lout99"
+                       android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                     >
+          <LinearLayout
+              android:id="@+id/shang"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" 
+               android:gravity="center_horizontal"
+               android:layout_marginLeft="11dp"
+               android:layout_marginRight="11dp"
+              >
+
+               <RelativeLayout
+                   android:id="@+id/re_xiaomian"
+                   android:layout_width="wrap_content"
+                   android:layout_height="140dp"
+                   android:layout_gravity="center" >
+
+                   <ImageView
+                       android:id="@+id/img_xiaomian11"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_alignParentTop="true"
+                       android:layout_centerHorizontal="true"
+                       android:background="@drawable/xiaomianbao" />
+
+                   <TextView
+                       android:id="@+id/hom_xiaomianmoney"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerHorizontal="true"
+                       android:layout_below="@id/img_xiaomian11"
+                       android:layout_marginTop="5dp"
+                        android:textColor="#ff5b00"
+                       android:text="镖费" />
+
+                     <Button
+                         android:id="@+id/hom_xiaomianbtn"
+                         style="@style/btns"
+                         android:layout_width="80dp"
+                         android:layout_height="25dp"
+                         android:layout_below="@+id/hom_xiaomianmoney"
+                         android:layout_centerHorizontal="true"
+                          android:layout_marginTop="7dp"
+                         android:text="小面包" />
+
+               </RelativeLayout>
+
+               <View
+                   android:layout_width="1dp"
+                   android:layout_height="160dp"
+                   android:layout_marginLeft="30dp"
+                   android:background="@drawable/shuxian"
+                    />
+
+            <RelativeLayout
+                android:id="@+id/re_zhongmian"
+                   android:layout_width="wrap_content"
+                   android:layout_height="140dp"
+                   android:layout_marginLeft="27dp"
+                   android:layout_gravity="center" >
+
+                   <ImageView
+                       android:id="@+id/img_zhongmian11"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_alignParentTop="true"
+                       android:layout_centerHorizontal="true"
+                       android:background="@drawable/zhongmian" />
+
+                   <TextView
+                       android:id="@+id/hom_zhongmianmoney"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerHorizontal="true"
+                       android:layout_below="@id/img_zhongmian11"
+                       android:layout_marginTop="5dp"
+                        android:textColor="#ff5b00"
+                       android:text="镖费" />
+
+                     <Button
+                         android:id="@+id/hom_zhongmianbtn"
+                         style="@style/btns"
+                         android:layout_width="80dp"
+                         android:layout_height="25dp"
+                         android:layout_below="@+id/hom_zhongmianmoney"
+                         android:layout_centerHorizontal="true"
+                          android:layout_marginTop="5dp"
+                         android:text="中面包" />
+
+               </RelativeLayout>
+          </LinearLayout>
+		<LinearLayout
+               android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:layout_below="@+id/v"
+                    android:gravity="center_horizontal"
+                     android:layout_marginLeft="11dp"
+                     android:layout_marginRight="11dp"
+              >
+                    <RelativeLayout
+                        android:id="@+id/re_xiaohuo"
+                   android:layout_width="wrap_content"
+                   android:layout_height="140dp"
+                   android:layout_gravity="center" >
+
+                   <ImageView
+                       android:id="@+id/img_xiaohuo11"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_alignParentTop="true"
+                       android:layout_centerHorizontal="true"
+                       android:background="@drawable/xiaohuoche" />
+
+                   <TextView
+                       android:id="@+id/hom_xioahuomoney"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerHorizontal="true"
+                       android:layout_below="@id/img_xiaohuo11"
+                       android:layout_marginTop="5dp"
+                        android:textColor="#ff5b00"
+                       android:text="镖费" />
+
+                     <Button
+                         android:id="@+id/hom_xiaohuobtn"
+                         style="@style/btns"
+                         android:layout_width="80dp"
+                         android:layout_height="25dp"
+                         android:layout_below="@+id/hom_xioahuomoney"
+                         android:layout_centerHorizontal="true"
+                          android:layout_marginTop="8dp"
+                         android:text="小货车" />
+
+               </RelativeLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="160dp"
+                        android:layout_marginLeft="30dp"
+                        android:background="@drawable/shuxian" />
+
+                    <RelativeLayout
+                        android:id="@+id/re_zhonghuo"
+                   android:layout_width="wrap_content"
+                   android:layout_height="140dp"
+                   android:layout_marginLeft="20dp"
+                   android:layout_gravity="center" >
+
+                   <ImageView
+                       android:id="@+id/img_zhonghuo11"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_alignParentTop="true"
+                       android:layout_centerHorizontal="true"
+                       android:background="@drawable/zhonghuo_bg" />
+
+                   <TextView
+                       android:id="@+id/hom_zhonghuomoney"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerHorizontal="true"
+                       android:layout_below="@id/img_zhonghuo11"
+                       android:layout_marginTop="5dp"
+                        android:textColor="#ff5b00"
+                       android:text="镖费" />
+
+                     <Button
+                         android:id="@+id/hom_zhonghuobtn"
+                         style="@style/btns"
+                         android:layout_width="80dp"
+                         android:layout_height="25dp"
+                         android:layout_below="@+id/hom_zhonghuomoney"
+                         android:layout_centerHorizontal="true"
+                          android:layout_marginTop="5dp"
+                         android:text="中货车" />
+
+               </RelativeLayout>
+               
+   </LinearLayout>
+		<View
+		    android:id="@+id/v"
+		    android:layout_width="220dp"
+		    android:layout_height="1dp"
+		    android:layout_below="@+id/shang"
+		    android:layout_centerHorizontal="true"
+		    android:background="@drawable/hengxian"
+		     />
+
+                    </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal" >
+        </LinearLayout>
+
+    </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

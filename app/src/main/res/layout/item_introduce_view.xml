@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ImageView 
+        android:id="@+id/imageview"
+        android:src="@drawable/aarrows2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
+    
+    <Button 
+        android:visibility="gone"
+          android:id="@+id/button"
+        android:layout_marginBottom="33dp"
+        android:layout_gravity="bottom|center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textColor="@color/orange1"
+        android:textSize="18sp"
+        android:background="@drawable/bg_buttons"/>
+    
+</FrameLayout>

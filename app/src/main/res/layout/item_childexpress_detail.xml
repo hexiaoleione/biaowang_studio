@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="25dp" >
+
+        <TextView
+            android:id="@+id/tv_INCREASING_NO"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:paddingLeft="15dp"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:gravity="center" />
+        
+        <TextView
+            android:id="@+id/et_kuaidinum"
+            android:layout_width="160dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:text="123456789"
+            android:textSize="14sp"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/text_money"
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:background="@null"
+            android:textColor="@color/black"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:text="20"
+            android:textSize="14sp" />
+
+</RelativeLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#22000000"
+        android:gravity="center"
+        android:padding="20dp" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:background="@drawable/corners_bg" >
+
+            <Button
+                android:id="@+id/lc_exti"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/hui_bg_exti" />
+
+            <Button
+                android:id="@+id/lc_sumitc"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="14dp"
+                android:layout_toLeftOf="@+id/lc_exti"
+                android:background="@drawable/bg_quchongzhi" />
+           <!-- bg_quchongzhi com_bg_zhifu -->
+
+            <Button
+                android:id="@+id/lc_sumitsan"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:layout_alignBaseline="@+id/lc_sumitc"
+                android:layout_alignBottom="@+id/lc_sumitc"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="18dp"
+                android:background="@drawable/com_bg_disanfang" />
+
+            <TextView
+                android:id="@+id/lc_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/lc_exti"
+                android:layout_centerHorizontal="true"
+                android:text="50元平台使用费" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lc_exti"
+                android:layout_marginTop="5dp"
+                android:background="#e1e1e1" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lc_conte"
+                android:layout_below="@+id/lc_conte"
+                android:layout_marginTop="5dp"
+                android:text="  3.使用第三方支付收取平台使用费50元"
+                android:textColor="@color/grayview"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/lc_conte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView1"
+                android:layout_below="@+id/textView1"
+                android:layout_marginTop="5dp"
+                android:text="  2.使用余额支付收取平台使用费10元"
+                android:textColor="@color/grayview"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textView2"
+                android:layout_marginTop="20dp"
+                android:background="#e1e1e1" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/view1"
+                android:layout_centerHorizontal="true"
+                android:text="温馨提示"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/orange"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="  1.参与报价将收取平台使用费，用户取消或者对接不成功，平台使用费将退回钱包"
+                android:textColor="@color/grayview"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/pay_zhifubao"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignRight="@+id/relativeLayout1"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/zhifu_120"
+             android:visibility="gone"
+             />
+
+        <ImageView
+            android:id="@+id/pay_wenxin"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignLeft="@+id/relativeLayout1"
+            android:layout_alignTop="@+id/pay_zhifubao"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/weixin_120"
+            android:visibility="gone"
+             />
+
+    </RelativeLayout>
+
+</LinearLayout>

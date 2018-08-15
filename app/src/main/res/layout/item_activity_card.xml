@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:background="@color/transparent" >
+
+<RelativeLayout
+    android:id="@+id/card_layout"
+    android:layout_width="match_parent"
+    android:layout_height="115dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/kuang_newbg"
+    android:descendantFocusability="blocksDescendants" >
+
+    <TextView
+        android:id="@+id/btn_usecard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="45dp"
+        android:background="#ff7900"
+        android:padding="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="未使用"
+        android:textColor="#ffffff"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+         android:visibility="invisible"
+        android:background="@drawable/shijian_card" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="15dp"
+        android:layout_height="10dp"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_below="@+id/txt_cardmoney"
+        android:layout_marginTop="26dp"
+        android:visibility="invisible"
+        android:background="@drawable/leixing_tip" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txt_cardmoney"
+        android:layout_alignBottom="@+id/txt_cardmoney"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/txt_cardmoney"
+        android:text="现金券"
+        android:textColor="@color/white" 
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/txt_cardmoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="25dp"
+        android:text="50"
+        android:textColor="#c1c1fa"
+        android:textSize="45sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txt_cardmoney"
+        android:layout_toLeftOf="@+id/txt_cardmoney"
+        android:text="¥"
+        android:textSize="16sp"
+        android:layout_marginRight="3dp"
+        android:textColor="#c1c1fa" />
+
+    <TextView
+        android:id="@+id/txt_cardDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignLeft="@+id/txt_cardexpname"
+        android:text="时间"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/txt_cardexpname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1"
+        android:layout_alignLeft="@+id/txt_cardConditions"
+        android:text="途径"
+        android:textColor="#c1c1fa"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txt_cardConditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txt_cardexpname"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="现金券"
+        android:textColor="#c1c1fa"
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
+
+</RelativeLayout>
+
+ <CheckBox
+     android:id="@+id/cb1"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentLeft="true"
+     android:layout_centerVertical="true"
+     android:focusable="false"
+     android:visibility="gone"
+     android:text="" />
+
+</RelativeLayout>

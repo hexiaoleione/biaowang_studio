@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+     <string-array name="menu_array">
+        <item>个人财产</item>
+        <item>签到</item>
+        <item>认证镖师</item>
+        <item>关于</item>
+    </string-array>
+      <string name="action_personal">个人中心</string>
+  <string-array name="preferences_front_light_values">
+    <item>ON</item>
+    <item>AUTO</item>
+    <item>OFF</item>
+  </string-array>
+  <string-array name="preferences_front_light_options">
+    <item>@string/preferences_front_light_on</item>
+    <item>@string/preferences_front_light_auto</item>
+    <item>@string/preferences_front_light_off</item>
+  </string-array>
+     <string-array name="zaibu">
+        <item>无要求</item>
+    </string-array>
+   <string-array name="quhuo">
+           <item>上门取货</item>
+        <item>送到货场</item>
+     
+    </string-array>
+    
+     <string-array name="songhuo">
+           <item>送货上门</item>
+         <item>用户自提</item>
+         
+    </string-array>
+      <string-array name="huoz">
+           <item>普通货物</item>
+         <item>冷链货物</item>
+         
+    </string-array>
+   <string-array name="languages">
+        <item>吨</item>
+        <item>公斤</item>
+    </string-array>
+    <string-array name="leibie">
+        <item>常规货物类</item>
+        <item>蔬菜</item>
+      <item>水果</item>
+        <item>牲畜及禽鱼</item>
+    </string-array>
+    <string-array name="baoxianleibie">
+        <item>基本险</item>
+        <item>综合险</item>
+    </string-array>
+     <string-array name="baoxianleibies">
+        <item>基本险</item>
+    </string-array>
+         <string-array name="oc">
+        <item>常温</item>
+    </string-array>
+     <string-array name="carchang">
+        <item>无</item>
+        <item>1.8米</item>
+        <item>2.7米</item>
+        <item>4.2米</item>
+    </string-array>
+      <string-array name="jianshu">
+        <item>1件</item>
+        <item>2件</item>
+        <item>3件</item>
+        <item>4件</item>
+        <item>5件</item>
+        <item>6件</item>
+        <item>7件</item>
+        <item>8件</item>
+        <item>9件</item>
+        <item>10件</item>
+        
+        <item>11件</item>
+        <item>12件</item>
+        <item>13件</item>
+        <item>14件</item>
+        
+        <item>15件</item>
+        <item>16件</item>
+        <item>17件</item>
+        <item>18件</item>
+        
+        <item>19件</item>
+        <item>20件</item>
+        <item>21件</item>
+        
+        <item>22件</item>
+        <item>23件</item>
+        <item>24件</item>
+        <item>25件</item>
+        <item>26件</item>
+          <item>27件</item>
+        <item>28件</item>
+        <item>29件</item>
+        <item>20件</item>
+    </string-array>
+      <string-array name="tiji">
+        <item>1立方米以下</item>
+        <item>1立方米</item>
+        <item>2立方米</item>
+        <item>3立方米</item>
+        <item>4立方米</item>
+        <item>5立方米</item>
+        <item>6立方米</item>
+        <item>7立方米</item>
+        <item>8立方米</item>
+        <item>9立方米</item>
+        <item>10立方米</item>
+        <item>11立方米</item>
+        <item>12立方米</item>
+        <item>13立方米</item>
+        <item>14立方米</item>
+        <item>15立方米</item>
+        <item>16立方米</item>
+        <item>17立方米</item>
+        <item>18立方米</item>
+        <item>19立方米</item>
+        <item>20立方米</item>
+    </string-array>
+     <string-array name="zhong">
+        <item>≤5公斤</item>
+        <item>6公斤</item>
+        <item>7公斤</item>
+        <item>8公斤</item>
+        <item>9公斤</item>
+        <item>10公斤</item>
+        <item>11公斤</item>
+        <item>12公斤</item>
+        <item>13公斤</item>
+        <item>14公斤</item>
+        <item>15公斤</item>
+         <item>16公斤</item>
+          <item>17公斤</item>
+           <item>18公斤</item>
+            <item>19公斤</item>
+             <item>20公斤</item>
+              <item>21公斤</item>
+               <item>22公斤</item>
+                <item>23公斤</item>
+                 <item>24公斤</item>
+                  <item>25公斤</item>
+                   <item>26公斤</item>
+                    <item>27公斤</item>
+                     <item>28公斤</item>
+                      <item>29公斤</item>
+                       <item>30公斤</item>
+                        <item>31公斤</item>
+                         <item>32公斤</item>
+                         <item>33公斤</item>
+                          <item>34公斤</item>
+                          <item>35公斤</item>
+                           <item>35公斤</item>
+                            <item>37公斤</item>
+                             <item>38公斤</item>
+                              <item>39公斤</item>
+                               <item>40公斤</item>
+                                <item>41公斤</item>
+                                 <item>42公斤</item>
+                                  <item>43公斤</item>
+                                  <item>44公斤</item>
+                                   <item>45公斤</item>
+                                    <item>46公斤</item>
+                                    <item>47公斤</item>
+                                     <item>48公斤</item>
+                                      <item>49公斤</item>
+                                       <item>50公斤</item>
+    </string-array>
+</resources>

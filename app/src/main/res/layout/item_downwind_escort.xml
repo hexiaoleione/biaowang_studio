@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/time_r"
+    android:background="@drawable/huowu_xinxi_bg" >
+
+    <ImageView
+        android:id="@+id/img_message"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        android:src="@drawable/right_bar1" />
+
+    <TextView
+        android:id="@+id/tv_publishTime"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="xxxx-xx-xx  xx:xx"
+        android:textSize="10sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_arrivingTime"
+        android:layout_width="130dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_arrivingtime"
+        android:orientation="horizontal"
+        android:visibility="invisible" >
+
+        <TextView
+            android:id="@+id/tv_arrivingTime"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="xxxx-xx-xx  xx:xx"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_imgOfGood"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@id/tv_publishTime"
+        android:layout_below="@id/tv_publishTime"
+        android:background="@drawable/wu_cou"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/tv_transferMoney"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/iv_imgOfGood"
+        android:layout_below="@id/iv_imgOfGood"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+          android:textColor="@color/orange"
+        android:text="费用：xx元"
+        android:textSize="10sp" />
+    <TextView
+        android:id="@+id/tv_collection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_publishTime"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/iv_imgOfGood"
+        android:text="代收款"
+        android:textSize="11sp"
+        android:textColor="@color/orange"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_ownerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_collection"
+        android:layout_marginLeft="10dp"
+          android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/iv_imgOfGood"
+        android:text="货主：发件人"
+        android:textColor="@color/orange1"
+        android:textSize="11sp"
+        android:visibility="gone"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_nameOfGood"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_below="@id/tv_ownerName"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/iv_imgOfGood"
+        android:text="物品：发送的物品"
+        android:textSize="10sp" />
+
+    <com.hex.express.iwant.views.MarqueeTextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignLeft="@id/tv_nameOfGood"
+        android:layout_below="@id/tv_nameOfGood"
+        android:ellipsize="marquee"
+        android:focusableInTouchMode="true"
+        android:lines="1"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="起始地：xx市xx区（县）xx街道xx小区"
+        android:textSize="10sp" />
+
+    <com.hex.express.iwant.views.MarqueeTextView
+        android:id="@+id/tv_addressTo"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignLeft="@id/tv_address"
+        android:layout_below="@id/tv_address"
+        android:ellipsize="marquee"
+        android:focusableInTouchMode="true"
+        android:lines="1"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="目的地：xx市xx区（县）xx街道xx小区"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignLeft="@id/tv_addressTo"
+        android:layout_below="@id/tv_addressTo"
+        android:text="距离：xxkm"
+        android:textSize="10sp"
+        android:gravity="center_vertical" />
+    <TextView
+        android:id="@+id/tv_usetime"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignLeft="@id/tv_addressTo"
+        android:layout_below="@id/tv_distance"
+        android:text="时间需求："
+        android:textSize="11sp"
+        android:gravity="center_vertical" />
+    <TextView
+        android:id="@+id/tv_carchang"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignLeft="@id/tv_addressTo"
+        android:layout_below="@id/tv_usetime"
+        android:text="车长需求："
+        android:textSize="10sp"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/tv_wancheng"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/tv_publishTime"
+        android:layout_alignBottom="@+id/tv_publishTime"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="."
+        android:textColor="@color/orange1"
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/tv_ramker"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_alignLeft="@id/tv_addressTo"
+        android:layout_below="@id/tv_carchang"
+        android:text="备注："
+        android:textSize="10sp"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/tv_tiji"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_above="@+id/tv_ramker"
+        android:layout_alignLeft="@+id/ll_arrivingTime"
+        android:gravity="center_vertical"
+        android:text="体积"
+        android:textSize="10sp" />
+
+</RelativeLayout>

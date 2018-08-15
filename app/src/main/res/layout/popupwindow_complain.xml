@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:gravity="center"
+     android:background="#22000000"
+    android:orientation="vertical" >
+     <LinearLayout 
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_marginTop="5dp"
+        >
+        <LinearLayout 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="10dp"
+            >
+         <TextView
+             android:id="@+id/exit"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/closeongebar" />
+</LinearLayout>
+    </LinearLayout>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_white_rounded"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="投诉"
+                android:textColor="@color/orange"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/edit_comp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView1"
+                android:background="@drawable/edit_bg"
+                android:inputType="text"
+                android:layout_marginLeft="10dp"
+                android:textSize="12sp"
+                android:hint="请详细描述对方的违规情况或者恶劣行为，
+并上传货物照片"
+                android:layout_marginRight="10dp"
+                     android:maxLength="3"
+                     android:layout_marginTop="5dp"
+                android:paddingLeft="3dp" >
+
+        </EditText>
+            <ImageView
+                  android:id="@+id/btn_comp_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_shizikuang"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+
+              <Button
+                android:id="@+id/btn_comp_sumit"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:background="@drawable/selector_orange_to_gray_rouded"
+                android:gravity="center"
+                android:text="提 交"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                 />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        
+    </LinearLayout>
+   
+</LinearLayout>

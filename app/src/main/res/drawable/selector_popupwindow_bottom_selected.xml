@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/popupwindow_bottomleft_bottomright_radiums" android:state_pressed="false"/>
+    <item android:drawable="@drawable/popupwindow_bottomleft_bottomright_radiums_selected" android:state_pressed="true"></item>
+    <item android:drawable="@drawable/popupwindow_bottomleft_bottomright_radiums"></item>
+
+</selector>

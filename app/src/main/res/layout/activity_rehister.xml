@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="#fa7024"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/btn_Left"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:paddingBottom="14dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="14dp"
+                android:paddingTop="14dp"
+                android:src="@drawable/back1" />
+
+            <TextView
+                android:id="@+id/btn_Right"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@+id/btnLeft"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="签到"
+                android:textColor="@color/whites"
+                android:textSize="16sp" />
+        </RelativeLayout>
+<!-- bg_register  bg_rehbg-->
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rehbgs" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="160dp" >
+
+            <ImageView
+                android:id="@+id/imagtitle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/bgtou" />
+
+            <ImageView
+                android:id="@+id/imagtitle1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/image1"
+                android:background="@drawable/bg_nonum" />
+
+            <ImageView
+                android:id="@+id/imagtitle2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/image2"
+                android:background="@drawable/bg_nonum" />
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="80dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imagtitle1"
+                android:background="@drawable/bg_tiaotiao" />
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="80dp"
+                android:layout_height="10dp"
+                android:layout_alignTop="@+id/image2"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imagtitle"
+                android:background="@drawable/bg_tiaotiao" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/r3" >
+
+            <ImageView
+                android:id="@+id/imagtitle3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/bg_nonum" />
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="80dp"
+                android:layout_height="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imagtitle3"
+                android:background="@drawable/bg_tiaotiao" />
+
+            <ImageView
+                android:id="@+id/imagtitle4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/image3"
+                android:background="@drawable/bg_nonum" />
+
+            <ImageView
+                android:id="@+id/imagtitle5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/image4"
+                android:background="@drawable/bg_nonum" />
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="80dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imagtitle4"
+                android:background="@drawable/bg_tiaotiao" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/imageView2"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/imagtitle7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/bg_nonum" />
+
+            <ImageView
+                android:id="@+id/image7"
+                android:layout_width="80dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imagtitle7"
+                android:background="@drawable/bg_tiaotiao" />
+
+            <ImageView
+                android:id="@+id/imagtitle6"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/image7"
+                android:background="@drawable/bg_nonum" />
+
+            <TextView
+                android:id="@+id/te_qian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imagtitle6"
+                android:textColor="@color/orange"
+                android:text="已连续签到0天" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imagesumit"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/relativeLayout3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_qian" />
+
+        <ImageView
+            android:id="@+id/imagetii"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignLeft="@+id/imageView2"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ren3" />
+
+
+
+		<RelativeLayout
+		    android:id="@+id/r1"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+		    android:layout_below="@+id/imagesumit"
+		    android:layout_marginTop="25dp" >
+
+      <TextView
+          android:id="@+id/textView1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
+          android:text="   签到规则   " />
+
+      <View
+          android:layout_width="200dp"
+          android:layout_height="1dp"
+          android:layout_alignParentLeft="true"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="30dp"
+          android:layout_toLeftOf="@+id/textView1"
+          
+          android:background="@color/grayviews" />
+
+<View
+          android:layout_width="200dp"
+          android:layout_height="1dp"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="26dp"
+          android:layout_toRightOf="@+id/textView1"
+          android:background="@color/grayviews" />
+		</RelativeLayout>
+      
+
+        <TextView
+            android:id="@+id/tirle_te"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tirle_text"
+            android:layout_alignTop="@+id/imagetii"
+            android:textSize="16sp"
+            android:text="姓名 " />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/r1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp" >
+
+            <TextView
+                android:id="@+id/txi2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.每天签到可得100积分。" />
+            <TextView
+                android:id="@+id/txi"
+                android:layout_below="@+id/txi2"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.连续签到七天即可得100积分。" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txi"
+                android:layout_marginTop="10dp"
+                android:text="3.积分可到积分商城兑换礼品和现金券。" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="10dp"
+            android:layout_height="60dp"
+            android:layout_alignLeft="@+id/relativeLayout4"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_marginLeft="41dp"
+            android:background="@drawable/bg_tiaotiaoshu" />
+
+        <RelativeLayout
+            android:id="@+id/r3"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_toRightOf="@+id/imageView2" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="10dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/bg_tiaotiaoshu" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tirle_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imagetii"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/imagetii"
+            android:textColor="#666666"
+            android:textSize="13sp"
+            android:text="今日 " />
+
+        <TextView
+            android:id="@+id/tirle_leiji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tirle_text"
+            android:layout_alignTop="@+id/tirle_te"
+            android:layout_marginTop="25dp"
+            android:textSize="14sp"
+            android:text="累计 " />
+
+         <TextView
+             android:id="@+id/tirle_leiji2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBaseline="@+id/tirle_leiji"
+             android:layout_alignBottom="@+id/tirle_leiji"
+             android:layout_toRightOf="@+id/tirle_leiji"
+             android:textColor="@color/orange"
+             android:textSize="19sp"
+             android:text="0" />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBaseline="@+id/tirle_leiji2"
+             android:layout_alignBottom="@+id/tirle_leiji2"
+             android:layout_toRightOf="@+id/tirle_leiji2"
+              android:textSize="14sp"
+             android:text="积分" />
+
+    </RelativeLayout>
+
+</ScrollView>
+</LinearLayout>

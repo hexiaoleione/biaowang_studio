@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+      <color name="c1">#6633B5E5</color>
+    <color name="c2">#33333333</color>
+    <color name="c3">#6633B5E5</color>
+      <color name="xinse">#c1c1fa</color>
+    
+    <color name="pickerview_timebtn_nor">#057dff</color>
+    <color name="pickerview_timebtn_pre">#c2daf5</color>
+    <color name="pickerview_bg_topbar">#f5f5f5</color>
+    <color name="pickerview_topbar_title">#000000</color>
+    <color name="pickerview_wheelview_textcolor_out">#a8a8a8</color>
+    <color name="pickerview_wheelview_textcolor_center">#2a2a2a</color>
+    <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
+    <!-- 暗宝石绿 -->
+    <color name="middleblue">#5f9cf9</color>
+    <!-- 覆盖颜色 -->
+     <color name="bg_mine">#EFEFF4</color>
+    <color name="bgColor_overlay">#60000000</color>
+    <color name="theme_bg">#F6F6F6</color>
+    <color name="common_title">#ff6b01</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent01">#22ffffff</color>
+    <color name="transparent1">#9000</color>
+    <color name="blue">#ff0000ff</color>
+    <color name="skyBlue">#27bef1</color>
+    <color name="black">#000000</color>
+    <color name="whites">#ffffffff</color>
+    <color name="devide_line">#ffcbced2</color>
+    <color name="devide_line1">#808080</color>
+    <color name="white">#ffffffff</color>
+    <color name="gray">#808080</color>
+    <color name="red">#FF0000</color>
+    <color name="common">#68677A</color>
+    <color name="red1">#99FF0000</color>
+    <color name="gold">#FFD700</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#008000</color>
+    <color name="purple">#800080</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="orange">#FF0000</color>
+    <!--FFA500  FF0000-->
+    <color name="view_gray">#e0e0e0</color>
+    <!-- 字体色彩 -->
+    <color name="theme_gray">#999999</color>
+    <color name="theme_blue">#24B4B4</color>
+    <color name="theme_black">#434343</color>
+    <!-- 橙色背景 FF730A-->
+
+    <color name="orange1">#FF0000</color>
+    <color name="lemonyellow">#FFFACD</color>
+
+    <!-- 灰色背景 -->
+       <color name="zilan">#222231</color>
+    <color name="huise">#f2f2f2</color>
+    <color name="graywhite">#F5F5F5</color>
+    <color name="dahuise">#A9A9A9</color>
+    <color name="grayview">#cdc9c4</color>
+    <color name="grayview1">#D3D3D3</color>
+    <color name="grayviews">#898989</color>
+    <color name="gray_transparent">#b3b3b3</color>
+    <color name="grayslate">#708090</color>
+    <color name="lightblue">#0083FF</color>
+    <color name="toast_text_color">#ff45c01a</color>
+    <color name="theme_green">#ff45c01a</color>
+    <color name="tab_title_normal_color">#ff666666</color>
+    <color name="background_tab_pressed">#33000000</color>
+    <color name="list_devider_color">#ffb0b0b0</color>
+    <color name="layout_item_pressed_color">#60000000</color>
+    <color name="full_transparent">#00000000</color>
+    <color name="half_transparent">#aa000000</color>
+    <color name="bright_foreground_light">#ff000000</color>
+    <color name="bright_foreground_light_inverse">#ffffffff</color>
+    <color name="bright_foreground_light_disabled">#80000000</color>
+    <color name="dim_foreground_light">#808080</color>
+    <color name="dim_foreground_light_disabled">#80323232</color>
+    <color name="dim_foreground_light_inverse">#ff006eaa</color>
+    <color name="dim_foreground_light_inverse_disabled">#80bebebe</color>
+    <color name="head_text">#0e5986</color>
+    <color name="author_text">#0e5986</color>
+    <color name="face_bg">#eef1f4</color>
+    <color name="frame_button_text_nor">#033a5c</color>
+    <color name="frame_button_text_select">#FFFFFF</color>
+    <color name="weight_bar_buttondown">#63A3D7</color>
+    <color name="weight_bar_buttonup">#A4A9AE</color>
+    <color name="listitem_transparent">#00000000</color>
+    <color name="listitem_black">#ff000000</color>
+    <color name="listitem_white">#ffffffff</color>
+    <color name="listitem_blue">#0e5986</color>
+    <color name="listitem_gray">#ff9da19e</color>
+    <color name="listitem_green">#ffe3ffc6</color>
+    <color name="listitem_greenyellow">#ff87b869</color>
+    <color name="listitem_yellow">#fffaffbf</color>
+    <color name="fff1f2f3">#fff1f2f3</color>
+    <color name="ff40ab54">#ff40ab54</color>
+    <color name="base_drawable">#ff5f00</color>
+    <color name="graywhite1">#cdc9c4</color>
+    <color name="graywhite2">#A8A8A8</color>
+
+    <!-- 下拉刷新时，颜色值 -->
+    <color name="swiperefresh_color1">#ff00ddff</color>
+    <color name="swiperefresh_color2">#ffffbb33</color>
+    <color name="swiperefresh_color3">#ffff4444</color>
+    <color name="swiperefresh_color4">#ffaa66cc</color>
+
+    <!-- 二维码扫描颜色值 -->
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color>
+    <!-- Android standard ICS color -->
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color>
+    <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="viewfinder_laser">#ffcc0000</color>
+    <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+
+    <!-- 登陆按钮的背景色 -->
+    <color name="btn_bg_blue">#738dff</color>
+
+    <!-- 扫码器 -->
+
+    <color name="capture_text_cover_bg">#535353</color>
+    <color name="seek_bar_text">#f6f6f6</color>
+    <!-- gray_also -->
+     <color name="gray_also">#d2d2d2</color>
+    <color name="gray_divider">#e9e9e9</color>
+    
+    <!-- 主色调  #222231  fd7716-->
+    <color name="baseColor">#222231</color>
+    
+    <!-- 分割线颜色 -->
+    <color name="dividerColor">#d3d3d3</color>
+    <!-- 分割线颜色 -->
+    <color name="divider_color">#d3d3d3</color>
+    
+    <!-- 浅灰色背景颜色 -->
+    <color name="baseBgColor">#f0f0f0</color>
+    <color name="ampm_text_color">#f0f0f0</color>
+
+</resources>

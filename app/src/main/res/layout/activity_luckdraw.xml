@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="@color/zilan"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/btn_Left"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:paddingBottom="14dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="14dp"
+                android:paddingTop="14dp"
+                android:src="@drawable/back1" />
+
+            <TextView
+                android:id="@+id/btn_Right"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@+id/btnLeft"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="抽奖"
+                android:textColor="@color/whites"
+                android:textSize="16sp" />
+        </RelativeLayout>
+            <RelativeLayout
+         android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+       android:layout_marginTop="50dip"
+       android:background="@drawable/bg_draw_dabg"
+         >
+    <RelativeLayout
+        android:id="@+id/r2"
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/r1s"
+         >
+    <com.hex.express.iwant.views.Rotate
+        android:id="@+id/rotate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="35dp"
+       />
+
+    <ImageView
+        android:id="@+id/start_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/bg_draw_start" 
+        />
+
+    <TextView
+        android:id="@+id/time_dao"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:text="" />
+
+ </RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/r1s"
+    android:layout_width="wrap_content"
+    android:layout_height="80dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="90dp" >
+
+    <ImageView
+        android:id="@+id/jiangchi1"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:paddingTop="14dp"
+        android:src="@drawable/bg_draw_jiang" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+        <TextView
+            android:id="@+id/jiangnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_toRightOf="@+id/textView1"
+            android:text="0"
+            android:textColor="@color/red"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/jiangnumber"
+            android:layout_alignBottom="@+id/jiangnumber"
+            android:layout_toRightOf="@+id/jiangnumber"
+            android:text=" "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您总共剩余积分"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+    <TextView
+        android:id="@+id/fashions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/r2"
+        android:text=""
+        android:textColor="@color/white"
+        android:background="@drawable/bg_draw_guize"
+        android:textSize="16sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

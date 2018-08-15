@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@color/white"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white" >
+
+        <Button
+            android:id="@+id/btnLe"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:background="@drawable/blake" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="商户认证"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+                <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/huise" />
+    </RelativeLayout>
+
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/white"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView1s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                          android:layout_centerVertical="true"
+                    android:text="所在城市："
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/et_addses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView1s"
+                    android:layout_alignBottom="@+id/textView1s"
+                    android:layout_alignRight="@+id/s"
+                    android:layout_toRightOf="@+id/textView1s"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:hint="请选择"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="13sp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_below="@+id/et_addses"
+                                    android:layout_toRightOf="@+id/textView1s"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@color/huise" />
+
+                                <TextView
+                                    android:id="@+id/s"
+                                    android:layout_width="17dp"
+                                    android:layout_height="12dp"
+                                         android:layout_centerVertical="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="20dp"
+                                    android:background="@drawable/duwom_new" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/white"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                          android:layout_centerVertical="true"
+                    android:text="具体地址："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_addse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView1"
+                    android:layout_alignBottom="@+id/textView1"
+                    android:layout_toRightOf="@+id/textView1"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="请填写街道以及具体门牌号"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="13sp" >
+
+                    <requestFocus />
+                </EditText>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_below="@+id/et_addse"
+                                    android:layout_toRightOf="@+id/textView1"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@color/huise" />
+
+            </RelativeLayout>
+   <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/white"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                          android:layout_centerVertical="true"
+                    android:text="店    名："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_homename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView12"
+                    android:layout_alignBottom="@+id/textView12"
+                    android:layout_toRightOf="@+id/textView12"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="请填写真实的商店名称"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="13sp" >
+
+                    <requestFocus />
+                </EditText>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_below="@+id/et_homename"
+                                    android:layout_toRightOf="@+id/textView12"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@color/huise" />
+
+            </RelativeLayout>
+               <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/white"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                          android:layout_centerVertical="true"
+                    android:text="店主身份证号："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_homephone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView13"
+                    android:layout_alignBottom="@+id/textView13"
+                    android:layout_toRightOf="@+id/textView13"
+                    android:background="@null"
+                    android:hint="请填写真实店主身份证号"
+                  android:digits="0123456789xX"
+                    android:singleLine="true"
+                    android:textSize="13sp" >
+
+                    <requestFocus />
+                </EditText>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_below="@+id/et_homephone"
+                                    android:layout_toRightOf="@+id/textView13"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@color/huise" />
+
+            </RelativeLayout>
+               <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/white"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                          android:layout_centerVertical="true"
+                    android:text="推荐人手机号："
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_tohomephone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView14"
+                    android:layout_alignBottom="@+id/textView14"
+                    android:layout_toRightOf="@+id/textView14"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="请填写推荐人手机号码"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                       android:maxLength="11"
+                    android:textSize="13sp" >
+
+                    <requestFocus />
+                </EditText>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_below="@+id/et_tohomephone"
+                                    android:layout_toRightOf="@+id/textView14"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@color/huise" />
+
+            </RelativeLayout>
+            <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                  android:layout_marginLeft="15dp"
+                >
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="请上传照片："
+                    />
+            </LinearLayout>
+            <LinearLayout 
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"
+    android:gravity="center_horizontal"
+    >
+           <LinearLayout 
+         android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_weight="1"
+    android:gravity="center"
+               >
+    <ImageView 
+        android:id="@+id/delver_img1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+       
+        android:background="@drawable/bg_newpai"
+        />
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="门头照"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        />
+    </LinearLayout>
+        <LinearLayout 
+         android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_weight="1"
+               >
+      <ImageView
+          android:id="@+id/delver_img2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_newpai"
+        />
+      <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="营业执照"
+        android:layout_marginTop="5dp"
+                android:textSize="12sp"
+        />
+    </LinearLayout>
+         <LinearLayout 
+         android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_weight="1"
+               >
+        <ImageView 
+           android:id="@+id/delver_img3"
+         android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/bg_newpai"
+        />
+          <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="店主手持身份证照片"
+        android:layout_marginTop="5dp"
+                android:textSize="12sp"
+        />
+    </LinearLayout>
+        
+</LinearLayout>
+  <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                  android:layout_marginLeft="15dp"
+                 android:layout_marginTop="20dp"
+                >
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="要求："
+                    android:textColor="@color/xinse"
+                    />
+            </LinearLayout>
+             <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                  android:layout_marginLeft="15dp"
+                 android:layout_marginTop="10dp"
+                 android:orientation="vertical"
+                >
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1、门头照（必须有该商店名称）"
+                    android:textColor="@color/xinse"
+                    />
+                 <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2、营业执照（必须清晰真实）"
+                    android:textColor="@color/xinse"
+                    />
+                  <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3、店主手持身份证照片（身份证、人物必须清晰可辨）"
+                    android:textColor="@color/xinse"
+                    />
+            </LinearLayout>
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                >
+                <Button 
+                    android:id="@+id/sumit"
+                    android:layout_width="130dp"
+                    android:layout_height="35dp"
+                    style="@style/btnnew"
+                    android:text="确认提交"
+                    
+                    />
+            </LinearLayout>
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           
+             >
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/huise"
+        android:orientation="vertical" >
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="80dp"
+          android:layout_gravity="center"
+          android:layout_marginBottom="10dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:layout_marginTop="20dp"
+          android:background="@drawable/linearl_bg"
+          android:orientation="vertical" >
+
+
+
+          <TextView
+              android:id="@+id/textView3"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="5dp"
+              android:text="温馨提示"
+              android:textColor="@color/red"
+              android:visibility="gone"
+              android:textSize="25sp" />
+
+          <Button
+              android:id="@+id/btnsaves_panb"
+              android:layout_width="120dp"
+              android:layout_height="36dp"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:background="@drawable/selector_orange_to_gray_rouded"
+              android:text="知道了"
+              android:textColor="@color/white"
+              android:textSize="14sp" />
+
+          <TextView
+              android:id="@+id/tet_tishisb"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/textView3"
+              android:layout_centerHorizontal="true"
+              android:layout_marginLeft="15dp"
+              android:layout_marginRight="15dp"
+              android:layout_marginTop="4dp"
+              android:text="投保金额不能超过5000。"
+              android:textColor="@color/black" />
+
+      </RelativeLayout>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    >
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="#fa7024"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/btn_Left"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:paddingBottom="14dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="14dp"
+                android:paddingTop="14dp"
+                android:src="@drawable/back1" />
+
+            <TextView
+                android:id="@+id/btn_Right"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@+id/btnLeft"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="活 动"
+                android:textColor="@color/whites"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+<ScrollView 
+    android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/draw_bgses" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:layout_marginTop="250dp"
+                android:background="#F5DB66" >
+
+                <RelativeLayout
+                    android:id="@+id/ll_a"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" >
+
+                    <ImageView
+                        android:id="@+id/img_title"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/hongbao_03" />
+
+                    <Button
+                        android:id="@+id/img_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:background="@color/orange"
+                        android:text="领取*0" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/img_left"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/img_title"
+                        android:gravity="center_vertical"
+                        android:text="新用户注册"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/textView11"
+                        android:layout_alignLeft="@+id/textView11"
+                        android:text="5元现金券"
+                         android:layout_alignParentTop="true"
+                        android:layout_marginTop="5dp"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/ll_a"
+                    android:background="@color/grayview" />
+
+                <RelativeLayout
+                    android:id="@+id/ll_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/v1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" >
+
+                    <ImageView
+                        android:id="@+id/img_title2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/hongbao_03" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/img_left2"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/img_title2"
+                        android:gravity="center_vertical"
+                        android:text="认证镖师"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/textView12"
+                        android:layout_alignLeft="@+id/textView12"
+                        android:text="20元现金券"
+                        android:layout_marginTop="5dp"
+                          android:layout_alignParentTop="true"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/img_left2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                         android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:background="@color/orange"
+                        android:text="领取*0" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/ll_b"
+                    android:background="@color/grayview" />
+
+                <RelativeLayout
+                    android:id="@+id/ll_c"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/v2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" >
+
+                    <ImageView
+                        android:id="@+id/img_title3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/hongbao_03" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/img_left3"
+                         android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/img_title3"
+                        android:gravity="center_vertical"
+                        android:text="顺风任务"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/textView13"
+                        android:layout_alignLeft="@+id/textView13"
+                        android:text="5元现金券"
+                        android:layout_marginTop="5dp"
+                          android:layout_alignParentTop="true"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/img_left3"
+                        android:layout_width="wrap_content"
+                          android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                         android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:background="@color/orange"
+                        android:text="领取*0" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/ll_c"
+                    android:background="@color/grayview" />
+
+                <RelativeLayout
+                    android:id="@+id/ll_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/v3"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:visibility="gone"
+                    android:paddingRight="20dp" >
+
+                    <ImageView
+                        android:id="@+id/img_title4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/hongbao_03" />
+
+                     <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/img_left4"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/img_title4"
+                        android:gravity="center_vertical"
+                        android:text="一键快递"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/textView14"
+                        android:layout_alignLeft="@+id/textView14"
+                        android:text="5元现金券"
+                        android:layout_marginTop="5dp"
+                          android:layout_alignParentTop="true"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/img_left4"
+                        android:layout_width="wrap_content"
+                          android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                       android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:background="@color/orange"
+                        android:text="领取*0" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:visibility="gone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/ll_d"
+                    android:background="@color/grayview" />
+
+                <RelativeLayout
+                    android:id="@+id/ll_e"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/v4"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" >
+
+                    <ImageView
+                        android:id="@+id/img_title5"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/hongbao_03" />
+
+                     <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/img_left5"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/img_title5"
+                        android:gravity="center_vertical"
+                        android:text="推广用户"
+                      
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_above="@+id/textView15"
+                        android:layout_alignLeft="@+id/textView15"
+                        android:text="5元现金券"
+                          android:layout_alignParentTop="true"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/img_left5"
+                        android:layout_width="wrap_content"
+                         android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                         android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:background="@color/orange"
+                        android:text="领取*0" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/v5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/ll_e"
+                    android:background="@color/grayview"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/relativeLayout1"
+                android:layout_below="@+id/relativeLayout1"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="178dp" >
+
+                 <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text=" 1、新用户注册登录镖王，镖王将献上¥5现金券一张。
+  2、每次使用镖王“一键快递”并完成在线支付，平台将赠送¥5现金券一张。
+  3、每次使用镖王“限时专递”、“顺风速递”，任务完成赠送¥5现金券。
+  4、认证顺风镖师，平台即刻送上¥20现金券，出行顺路还能挣油钱。
+  5、除了以上几项，【镖王】还会不定期发放现金券。" />
+            </RelativeLayout>
+
+           
+        </RelativeLayout>
+ 
+</ScrollView>
+</LinearLayout>

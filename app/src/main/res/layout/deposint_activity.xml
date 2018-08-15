@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="#262532"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/btnLeft"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:paddingBottom="14dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="14dp"
+                android:paddingTop="14dp"
+                android:src="@drawable/back1" />
+
+            <TextView
+                android:id="@+id/btnRight"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@+id/btnLeft"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:text="押金说明"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="押金充值"
+                android:textColor="@color/whites"
+                android:textSize="16sp" />
+        </RelativeLayout>
+        
+    <!-- <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        > -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值金额"
+            android:textColor="@color/grayviews"
+            />
+            <TextView 
+                android:id="@+id/moss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值金额"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            />
+              <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="押金随心退，安全无忧"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+        
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:id="@+id/baoweixin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/yajinweixin" />
+
+        <ImageView
+            android:id="@+id/imgweixin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/yaxuanzhong" />
+
+
+    </RelativeLayout>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/huise"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        />
+   
+    <RelativeLayout
+         android:id="@+id/baozhifubao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+              android:layout_marginLeft="20dp"
+            android:background="@drawable/yajin" />
+
+        <ImageView
+            android:id="@+id/imgzhifubao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/yaweixuanzhong" />
+
+
+    </RelativeLayout>
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        >
+
+        <Button
+            android:id="@+id/sumit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/jiaoyajin" />
+        
+   
+     
+     </RelativeLayout>
+     <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        >
+    <TextView 
+        android:id="@+id/yyshuo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+          android:layout_centerHorizontal="true"
+        android:text="《 押金说明 》"
+        />
+     </RelativeLayout>
+    <LinearLayout  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"  
+        android:gravity="bottom"  
+        android:orientation="vertical">  
+        <RelativeLayout 
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+        android:layout_marginBottom="40dp"
+         android:gravity="bottom"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/grayviews"
+            android:text="镖王不会以任何形式要求您输入银行账户和密码"/>
+        
+    </RelativeLayout>
+    </LinearLayout>
+    </LinearLayout>
+  <!--   </ScrollView> -->
+</LinearLayout>

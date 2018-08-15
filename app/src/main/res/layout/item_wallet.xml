@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp" >
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="●"
+        android:textColor="#cdc9c4"
+        android:textSize="15sp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="1.0dp"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textview1"
+        android:layout_marginLeft="5dp"
+        android:background="#cdc9c4" />
+
+    <TextView
+        android:id="@+id/wallet_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/wallet_history"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_toLeftOf="@+id/waller_num"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/waller_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/wallet_history"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="35dp"
+        android:text="5"
+        android:textColor="@color/red"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/waller_num"
+        android:layout_marginRight="10dp"
+        android:text="元"
+        android:textColor="@color/red"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/wallet_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view1"
+        android:layout_alignLeft="@+id/wallet_desc"
+        android:text="流水记录名称"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/wallet_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wallet_desc"
+        android:layout_below="@+id/wallet_desc"
+        android:layout_marginTop="3dp"
+        android:text="2016-12-10"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+</RelativeLayout>
