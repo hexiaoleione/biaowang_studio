@@ -41,6 +41,7 @@ public class AboutActivity extends BaseActivity {
 	private VersionBean bean2;
 	private String androidApkPath;
 	private String androidVersion = "";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub

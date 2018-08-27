@@ -165,7 +165,7 @@
                             android:textSize="14sp" />
                     </LinearLayout>
 
-                    
+
                     <LinearLayout
                         android:id="@+id/lout4"
                         android:layout_width="match_parent"
@@ -192,7 +192,7 @@
                             android:textSize="14sp" />
                     </LinearLayout>
 
-                    
+
 
                 </RelativeLayout>
 
@@ -379,14 +379,14 @@
                     android:orientation="vertical"
                     android:layout_weight="1"
                     android:gravity="center"
-                    >   
-                    <ImageView 
+                    >
+                    <ImageView
                           android:id="@+id/img_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/newsender"
                     />
-                    <TextView 
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="发件人"
@@ -398,34 +398,34 @@
                     android:orientation="vertical"
                     android:layout_weight="1"
                         android:gravity="center"
-                    >   
-                    <ImageView 
+                    >
+                    <ImageView
                       android:id="@+id/img_phone_to"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/recipient"
                     />
-                    <TextView 
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="收件人"
                         />
                             </LinearLayout>
                               <LinearLayout
-                                  
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_weight="1"
                         android:gravity="center"
-                    >   
-                    <ImageView 
+                    >
+                    <ImageView
                         android:id="@+id/qujian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/take"
                     />
-                    <TextView 
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="去取件"
@@ -437,14 +437,14 @@
                     android:orientation="vertical"
                     android:layout_weight="1"
                         android:gravity="center"
-                    >   
-                    <ImageView 
+                    >
+                    <ImageView
                          android:id="@+id/songjian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/take"
                     />
-                    <TextView 
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="去送件"
@@ -460,14 +460,14 @@
                       android:layout_gravity="center"
                       android:visibility="gone"
                     android:orientation="horizontal" >
-			<TextView 
+			<TextView
 		    		    android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="20dp"
                         android:text="填写车牌号:"
                         android:textSize="13sp"/>
-			
+
 			<RelativeLayout
         android:id="@+id/input_layout"
         android:layout_width="match_parent"
@@ -487,7 +487,7 @@
             android:paddingLeft="5dp"
             android:hint="填写正确的车牌号"
             android:imeOptions="actionNext"
-            
+
             android:textSize="12sp" />
 
         <ImageButton
@@ -511,7 +511,7 @@
 		    android:hint="请输入起运车牌号"
 		    android:inputType="text"
 		    android:paddingLeft="5dp"
-		    android:textSize="12sp" 
+		    android:textSize="12sp"
 		    android:visibility="gone"
 		    />
 
@@ -522,8 +522,8 @@
                     android:layout_marginTop="10dp"
                     android:visibility="gone"
                     android:background="@drawable/text_radius_white" >
-				
-				<TextView 
+
+				<TextView
 				    android:id="@+id/cartype"
 				     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -531,7 +531,7 @@
                     android:text="代收货款"
                     android:textColor="@color/orange"
 				    />
-				 <TextView 
+				 <TextView
 				    android:id="@+id/carchang"
 				     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -539,7 +539,7 @@
                     android:text="车长"
                     android:layout_below="@+id/cartype"
 				    />
-				 <TextView 
+				 <TextView
 				    android:id="@+id/usertime"
 				     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -589,9 +589,9 @@
 
                     </LinearLayout>
 
-                    
 
-                    
+
+
 
                 </RelativeLayout>
 
@@ -609,7 +609,7 @@
                     android:visibility="gone"
                      />
 
-                
+
 
                 <Button
                     android:id="@+id/btn_tousu"
@@ -645,6 +645,7 @@
                     android:gravity="center"
                     android:visibility="gone"
                     android:textSize="13sp" />
+
                 <RelativeLayout
                     android:id="@+id/dart_ok"
                     android:layout_width="match_parent"
@@ -653,9 +654,8 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
                     android:layout_marginTop="20dp"
-                    android:gravity="center_horizontal" 
-                         android:visibility="gone"
-                    >
+                    android:gravity="center_horizontal"
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/iv_flag"
@@ -665,13 +665,14 @@
                         android:layout_marginRight="20dp"
                         android:background="@drawable/escort_finisflag"
                         android:visibility="gone" />
-                        <TextView
+
+                    <TextView
                         android:id="@+id/btn_escortnoaa"
                         android:layout_width="30dp"
                         android:layout_height="35dp"
                         android:layout_centerHorizontal="true"
-                        android:visibility="invisible"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/btn_escortno"
@@ -680,7 +681,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_toLeftOf="@+id/btn_escortnoaa"
                         android:background="@drawable/wuqudiangsongda"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/btn_escort"
@@ -688,7 +690,7 @@
                         android:layout_height="35dp"
                         android:layout_alignParentTop="true"
                         android:layout_toRightOf="@+id/btn_escortnoaa"
-                        android:background="@drawable/qudiangsongda"
+                        android:background="@drawable/qudiangsongda1"
                         android:textSize="13sp" />
 
                 </RelativeLayout>
@@ -717,7 +719,7 @@
                           android:id="@+id/btn_weigui"
                           android:layout_width="wrap_content"
                           android:layout_height="38dp"
-                        
+
                           android:layout_alignParentRight="true"
                           android:layout_alignParentTop="true"
                           android:background="@drawable/newhuowuweigui"
@@ -725,10 +727,10 @@
                           android:textColor="@drawable/selector_text_white_to_gray"
                           android:textSize="13sp" />
 
-                      
-                    
+
+
                     </LinearLayout>
-                
+
             </LinearLayout>
 
         </LinearLayout>
