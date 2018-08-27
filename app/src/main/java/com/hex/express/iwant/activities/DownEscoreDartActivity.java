@@ -397,7 +397,7 @@ public class DownEscoreDartActivity extends BaseActivity implements OnClickListe
                 }
                 if (!isFinished) {// 押镖未完成且交易码已发送
 
-                    ToastUtil.longToast(DownEscoreDartActivity.this, "支付中...");
+//                    ToastUtil.longToast(DownEscoreDartActivity.this, "支付中...");
                     AsyncHttpUtils
                             .doSimGet(
                                     UrlMap.getfive(MCUrl.DRIVERTRUETASK, "recId", recId, "dealPassword", "000000",
@@ -1123,7 +1123,7 @@ public class DownEscoreDartActivity extends BaseActivity implements OnClickListe
                             Log.e("bean________", new String(arg2) + "ooooooooo");
                             if (bean.getErrCode() == 0) {// 如果获取成功
 
-                                ToastUtil.shortToast(getApplicationContext(), "取货短信发送成功！");
+//                                ToastUtil.shortToast(getApplicationContext(), "取货短信发送成功！");
                                 btn_submit.setBackgroundResource(R.drawable.bg_gray_rounded_stroke);
                                 btn_submit.setTextColor(0xffa4a4a4);// 设置字体颜色
                                 btn_submit.setClickable(false);
