@@ -1415,47 +1415,63 @@ public class DownEscoreDartActivity extends BaseActivity implements OnClickListe
      * h货物违规
      */
     private void showPopup_report() {
-        vPopupWindow_report = LayoutInflater.from(this).inflate(R.layout.popupwindow_report, null);
-//		ll_report = (LinearLayout) vPopupWindow_report.findViewById(R.id.ll_setChecked);
-        btn_image = (ImageView) vPopupWindow_report.findViewById(R.id.btn_image);
-        btn_immediately = (Button) vPopupWindow_report.findViewById(R.id.btn_immediately);
-        exit_re = (TextView) vPopupWindow_report.findViewById(R.id.exit_re);
-        popupWindow_report = new PopupWindow(vPopupWindow_report, LayoutParams.MATCH_PARENT,
-                LayoutParams.MATCH_PARENT, true);
-        popupWindow_report.setAnimationStyle(R.style.mypopwindow_anim_style);
-        popupWindow_report.showAtLocation(DownEscoreDartActivity.this.findViewById(R.id.btn_escort), Gravity.CENTER, 0, 0);
-        // 设置背景 使返回键生效（PopupWindow会拦截触摸事件，包括返回键和菜单键）
-        popupWindow_report.setBackgroundDrawable(new ColorDrawable(0x99999999));
-
-        btn_immediately.setOnClickListener(new View.OnClickListener() {
+        Builder ad = new Builder(DownEscoreDartActivity.this);
+        ad.setTitle("");
+        ad.setMessage("发件人是否已同意取消？");
+        ad.setPositiveButton("是", new OnClickListener() {
             @Override
-            public void onClick(View arg0) {
-                // TODO Auto-generated method stub
+            public void onClick(DialogInterface arg0, int arg1) {
                 getmegseshang(1);
             }
         });
-        btn_image.setOnClickListener(new View.OnClickListener() {
+        ad.setNegativeButton("否", new OnClickListener() {
             @Override
-            public void onClick(View arg0) {
-                // TODO Auto-generated method stub
-                showPopwindow();
+            public void onClick(DialogInterface arg0, int arg1) {
+                arg0.dismiss();
             }
         });
-        exit_re.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                // TODO Auto-generated method stub
-                popupWindow_report.dismiss();
-            }
-        });
-
-        popupWindow_report.setOnDismissListener(new OnDismissListener() {
-
-            @Override
-            public void onDismiss() {
-                popupWindow_report.dismiss();
-            }
-        });
+        ad.create().show();
+//        vPopupWindow_report = LayoutInflater.from(this).inflate(R.layout.popupwindow_report, null);
+////		ll_report = (LinearLayout) vPopupWindow_report.findViewById(R.id.ll_setChecked);
+//        btn_image = (ImageView) vPopupWindow_report.findViewById(R.id.btn_image);
+//        btn_immediately = (Button) vPopupWindow_report.findViewById(R.id.btn_immediately);
+//        exit_re = (TextView) vPopupWindow_report.findViewById(R.id.exit_re);
+//        popupWindow_report = new PopupWindow(vPopupWindow_report, LayoutParams.MATCH_PARENT,
+//                LayoutParams.MATCH_PARENT, true);
+//        popupWindow_report.setAnimationStyle(R.style.mypopwindow_anim_style);
+//        popupWindow_report.showAtLocation(DownEscoreDartActivity.this.findViewById(R.id.btn_escort), Gravity.CENTER, 0, 0);
+//        // 设置背景 使返回键生效（PopupWindow会拦截触摸事件，包括返回键和菜单键）
+//        popupWindow_report.setBackgroundDrawable(new ColorDrawable(0x99999999));
+//
+//        btn_immediately.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View arg0) {
+//                // TODO Auto-generated method stub
+//                getmegseshang(1);
+//            }
+//        });
+//        btn_image.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View arg0) {
+//                // TODO Auto-generated method stub
+//                showPopwindow();
+//            }
+//        });
+//        exit_re.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View arg0) {
+//                // TODO Auto-generated method stub
+//                popupWindow_report.dismiss();
+//            }
+//        });
+//
+//        popupWindow_report.setOnDismissListener(new OnDismissListener() {
+//
+//            @Override
+//            public void onDismiss() {
+//                popupWindow_report.dismiss();
+//            }
+//        });
     }
 
     private void getmegseshang(int i) {
@@ -1475,7 +1491,7 @@ public class DownEscoreDartActivity extends BaseActivity implements OnClickListe
             @Override
             public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
                 dialog.dismiss();
-                popupWindow_report.dismiss();
+//                popupWindow_report.dismiss();
                 BaseBean baseBean = new Gson().fromJson(new String(arg2), BaseBean.class);
                 if (baseBean.getErrCode() == 0) {
                     dart_xuanze.setVisibility(View.GONE);

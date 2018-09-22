@@ -721,7 +721,7 @@
 
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
-                        android:background="@drawable/newhuowuweigui"
+                        android:background="@drawable/newhuowuweigui1"
                         android:gravity="center"
                         android:textColor="@drawable/selector_text_white_to_gray"
                         android:textSize="13sp" />

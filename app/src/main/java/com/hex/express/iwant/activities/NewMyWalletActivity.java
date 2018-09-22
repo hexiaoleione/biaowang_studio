@@ -238,6 +238,7 @@ public class NewMyWalletActivity extends BaseActivity{
 					}
 					@Override
 					public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+
 						// TODO Auto-generated method stub
 						Log.e("json", "" + new String(arg2));
 						RegisBean bean = new Gson().fromJson(

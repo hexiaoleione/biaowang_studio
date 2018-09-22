@@ -1,13 +1,13 @@
 package com.hex.express.iwant.activities;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -340,7 +340,7 @@ public class PrefectActivity extends BaseActivity {
                 iv_xiaomian4.setBackgroundResource(R.drawable.xuanzhongoff);
                 iv_xiaomian5.setBackgroundResource(R.drawable.xuanzhongoff);
                 iv_xiaomian6.setBackgroundResource(R.drawable.xuanzhongon);
-                pre_tishi.setText("请上传驾驶证（无驾驶证者请上传身份证）");
+                pre_tishi.setText("请上传手持身份证照片");
 
                 break;
             default:
@@ -574,7 +574,24 @@ public class PrefectActivity extends BaseActivity {
                 break;
         }
     }
-
+    private String getRealPathFromURI(Uri contentURI) {
+        String result;
+        Cursor cursor = null;
+        try {
+            cursor = getContentResolver().query(contentURI, null, null, null, null);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+        if (cursor == null) {
+            result = contentURI.getPath();
+        } else {
+            cursor.moveToFirst();
+            int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            result = cursor.getString(idx);
+            cursor.close();
+        }
+        return result;
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -602,7 +619,17 @@ public class PrefectActivity extends BaseActivity {
             case 3:
                 if (data != null) {
                     Bundle extras = data.getExtras();
-                    head = extras.getParcelable("data");
+                    if (extras == null){
+                        Uri uri = data.getData();
+                        if (uri != null) {
+
+                            BitmapFactory.Options options = new BitmapFactory.Options();
+                            options.inJustDecodeBounds = true;
+                            head = BitmapFactory.decodeFile(getRealPathFromURI(uri),options);
+                        }
+                    }else {
+                        head = extras.getParcelable("data");
+                    }
                     if (head != null) {
                         /**
                          * 上传服务器代码 //TODO 实现头衔上传

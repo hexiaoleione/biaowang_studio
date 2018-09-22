@@ -252,6 +252,13 @@ public class SubFragment2 extends Fragment {
 				lin_xuanze.setVisibility(View.GONE);
 			}
 		});
+		view_null_message.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				getHttpOwnerRequst(false, true, 1, false, sortType,carType);
+			}
+		});
 //		my_xiaomian.setOnClickListener(new OnClickListener() {
 //			
 //			@Override

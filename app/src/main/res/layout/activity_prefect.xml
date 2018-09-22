@@ -200,7 +200,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="请上传驾驶证（无驾驶证者请上传身份证）"
+            android:text="请上传手持身份证照片"
             android:textColor="@color/red" />
         <TextView
             android:layout_width="wrap_content"
