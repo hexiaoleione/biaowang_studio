@@ -340,7 +340,7 @@ public class PrefectActivity extends BaseActivity {
                 iv_xiaomian4.setBackgroundResource(R.drawable.xuanzhongoff);
                 iv_xiaomian5.setBackgroundResource(R.drawable.xuanzhongoff);
                 iv_xiaomian6.setBackgroundResource(R.drawable.xuanzhongon);
-                pre_tishi.setText("请上传手持身份证照片");
+                pre_tishi.setText("上传身份证或者驾照");
 
                 break;
             default:
