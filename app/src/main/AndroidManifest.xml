@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.hex.express.iwant">
     <!--   海南的84 3.21  线上 90 3.28  本地 55 2.58 -->
 
@@ -20,7 +21,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- Optional for location -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -51,9 +53,12 @@
     <uses-permission android:name="com.hex.express.iwant.permission.JPUSH_MESSAGE" />
     <!-- 允许应用程序联网，以便向我们的服务器端发送数据 -->
 
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
-    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP"
+        tools:ignore="ProtectedPermissions" />
 
     <!--  com.hex.express.iwant.iWantApplication   MainTab -->
     <application
@@ -90,12 +95,12 @@
         <!-- 显示现金卷界面 -->
         <service
             android:name="com.hex.express.iwant.service.FloatuiService"
-            android:exported="true"></service>
+            android:exported="true"/>
         <!-- 主界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.MainActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!-- 欢迎界面 -->
         <activity android:name="com.hex.express.iwant.activities.WelcomeActivity">
             <intent-filter>
@@ -110,316 +115,316 @@
         <activity
             android:name="com.hex.express.iwant.activities.LoginActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!-- 注册1界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.RegisteInfoActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!-- 注册2界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.RegisterSetPwdActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!-- 注册3界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.RegisterSetImageAndNameActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!-- 找回密码1界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.FindPassWordActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!-- 找回密码2界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.FindPassWordOkActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!-- 一键发布界面 -->
 
         <!-- 用户抢单发布界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.PickOrderActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!-- 来抢单吧界面 -->
-        <activity android:name="com.hex.express.iwant.activities.ComeToPickExpActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.DownWindCourierActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.ComeToPickExpActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.DownWindCourierActivity"/>
         <!-- 我的顺风界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.MyDownwindActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.NewDepositActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
 
         <!-- 顺风货运界面 -->
 
         <!-- 发布任务界面 -->
-        <activity android:name="com.hex.express.iwant.activities.PublishingTasksActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.PublishingTasksActivity"/>
         <!-- 接受任务界面 -->
-        <activity android:name="com.hex.express.iwant.activities.AcceptTasksActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.AcceptTasksActivity"/>
         <!-- 用户中心界面 -->
-        <activity android:name="com.hex.express.iwant.activities.UserCenterActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.UserCenterActivity"/>
         <!-- 快递员抢单大厅界面 -->
-        <activity android:name="com.hex.express.iwant.activities.PickCenterActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.PickCenterActivity"/>
 
         <!-- 快递员库界面 -->
-        <activity android:name="com.hex.express.iwant.activities.CouriersCenterActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.CouriersCenterActivity"/>
         <!-- 添加快递员界面 -->
-        <activity android:name="com.hex.express.iwant.activities.AddCouriersActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.AddCouriersActivity"/>
         <!-- 选择快递公司界面 -->
-        <activity android:name="com.hex.express.iwant.activities.SelectExpCompanyActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.SelectExpCompanyActivity"/>
         <!-- 一键发布 -->
-        <activity android:name="com.hex.express.iwant.activities.OneKeySendExpActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.OneKeySendExpActivity"/>
         <!-- 地址 -->
-        <activity android:name="com.hex.express.iwant.activities.AddressActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.NewAddressActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.AddressActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.NewAddressActivity"/>
         <!-- 保单js -->
-        <activity android:name="com.hex.express.iwant.activities.HjasActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.HjasActivity"/>
 
         <!-- 我的快递界面 -->
-        <activity android:name="com.hex.express.iwant.activities.MyCourierActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.MyCourierActivity"/>
         <!-- 我的物流界面 -->
-        <activity android:name="com.hex.express.iwant.activities.MyTransportActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.MyTransportActivity"/>
         <!-- 我的任务界面 -->
-        <activity android:name="com.hex.express.iwant.activities.MyMissionActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.MyMissionActivity"/>
         <!-- 我的E币 -->
-        <activity android:name="com.hex.express.iwant.activities.EcoinActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.EcoinActivity"/>
         <!-- 我的钱包 -->
-        <activity android:name="com.hex.express.iwant.activities.MyWalletActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.MyWalletActivity"/>
         <!-- 兑换说明 -->
-        <activity android:name="com.hex.express.iwant.activities.EcoinExchangeNoteActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.EcoinExchangeNoteActivity"/>
         <!-- E币历史 -->
-        <activity android:name="com.hex.express.iwant.activities.EcoinHistory"></activity>
-        <activity android:name="com.hex.express.iwant.activities.PrefectActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.EcoinHistory"/>
+        <activity android:name="com.hex.express.iwant.activities.PrefectActivity"/>
         <!-- E币商城 -->
-        <activity android:name="com.hex.express.iwant.activities.EcoinShopeActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.EcoinShopeActivity"/>
         <!-- 我的消息 -->
-        <activity android:name="com.hex.express.iwant.activities.MessageActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.MessageActivity"/>
         <!-- 现金券 -->
-        <activity android:name="com.hex.express.iwant.activities.CardActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.GiftActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.CardActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.GiftActivity"/>
         <!-- 寄件人信息 -->
-        <activity android:name="com.hex.express.iwant.activities.SendPersonActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.ChangeAddressActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.SendPersonActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.ChangeAddressActivity"/>
         <!-- 发物流 -->
-        <activity android:name="com.hex.express.iwant.activities.LogisticalActivitys"></activity>
-        <activity android:name="com.hex.express.iwant.activities.LogisticalActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogisticalActivitys"/>
+        <activity android:name="com.hex.express.iwant.activities.LogisticalActivity"/>
         <!-- 我的物流 -->
         <activity
             android:name="com.hex.express.iwant.activities.MylogisticakActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!-- 货物报价 -->
         <activity
             android:name="com.hex.express.iwant.activities.LogistiOfferActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!-- 物流详情 -->
         <activity
             android:name="com.hex.express.iwant.activities.MydetailedActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!-- 物流货运 -->
-        <activity android:name="com.hex.express.iwant.activities.LogisticalFreightActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.HWdvertActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogisticalFreightActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.HWdvertActivity"/>
 
         <!-- 物流货运 -->
-        <activity android:name="com.hex.express.iwant.activities.LogisticalParticulars"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogisticalParticulars"/>
         <!-- 货源信息 地区，附近 长途 -->
-        <activity android:name="com.hex.express.iwant.activities.LogistcaInforActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogistcaInforActivity"/>
         <!-- 我的关注 -->
-        <activity android:name="com.hex.express.iwant.activities.LoistcalConcernActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LoistcalConcernActivity"/>
         <!-- 物流认证 -->
-        <activity android:name="com.hex.express.iwant.activities.LogiCertificationActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogiCertificationActivity"/>
         <!-- 物流公司注册2 -->
-        <activity android:name="com.hex.express.iwant.activities.LogisticalRegistrationActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogisticalRegistrationActivity"/>
         <!-- 物流关注 -->
-        <activity android:name="com.hex.express.iwant.activities.LoistattentionActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LoistattentionActivity"/>
         <!-- 物流关注 定点货源 -->
-        <activity android:name="com.hex.express.iwant.activities.LoistattentionMyActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LoistattentionMyActivity"/>
         <!-- 物流公司详情 -->
-        <activity android:name="com.hex.express.iwant.activities.LogisticalCompanyActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogisticalCompanyActivity"/>
         <!-- 物流详情报价 -->
-        <activity android:name="com.hex.express.iwant.activities.LogCompanyActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogCompanyActivity"/>
         <!-- 物流公司接货界面 -->
-        <activity android:name="com.hex.express.iwant.activities.LogCompanyDeliveryActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogCompanyDeliveryActivity"/>
 
         <!-- 我的推广界面 -->
-        <activity android:name="com.hex.express.iwant.activities.ExpandActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.ExpandActivity"/>
         <!-- ceshi -->
-        <activity android:name="com.hex.express.iwant.newmain.BaidudingActivity"></activity>
+        <activity android:name="com.hex.express.iwant.newmain.BaidudingActivity"/>
         <!-- cheshi -->
-        <activity android:name="com.hex.express.iwant.newmain.MoreAddressActivity"></activity>
+        <activity android:name="com.hex.express.iwant.newmain.MoreAddressActivity"/>
         <!-- cheshi -->
         <activity
             android:name="com.hex.express.iwant.newbaidu.LocationDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
 
-        <activity android:name="com.hex.express.iwant.iflytek.TtsDemo"></activity>
+        <activity android:name="com.hex.express.iwant.iflytek.TtsDemo"/>
         <!-- cheshi -->
-        <activity android:name="com.hex.express.iwant.activities.NewSearchActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.OperationActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.SpreadActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.NewSearchActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.OperationActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.SpreadActivity"/>
 
         <!-- 微信登入界面界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.LoginWeixinActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!--测试界面界面 -->
 
         <!--youh界面 -->
-        <activity android:name="com.hex.express.iwant.activities.CardActivitys"></activity>
+        <activity android:name="com.hex.express.iwant.activities.CardActivitys"/>
         <!--youh界面 -->
-        <activity android:name="com.hex.express.iwant.activities.CardActivitysddd"></activity>
+        <activity android:name="com.hex.express.iwant.activities.CardActivitysddd"/>
         <!--扫二维码界面 -->
-        <activity android:name="com.hex.express.iwant.activities.ThinkChangeActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.ThinkChangeActivity"/>
         <!--物流支付界面界面 -->
-        <activity android:name="com.hex.express.iwant.activities.LogisPayActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogisPayActivity"/>
         <!--物流公司支付界面界面 -->
-        <activity android:name="com.hex.express.iwant.activities.CompanyDeliveryPayActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.CompanyDeliveryPayActivity"/>
         <!--物流用户支付界面界面 -->
-        <activity android:name="com.hex.express.iwant.activities.MydetailedPayActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.MydetailedPayActivity"/>
         <!--h5界面 -->
-        <activity android:name="com.hex.express.iwant.activities.HModelActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.HModelActivity"/>
         <!--h5现金卷界面 -->
-        <activity android:name="com.hex.express.iwant.activities.WeHwedActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.WeHwedActivity"/>
         <!--物流认证的s界面 -->
-        <activity android:name="com.hex.express.iwant.activities.AttestationActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.AttestationActivity"/>
         <!--物流个人认证的s界面 -->
-        <activity android:name="com.hex.express.iwant.activities.PersonCerActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.PersonCerActivity"/>
         <!--物流认证公司的s界面 -->
-        <activity android:name="com.hex.express.iwant.activities.CompanyCerActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.CompanyCerActivity"/>
         <!--物流认证的s界面 -->
-        <activity android:name="com.hex.express.iwant.activities.LogiCertiActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogiCertiActivity"/>
         <!--物流公司支付的 -->
-        <activity android:name="com.hex.express.iwant.activities.LogisticaPayActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogisticaPayActivity"/>
         <!--修改手机号 -->
-        <activity android:name="com.hex.express.iwant.activities.RevisePhoneActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.RevisePhoneActivity"/>
         <!--了解详情界面H5 -->
         <activity
             android:name="com.hex.express.iwant.activities.HAdvertActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!--活动界面 -->
-        <activity android:name="com.hex.express.iwant.activities.ExerciseActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.ExerciseActivity"/>
         <!--带领取现金卷界面 -->
-        <activity android:name="com.hex.express.iwant.activities.DrawCardActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.DrawCardActivity"/>
         <!--签到界面 -->
-        <activity android:name="com.hex.express.iwant.activities.RegisterActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.RegisterActivity"/>
         <!--抽奖大转盘界面 -->
-        <activity android:name="com.hex.express.iwant.activities.LuckydrawActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LuckydrawActivity"/>
         <!--物流个人去支付的界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.TradingcertaintyActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!--物流公司找货新的界面 -->
-        <activity android:name="com.hex.express.iwant.activities.LogistcaInforseActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogistcaInforseActivity"/>
         <!--物流公司找货新的界面 android:launchMode="singleTask" -->
-        <activity android:name="com.hex.express.iwant.activities.LogistioffActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogistioffActivity"/>
         <!--物流二级列表的界面 -->
-        <activity android:name="com.hex.express.iwant.activities.ProvCityTownAcrivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.ProvCityTownAcrivity"/>
         <!--修改个人信息的界面 -->
-        <activity android:name="com.hex.express.iwant.activities.RevisepersonActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.RevisepersonActivity"/>
         <!--修改个人头像信息的界面 -->
-        <activity android:name="com.hex.express.iwant.activities.ReviseheadActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.ReviseheadActivity"/>
         <!--新的活动界面 -->
-        <activity android:name="com.hex.express.iwant.activities.NewExerciseActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.NewExerciseActivity"/>
         <!--1️已报价界面 -->
-        <activity android:name="com.hex.express.iwant.activities.LogCompanyFreActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.LogCompanyFreActivity"/>
         <!--1️个人物流认证新界面 -->
-        <activity android:name="com.hex.express.iwant.activities.PersonNewCerActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.PersonNewCerActivity"/>
         <!--1货场地址界面 -->
-        <activity android:name="com.hex.express.iwant.activities.DepotActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.DepotActivity"/>
         <!--1添加货场地址界面 -->
-        <activity android:name="com.hex.express.iwant.activities.DepotAddsActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.DepotAddsActivity"/>
         <!--货源管理 货场界面 -->
-        <activity android:name="com.hex.express.iwant.activities.DepotFreigActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.DepotFreigActivity"/>
         <!--单独的海南物流界面 -->
-        <activity android:name="com.hex.express.iwant.activities.HaiLogisticalActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.HaiLogisticalActivity"/>
         <!--单独的海南物流界面 -->
-        <activity android:name="com.hex.express.iwant.activities.HaiLogisPayActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.HaiLogisPayActivity"/>
         <!--单独的海南物流界面 -->
-        <activity android:name="com.hex.express.iwant.activities.HaiLogisticalFreightActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.HaiLogisticalFreightActivity"/>
         <!--单独的海南物流界面 -->
-        <activity android:name="com.hex.express.iwant.activities.HainanLogistioffActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.HainanLogistioffActivity"/>
         <!--单独的海南物流界面 -->
-        <activity android:name="com.hex.express.iwant.activities.HnLogActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.HnLogActivity"/>
 
         <!--新的个人中心界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.NewCenterActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!--新的钱包界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.NewMyWalletActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!--新的钱包界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.MyWalletlistActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!--新的钱包界面 -->
-        <activity android:name="com.hex.express.iwant.activities.GuardActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.GuardActivity"/>
         <!--新的钱包界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.IntegralActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!--商户界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.CommercialActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
 
 
         <!--未缴费镖件界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.NotPermittedActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!--未缴费镖件缴费界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.NotPermittPayActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!--新的领卷界面界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.NewDrawCardActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!--签到奖励界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.LogiNumberActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <!-- 2017.6.2  新的界面 -->
 
-        <activity android:name="com.hex.express.iwant.newsmain.MainseActivity"></activity>
+        <activity android:name="com.hex.express.iwant.newsmain.MainseActivity"/>
         <activity
             android:name="com.hex.express.iwant.newsmain.NewMainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.ReleaseActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.ReleaseActivityto"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name="com.hex.express.iwant.newactivity.AnswerActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name="com.hex.express.iwant.newactivity.LogisewindActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name="com.hex.express.iwant.newactivity.LogisewindtimlitActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
 
         <activity
             android:name="com.hex.express.iwant.newactivity.LoginseticsActivity"
@@ -428,117 +433,117 @@
         </activity>
         <activity
             android:name="com.hex.express.iwant.newactivity.LoginseticsActivityto"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.DituActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.PickActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.PickToActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.MyPaidActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.NotPermitActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.LogoffActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.InsureActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.HtmltouActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.DepositsActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.DepositToActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.DepositNewActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.LogoffActivitybao"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.InsuranceActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.InsuranceseActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.InsuranceOnActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hex.express.iwant.newactivity.InsuranceOffActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
 
         <!-- 现金卷展示界面 -->
 
         <activity
             android:name="com.hex.express.iwant.activities.CouponActivity"
-            android:theme="@style/MyDialogStyle"></activity>
+            android:theme="@style/MyDialogStyle"/>
         <!--人人代理web界面 -->
-        <activity android:name="com.hex.express.iwant.activities.CourierInstrucActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.CardActivityse"></activity>
+        <activity android:name="com.hex.express.iwant.activities.CourierInstrucActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.CardActivityse"/>
 
 
         <!-- 新增发货地址 -->
-        <activity android:name="com.hex.express.iwant.activities.ChangeReceiverActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.AddCourierActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.ChangeReceiverActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.AddCourierActivity"/>
         <!-- 现金信息 -->
-        <activity android:name="com.hex.express.iwant.activities.PreferentialActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.PreferentialActivity"/>
         <!-- 使用说明 -->
-        <activity android:name="com.hex.express.iwant.activities.InstructionActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.InstructionActivity"/>
         <!-- 选择城市 -->
         <activity
             android:name="com.hex.express.iwant.activities.ProvCityActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
         <!-- 充值界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.RechargeActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!-- 重置支付密码 -->
         <activity
             android:name="com.hex.express.iwant.activities.ResetPayPasswordActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!-- 输入支付密码 -->
         <activity
             android:name="com.hex.express.iwant.mypasspay.MypassActivity"
             android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent"></activity>
+            android:theme="@android:style/Theme.Translucent"/>
         <!-- 输入支付密码(提现) -->
         <activity
             android:name="com.hex.express.iwant.mypasspay.DepositPassActivity"
             android:launchMode="singleTask"
             android:theme="@android:style/Theme.Translucent"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan"/>
         <!-- 输入取货码(押镖完成) -->
         <activity
             android:name="com.hex.express.iwant.mypasspay.DownWindPassActivity"
             android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent"></activity>
+            android:theme="@android:style/Theme.Translucent"/>
         <!-- 二维码扫描 -->
         <activity android:name="org.madmatrix.zxing.android.CaptureActivity" />
         <activity
@@ -552,52 +557,52 @@
             </intent-filter>
         </activity>
         <activity android:name="com.hex.express.iwant.activities.CropActivity" />
-        <activity android:name="com.hex.express.iwant.activities.RecevierListActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.RecevierListActivity"/>
         <!-- 常用收件人界面 -->
-        <activity android:name="com.hex.express.iwant.activities.AddReceiverActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.SettingActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.ShareActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.AddReceiverActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.SettingActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.ShareActivity"/>
         <!-- 关于 -->
-        <activity android:name="com.hex.express.iwant.activities.AboutActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.AboutActivity"/>
         <!-- 指南的html -->
-        <activity android:name="com.hex.express.iwant.activities.OperationHtmlActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.OperationHtmlActivity"/>
 
         <!-- 法律声明及条款 -->
-        <activity android:name="com.hex.express.iwant.activities.JudgeActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.JudgeActivity"/>
         <!-- 反馈 -->
-        <activity android:name="com.hex.express.iwant.activities.FeedBackActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.FeedBackActivity"/>
         <!-- 功能介绍 -->
-        <activity android:name="com.hex.express.iwant.activities.FunctionActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.JudgeSmsActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.ComActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.ServiceActivity"></activity>
-        <activity android:name="com.hex.express.iwant.activities.PublicDetailShowActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.FunctionActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.JudgeSmsActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.ComActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.ServiceActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.PublicDetailShowActivity"/>
         <!-- 我的接单 -->
-        <activity android:name="com.hex.express.iwant.activities.MyPickupActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.MyPickupActivity"/>
         <!-- 不显示当前位置的地址检索 -->
-        <activity android:name="com.hex.express.iwant.activities.AddressReceiveActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.AddressReceiveActivity"/>
         <!-- 微信支付回调 -->
         <activity
             android:name="com.hex.express.iwant.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:theme="@style/MyDialogStyle"></activity>
+            android:theme="@style/MyDialogStyle"/>
 
         <!-- 信息详情界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.MessageDetails"
-            android:theme="@style/MyDialogStyle"></activity>
+            android:theme="@style/MyDialogStyle"/>
         <!-- 评价界面 -->
-        <activity android:name="com.hex.express.iwant.activities.EvaluateActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.EvaluateActivity"/>
         <!-- 快递查询界面 -->
-        <activity android:name="com.hex.express.iwant.activities.ExpressCheckActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.ExpressCheckActivity"/>
         <!-- 支付宝提现界面 -->
-        <activity android:name="com.hex.express.iwant.activities.DepositActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.DepositActivity"/>
         <!-- 转账界面 -->
-        <activity android:name="com.hex.express.iwant.activities.TransferActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.TransferActivity"/>
         <activity
             android:name="com.hex.express.iwant.activities.BindPhoneActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask"/>
         <!-- 欢迎界面 -->
         <activity
             android:name="com.hex.express.iwant.activities.IntroduceActivity"
@@ -626,7 +631,7 @@
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <!-- 顺风专递支付界面 -->
         <!-- 顺风专递支付界面  android:theme="@style/MyDialogStyle" -->
-        <activity android:name="com.hex.express.iwant.activities.DownWindPayActivity"></activity>
+        <activity android:name="com.hex.express.iwant.activities.DownWindPayActivity"/>
         <!-- 发布顺风行程 -->
         <activity android:name="com.hex.express.iwant.activities.DownWindStrokeActivity" />
         <!-- 我是镖师货物详情 -->
@@ -652,53 +657,53 @@
         <!-- 验证快递员界面 -->
         <activity
             android:name=".activities.CourierIdentificationActivity"
-            android:label="@string/activity_courier_identification"></activity>
+            android:label="@string/activity_courier_identification"/>
         <!-- 快递员接单界面 -->
 
         <!-- 快递推广界面 -->
-        <activity android:name=".activities.MyExtentionActivity"></activity>
+        <activity android:name=".activities.MyExtentionActivity"/>
         <!-- 快递员用户中心界面 -->
-        <activity android:name=".activities.CourierCenterActivity"></activity>
+        <activity android:name=".activities.CourierCenterActivity"/>
         <!-- 快递用户中心角色认证 -->
-        <activity android:name=".activities.RoleAuthenticationActivity"></activity>
+        <activity android:name=".activities.RoleAuthenticationActivity"/>
         <!-- 设置支付密码界面 -->
-        <activity android:name=".activities.SetupPasswordActivity"></activity>
+        <activity android:name=".activities.SetupPasswordActivity"/>
         <!-- 普通用户我的接单 -->
-        <activity android:name=".activities.MyReceiptCourierActivity"></activity>
+        <activity android:name=".activities.MyReceiptCourierActivity"/>
         <!-- 快递员用户使用说明 -->
-        <activity android:name=".activities.CourierInstructionsActivity"></activity>
+        <activity android:name=".activities.CourierInstructionsActivity"/>
         <!-- 普通用户使用说明 -->
-        <activity android:name=".activities.UserInstruxtions"></activity>
+        <activity android:name=".activities.UserInstruxtions"/>
         <!-- 普通用户钱包 -->
-        <activity android:name=".activities.UserWalletActivity"></activity>
+        <activity android:name=".activities.UserWalletActivity"/>
         <!-- 快递员用户钱包 -->
-        <activity android:name=".activities.CourierWalletActivity"></activity>
+        <activity android:name=".activities.CourierWalletActivity"/>
         <!--  城市搜索界面 -->
-        <activity android:name=".activities.SearchActivity"></activity>
+        <activity android:name=".activities.SearchActivity"/>
         <!--  多单支付界面 -->
-        <activity android:name=".activities.PublicOtherDetailActivity"></activity>
+        <activity android:name=".activities.PublicOtherDetailActivity"/>
         <!--   镖师认证界面 -->
-        <activity android:name=".activities.EscoreAuthenticationActivity"></activity>
+        <activity android:name=".activities.EscoreAuthenticationActivity"/>
         <!--   补贴说明界面 -->
-        <activity android:name=".activities.CourierExtentionActivity"></activity>
+        <activity android:name=".activities.CourierExtentionActivity"/>
         <!--   用户现金政策界面 -->
-        <activity android:name=".activities.PreferrntialTwoActivity"></activity>
+        <activity android:name=".activities.PreferrntialTwoActivity"/>
         <!--   地图选的-->
-        <activity android:name=".activities.BduActivity"></activity>
+        <activity android:name=".activities.BduActivity"/>
 
         <!--   快递详情 -->
-        <activity android:name=".activities.PublicDetailMoreShowActivity"></activity>
+        <activity android:name=".activities.PublicDetailMoreShowActivity"/>
         <!--   快递员端我的接单点击显示订单详情 -->
         <activity
             android:name=".activities.ChildExpressListActivity"
-            android:theme="@style/MyDialogStyle"></activity>
+            android:theme="@style/MyDialogStyle"/>
 
         <!-- 新的改版界面 -->
         <!-- 新的首页MainTab界面 -->
         <activity
             android:name="com.hex.express.iwant.newmain.MainTab"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="stateHidden|adjustPan"></activity>
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
 
         <!-- 环信相关 -->
 
@@ -951,7 +956,7 @@
 
         <activity
             android:name="com.hex.express.iwant.wxapi.WXEntryActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
 
         <!-- 百度地图LBS的service -->
         <!-- 快递公司 -->
@@ -961,7 +966,7 @@
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:permission="android.permission.BAIDU_LOCATION_SERVICE"
-            android:process=":remote"></service>
+            android:process=":remote"/>
         <!--     <intent-filter>
                    <action android:name="com.baidu.location.service_v2.2" >
                    </action>
@@ -1066,7 +1071,7 @@
         <service
             android:name="cn.jpush.android.service.DownloadService"
             android:enabled="true"
-            android:exported="false"></service>
+            android:exported="false"/>
         <!-- Required SDK核心功能 -->
         <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
 
@@ -1119,7 +1124,7 @@
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="56fde7b367e58e6cf70011cf"></meta-data>
+            android:value="56fde7b367e58e6cf70011cf"/>
 
         <activity
             android:name="com.tencent.tauth.AuthActivity"

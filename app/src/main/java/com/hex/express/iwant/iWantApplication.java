@@ -1,8 +1,5 @@
 package com.hex.express.iwant;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import android.app.Activity;
 import android.app.Application;
 import android.content.BroadcastReceiver;
@@ -13,16 +10,19 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.multidex.MultiDex;
-
-import cn.jpush.android.api.JPushInterface;
+import android.util.Log;
 
 import com.baidu.mapapi.SDKInitializer;
 import com.hex.express.iwant.helper.DbManager;
-import com.hex.express.iwant.utils.CrashHandler;
+import com.hex.express.iwant.utils.Cockroach;
 import com.hex.express.iwant.utils.ToastUtil;
-import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 import com.tencent.bugly.crashreport.CrashReport;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import cn.jpush.android.api.JPushInterface;
 
 public class iWantApplication extends Application {
     // 定义全局变量
@@ -43,8 +43,26 @@ public class iWantApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        CrashReport.initCrashReport(getApplicationContext(), "ccb6dcb790", false);    //bugly初始化
-        JPushInterface.setDebugMode(true);
+        CrashReport.initCrashReport(getApplicationContext(), "31647ae072", false);//bugly初始化
+
+        Cockroach.install(new Cockroach.ExceptionHandler() {
+
+            // handlerException内部建议手动try{  你的异常处理逻辑  }catch(Throwable e){ } ，以防handlerException内部再次抛出异常，导致循环调用handlerException
+            @Override
+            public void handlerException(final Thread thread, final Throwable throwable) {
+                try {
+                    //开发时使用Cockroach可能不容易发现bug，所以建议开发阶段在handlerException中用Log，
+                    CrashReport.postCatchedException(throwable);
+                    Log.e("AndroidRuntime", "--->CockroachException:" + thread + "<---", throwable);
+                } catch (Throwable e) {
+                    Log.e("AndroidRuntime", "--->CockroachException:" + thread + "<---", throwable);
+                    CrashReport.postCatchedException(e);
+                }
+            }
+        });
+
+
+        JPushInterface.setDebugMode(false);
         JPushInterface.init(this);
         mApplication = this;
         // 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
