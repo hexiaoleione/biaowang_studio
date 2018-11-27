@@ -1,11 +1,5 @@
 package com.hex.express.iwant.activities;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-
-import org.apache.http.Header;
-import org.json.JSONObject;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -21,25 +15,22 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 import com.alipay.sdk.app.PayTask;
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.google.gson.Gson;
 import com.hex.express.iwant.R;
-import com.hex.express.iwant.iWantApplication;
 import com.hex.express.iwant.alipay.AlipayUtils;
 import com.hex.express.iwant.alipay.PayResult;
 import com.hex.express.iwant.bean.BaseBean;
 import com.hex.express.iwant.bean.RechargeBean;
-import com.hex.express.iwant.bean.ReleaseBean;
 import com.hex.express.iwant.bean.WechatBean;
 import com.hex.express.iwant.constance.CollectionKey;
 import com.hex.express.iwant.constance.MCUrl;
@@ -47,16 +38,27 @@ import com.hex.express.iwant.constance.MsgConstants;
 import com.hex.express.iwant.constance.PreferenceConstants;
 import com.hex.express.iwant.http.AsyncHttpUtils;
 import com.hex.express.iwant.http.UrlMap;
+import com.hex.express.iwant.iWantApplication;
 import com.hex.express.iwant.utils.MessageUtils;
 import com.hex.express.iwant.utils.PreferencesUtils;
 import com.hex.express.iwant.utils.ToastUtil;
-import com.hex.express.iwant.views.TitleBarView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.tencent.mm.sdk.constants.Build;
 import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
+
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class RechargeActivity extends BaseActivity {
     private String orderInfo;
@@ -109,6 +111,11 @@ public class RechargeActivity extends BaseActivity {
     private String billCode;
     private String url;// 图片地址；
 
+    private LocationClient client;//百度地图的Client
+    private double latitude;
+    private double longitude;
+    private String 	city,cityCode,townCode,townaddressd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -127,8 +134,55 @@ public class RechargeActivity extends BaseActivity {
             btn_alipay.setClickable(false);
         }
 
-
+        initView();
     }
+
+
+    public void initView() {
+
+        client = new LocationClient(RechargeActivity.this);
+        initLocation();
+        client.registerLocationListener(new BDLocationListener() {
+
+            @Override
+            public void onReceiveLocation(BDLocation arg0) {
+                if (arg0 == null) {
+                    ToastUtil.shortToast(RechargeActivity.this, "定位失败，请检查设置");
+                    return;
+                } else {
+//					ToastUtil.shortToast(LoginWeixinActivity.this, "定设置"+ arg0.getLatitude());
+                    latitude = arg0.getLatitude();
+                    longitude = arg0.getLongitude();
+                    city=arg0.getCity();
+                    townaddressd=arg0.getDistrict();
+                    Log.e("jpppp", latitude + ":::::::::" + longitude);
+                    client.stop();
+                    updatelocation();
+                }
+            }
+        });
+        // 初始化定位
+        // 打开GPS
+        client.start();
+    }
+
+    private void initLocation() {
+        LocationClientOption option = new LocationClientOption();
+        option.setLocationMode(com.baidu.location.LocationClientOption.LocationMode.Hight_Accuracy);// 可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
+        option.setCoorType("bd09ll");// 可选，默认gcj02，设置返回的定位结果坐标系
+        int span = 0;
+        option.setScanSpan(span);// 可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
+        option.setIsNeedAddress(true);// 可选，设置是否需要地址信息，默认不需要
+        option.setOpenGps(false);// 可选，默认false,设置是否使用gps
+        option.setLocationNotify(false);// 可选，默认false，设置是否当gps有效时按照1S1次频率输出GPS结果
+        option.setIsNeedLocationDescribe(true);// 可选，默认false，设置是否需要位置语义化结果，可以在BDLocation.getLocationDescribe里得到，结果类似于“在北京天安门附近”
+        option.setIsNeedLocationPoiList(true);// 可选，默认false，设置是否需要POI结果，可以在BDLocation.getPoiList里得到
+        option.setIgnoreKillProcess(false);// 可选，默认true，定位SDK内部是一个SERVICE，并放到了独立进程，设置是否在stop的时候杀死这个进程，默认不杀死
+        option.SetIgnoreCacheException(false);// 可选，默认false，设置是否收集CRASH信息，默认收集
+        option.setEnableSimulateGps(false);// 可选，默认false，设置是否需要过滤gps仿真结果，默认需要
+        client.setLocOption(option);
+    }
+
 
     @Override
     public void onWeightClick(View v) {
@@ -246,6 +300,9 @@ public class RechargeActivity extends BaseActivity {
                 // //sendEmptyBackgroundMessage(MsgConstants.MSG_01);
                 // }*/
 
+                // 打开GPS
+                client.start();
+
                 for (int i = 0; i < mList.size(); i++) {
                     if (mList.get(i).isChecked()) {
                         text = mList.get(i).getText().toString();
@@ -306,6 +363,9 @@ public class RechargeActivity extends BaseActivity {
                 // MessageUtils.alertMessageCENTER(getApplicationContext(),
                 // "此功能暂未开放");
                 if (choxdai) {
+
+                    // 打开GPS
+                    client.start();
 
                     if (first) {
                         MessageUtils.alertMessageCENTER(getApplicationContext(), "正在唤醒微信支付");
@@ -443,6 +503,63 @@ public class RechargeActivity extends BaseActivity {
             default:
                 break;
         }
+
+    }
+
+    public void  updatelocation(){
+        JSONObject obj = new JSONObject();
+
+        try {
+            obj.put("userId", PreferencesUtils.getInt(
+                    getApplicationContext(), PreferenceConstants.UID));
+            obj.put("userType", PreferencesUtils.getString(getApplicationContext(), PreferenceConstants.USERTYPE));
+            obj.put("latitude", latitude);
+            obj.put("longitude", longitude);
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        AsyncHttpUtils.doPostJson(getApplicationContext(), MCUrl.UPLOADMYLOCATION,
+                obj.toString(), new AsyncHttpResponseHandler() {
+
+                    @Override
+                    public void onSuccess(int arg0, Header[] arg1,
+                                          byte[] arg2) {
+                        Log.e("___00000000000000_", new String(arg2));
+                        dialog.dismiss();
+                        if (arg2.length == 0) {
+//														ToastUtil.shortToast(getApplicationContext(),
+//																"获取位置失败");
+                            Log.e("__111111111111111__", "获取位置失败");
+                            return;
+                        }
+                        BaseBean bean = new Gson().fromJson(
+                                new String(arg2), BaseBean.class);
+                        if (bean.isSuccess()) {
+//														ToastUtil.shortToast(getApplicationContext(),
+//																bean.getMessage());
+                            Log.e("__222222222222___", bean.getMessage());
+
+                        } else {
+//														ToastUtil.shortToast(getApplicationContext(),
+//																bean.getMessage());
+                            Log.e("_33333333333333___", bean.getMessage());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(int arg0, Header[] arg1,
+                                          byte[] arg2, Throwable arg3) {
+                        dialog.dismiss();
+//													ToastUtil.shortToast(getApplicationContext(),
+//															"获取位置失败");
+                        BaseBean bean = new Gson().fromJson(
+                                new String(arg2), BaseBean.class);
+                        Log.e("_4444444444444444__", bean.getMessage());
+                        // TODO Auto-generated method stub
+                        Log.e("ooo1", arg0 + "");
+                    }
+                });
 
     }
 
@@ -654,11 +771,6 @@ public class RechargeActivity extends BaseActivity {
                         }
                     });
         }
-
-    }
-
-    @Override
-    public void initView() {
 
     }
 

@@ -545,6 +545,7 @@ public class NewMainActivity extends SlidingFragmentActivity implements
     };
 
     //定时器
+    @SuppressLint("HandlerLeak")
     Handler handler1 = new Handler() {
         public void handleMessage(Message msg) {
             if (msg.what == 1) {

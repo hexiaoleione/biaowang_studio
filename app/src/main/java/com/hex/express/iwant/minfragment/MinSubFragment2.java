@@ -1,74 +1,59 @@
 package com.hex.express.iwant.minfragment;
 
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import org.apache.http.Header;
+import android.app.AlertDialog.Builder;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.ILoadingLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.hex.express.iwant.R;
 import com.hex.express.iwant.activities.DownDetialTrackActivity;
 import com.hex.express.iwant.activities.DownOwnerDetialsActivity;
 import com.hex.express.iwant.activities.DownWindPayActivity;
-import com.hex.express.iwant.activities.LogCompanyActivity;
-import com.hex.express.iwant.activities.LogistcaInforseActivity;
-import com.hex.express.iwant.activities.ProvCityTownAcrivity;
 import com.hex.express.iwant.adapters.BaseListAdapter;
-import com.hex.express.iwant.adapters.NearbyAdapter;
-import com.hex.express.iwant.adapters.ReceiptCourierAdapter;
-import com.hex.express.iwant.adapters.SendOwnerAdapter;
-import com.hex.express.iwant.adapters.BaseListAdapter.ViewHolder;
 import com.hex.express.iwant.bean.BaseBean;
-import com.hex.express.iwant.bean.DownSpecialBean;
 import com.hex.express.iwant.bean.DownSpecialBean;
 import com.hex.express.iwant.bean.DownSpecialBean.Data;
 import com.hex.express.iwant.constance.MCUrl;
 import com.hex.express.iwant.constance.PreferenceConstants;
 import com.hex.express.iwant.http.AsyncHttpUtils;
 import com.hex.express.iwant.http.UrlMap;
-import com.hex.express.iwant.minfragment.MinSubFragment1.SendOwnerAdapter.OwnerViewHolder;
 import com.hex.express.iwant.newsmain.NewMainActivity;
 import com.hex.express.iwant.utils.AppUtils;
-import com.hex.express.iwant.utils.Logger;
 import com.hex.express.iwant.utils.PreferencesUtils;
 import com.hex.express.iwant.utils.ToastUtil;
 import com.hex.express.iwant.views.LoadingProgressDialog;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.FrameLayout.LayoutParams;
+import org.apache.http.Header;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -784,7 +769,7 @@ class SendOwnerAdapter extends BaseListAdapter {
 					
 				});
 				
-				img_status.setBackgroundResource(R.drawable.newfabu);
+				img_status.setBackgroundResource(R.drawable.zhuangtai1);
 //				delete_order.setVisibility(View.VISIBLE);
 //				tv_status.setText("");
 				if (bean.data.get(position).status.equals("9")) {
@@ -792,84 +777,84 @@ class SendOwnerAdapter extends BaseListAdapter {
 					delete_order.setText("货物违规");
 					tv_status.setText("");
 					delete_order.setClickable(false);
-				}else {
+					img_status.setBackgroundResource(R.drawable.zhuangtai6);
+				} else {
 					delete_order.setClickable(true);
 				}
 				// public String status;//状态 0-预发布成功(未支付) 1-支付成功(已支付)-待接镖 2-待取镖
-				// 3-押镖中 4-取消押镖 5-押镖完成（） 6-删除 7-已评价
+				// 3-押镖中 4-取消押镖 5-押镖完成（） 6-删除 7-已评价   8订单取消(用户)   9货物违规状态(镖师点击货物违规按钮后,用户界面出现是否同意的按钮)
 				if (bean.data.get(position).status.equals("1")) {
 					tv_status.setText("等待接单");
 					tv_status.setTextColor(context.getResources().getColor(R.color.red));
 					text1.setText("收件人:");
 					text_peoplename.setText(bean.data.get(position).personNameTo);
 					delete_order.setVisibility(View.VISIBLE);
-					img_status.setBackgroundResource(R.drawable.newfabu);
+					img_status.setBackgroundResource(R.drawable.zhuangtai1);
 				} else if (bean.data.get(position).status.equals("2")) {
-					tv_status.setText("等待取单");
+					tv_status.setText("等待取件");
 					text1.setText("镖师:");
 					tv_status.setTextColor(context.getResources().getColor(R.color.red));
 					delete_order.setVisibility(View.VISIBLE);
-					img_status.setBackgroundResource(R.drawable.newfabu);
+					img_status.setBackgroundResource(R.drawable.zhuangtai5);
 				} else if (bean.data.get(position).status.equals("3")) {
-					tv_status.setText("送单中");
+					tv_status.setText("送件中");
 					text1.setText("镖师:");
 					tv_status.setTextColor(context.getResources().getColor(R.color.red));
 					delete_order.setVisibility(View.GONE);
-					img_status.setBackgroundResource(R.drawable.fabuqujian);
+					img_status.setBackgroundResource(R.drawable.zhuangtai2);
 				} else if (bean.data.get(position).status.equals("4")) {
 					if (!bean.data.get(position).ifAgree.equals("")) {
 						tv_status.setText("货物违规取消");
 						delete_order.setVisibility(View.GONE);
 						text1.setText("镖师:");
 						tv_status.setTextColor(context.getResources().getColor(R.color.red));
-						img_status.setBackgroundResource(R.drawable.fabuquxiao);
-				    	}else {
-				    		delete_order.setVisibility(View.GONE);
-							tv_status.setText("镖师取消送单");
-							text1.setText("镖师:");
-							tv_status.setTextColor(context.getResources().getColor(R.color.red));
-							img_status.setBackgroundResource(R.drawable.fabuquxiao);
-						}
-					
+						img_status.setBackgroundResource(R.drawable.zhuangtai6);
+					} else {
+						delete_order.setVisibility(View.GONE);
+						tv_status.setText("镖师取消送单");
+						text1.setText("镖师:");
+						tv_status.setTextColor(context.getResources().getColor(R.color.red));
+						img_status.setBackgroundResource(R.drawable.zhuangtai6);
+					}
+
 				} else if (bean.data.get(position).status.equals("5")) {
 					tv_status.setText("  押单完成(待评价）");
 					text1.setText("镖师:");
 					delete_order.setVisibility(View.GONE);
 					tv_status.setTextColor(context.getResources().getColor(R.color.red));
-					img_status.setBackgroundResource(R.drawable.fabuwanchen);
+					img_status.setBackgroundResource(R.drawable.zhuangtai3);
+				} else if (bean.data.get(position).status.equals("6")) {
+					tv_status.setTextColor(context.getResources().getColor(R.color.red));
+					tv_status.setText("过期（已退款）");
+					text1.setText("收件人:");
+					img_status.setBackgroundResource(R.drawable.zhuangtai);
+//					setBackgroundResource(R.drawable.simi);
+					delete_order.setVisibility(View.GONE);
+				}  else if (bean.data.get(position).status.equals("7")) {
+					tv_status.setTextColor(context.getResources().getColor(R.color.orange1));
+					tv_status.setText("已评价");
+					text1.setText("镖师:");
+					delete_order.setVisibility(View.GONE);
+					img_status.setBackgroundResource(R.drawable.zhuangtai3);
 				} else if (bean.data.get(position).status.equals("8")) {
 					tv_status.setTextColor(context.getResources().getColor(R.color.red));
 					tv_status.setText("已取消发布");
 					text1.setText("收件人:");
 					text_peoplename.setText(bean.data.get(position).personNameTo);
 					delete_order.setVisibility(View.GONE);
-					img_status.setBackgroundResource(R.drawable.fabuquxiao);
-				}else if (bean.data.get(position).status.equals("7")) {
-					tv_status.setTextColor(context.getResources().getColor(R.color.orange1));
-					tv_status.setText("已评价");
-					text1.setText("镖师:");
-					delete_order.setVisibility(View.GONE);
-					img_status.setBackgroundResource(R.drawable.fabuwanchen);
-				}else if (bean.data.get(position).status.equals("6")) {
-					tv_status.setTextColor(context.getResources().getColor(R.color.red));
-					tv_status.setText("过期（已退款）");
-					text1.setText("收件人:");
-					img_status.setBackgroundResource(R.drawable.fabuquxiao);
-//					setBackgroundResource(R.drawable.simi);
-					delete_order.setVisibility(View.GONE);
-				}else if (bean.data.get(position).status.equals("10")) {
+					img_status.setBackgroundResource(R.drawable.zhuangtai);
+				} else if (bean.data.get(position).status.equals("10")) {
 					tv_status.setText("  已送达");
 					text1.setText("镖师:");
 					delete_order.setVisibility(View.GONE);
 					tv_status.setTextColor(context.getResources().getColor(R.color.red));
-					img_status.setBackgroundResource(R.drawable.fabuwanchen);
-				}
-				else if (bean.data.get(position).status.equals("11")) {
+					img_status.setBackgroundResource(R.drawable.zhuangtai3);
+				} else if (bean.data.get(position).status.equals("11")) {
 					tv_status.setText("  已退款");
 					text1.setText("镖师:");
 					delete_order.setVisibility(View.GONE);
 					tv_status.setTextColor(context.getResources().getColor(R.color.red));
-					img_status.setBackgroundResource(R.drawable.fabuwanchen);
+					img_status.setBackgroundResource(R.drawable.zhuangtai3);
 				}
 				
 				
