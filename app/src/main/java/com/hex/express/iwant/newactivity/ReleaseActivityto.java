@@ -419,8 +419,8 @@ public class ReleaseActivityto extends BaseActivity {
                 intent.putExtra("fromLongitude", fromLongitude);
                 intent.putExtra("cityCode", fcityCode);
                 intent.putExtra("townCode", ftownCode);
-                intent.putExtra("address", et_address.getText().toString() + et_address_specific.getText().toString());
-                intent.putExtra("addressTo", et_add_address.getText().toString() + et_add_address_specific.getText().toString());
+                intent.putExtra("address", et_address.getText().toString() + " · " + et_address_specific.getText().toString());
+                intent.putExtra("addressTo", et_add_address.getText().toString()  + " · " + et_add_address_specific.getText().toString());
 //				obj.put("addressTo", et_address.getText().toString());
                 intent.putExtra("cityCodeTo", receiver_citycode);
                 intent.putExtra("toLatitude", receiver_latitude);
@@ -459,8 +459,8 @@ public class ReleaseActivityto extends BaseActivity {
                 intent.putExtra("fromLongitude", fromLongitude);
                 intent.putExtra("cityCode", fcityCode);
                 intent.putExtra("townCode", ftownCode);
-                intent.putExtra("address", et_address.getText().toString() + et_address_specific.getText().toString());
-                intent.putExtra("addressTo", et_add_address.getText().toString() + et_add_address_specific.getText().toString());
+                intent.putExtra("address", et_address.getText().toString() + " · " + et_address_specific.getText().toString());
+                intent.putExtra("addressTo", et_add_address.getText().toString() + " · " + et_add_address_specific.getText().toString());
 //				obj.put("addressTo", et_address.getText().toString());
                 intent.putExtra("cityCodeTo", receiver_citycode);
                 intent.putExtra("toLatitude", receiver_latitude);
@@ -498,8 +498,8 @@ public class ReleaseActivityto extends BaseActivity {
                 intent.putExtra("fromLongitude", fromLongitude);
                 intent.putExtra("cityCode", fcityCode);
                 intent.putExtra("townCode", ftownCode);
-                intent.putExtra("address", et_address.getText().toString() + et_address_specific.getText().toString());
-                intent.putExtra("addressTo", et_add_address.getText().toString() + et_add_address_specific.getText().toString());
+                intent.putExtra("address", et_address.getText().toString() + " · " + et_address_specific.getText().toString());
+                intent.putExtra("addressTo", et_add_address.getText().toString() + " · " + et_add_address_specific.getText().toString());
 //				obj.put("addressTo", et_address.getText().toString());
                 intent.putExtra("cityCodeTo", receiver_citycode);
                 intent.putExtra("toLatitude", receiver_latitude);
@@ -538,8 +538,8 @@ public class ReleaseActivityto extends BaseActivity {
                 intent.putExtra("fromLongitude", fromLongitude);
                 intent.putExtra("cityCode", fcityCode);
                 intent.putExtra("townCode", ftownCode);
-                intent.putExtra("address", et_address.getText().toString() + et_address_specific.getText().toString());
-                intent.putExtra("addressTo", et_add_address.getText().toString() + et_add_address_specific.getText().toString());
+                intent.putExtra("address", et_address.getText().toString() + " · " + et_address_specific.getText().toString());
+                intent.putExtra("addressTo", et_add_address.getText().toString() + " · " + et_add_address_specific.getText().toString());
 //				obj.put("addressTo", et_address.getText().toString());
                 intent.putExtra("cityCodeTo", receiver_citycode);
                 intent.putExtra("toLatitude", receiver_latitude);
@@ -598,8 +598,8 @@ public class ReleaseActivityto extends BaseActivity {
                         intent.putExtra("fromLongitude", fromLongitude);
                         intent.putExtra("cityCode", fcityCode);
                         intent.putExtra("townCode", ftownCode);
-                        intent.putExtra("address", et_address.getText().toString() + et_address_specific.getText().toString());
-                        intent.putExtra("addressTo", et_add_address.getText().toString() + et_add_address_specific.getText().toString());
+                        intent.putExtra("address", et_address.getText().toString() + " · " + et_address_specific.getText().toString());
+                        intent.putExtra("addressTo", et_add_address.getText().toString() + " · " + et_add_address_specific.getText().toString());
 //					obj.put("addressTo", et_address.getText().toString());
                         intent.putExtra("cityCodeTo", receiver_citycode);
                         intent.putExtra("toLatitude", receiver_latitude);
@@ -633,8 +633,8 @@ public class ReleaseActivityto extends BaseActivity {
                         intent.putExtra("fromLongitude", fromLongitude);
                         intent.putExtra("cityCode", fcityCode);
                         intent.putExtra("townCode", ftownCode);
-                        intent.putExtra("address", et_address.getText().toString() + et_address_specific.getText().toString());
-                        intent.putExtra("addressTo", et_add_address.getText().toString() + et_add_address_specific.getText().toString());
+                        intent.putExtra("address", et_address.getText().toString() + " · " + et_address_specific.getText().toString());
+                        intent.putExtra("addressTo", et_add_address.getText().toString() + " · " + et_add_address_specific.getText().toString());
 //						obj.put("addressTo", et_address.getText().toString());
                         intent.putExtra("cityCodeTo", receiver_citycode);
                         intent.putExtra("toLatitude", receiver_latitude);
@@ -676,7 +676,7 @@ public class ReleaseActivityto extends BaseActivity {
                         intent.putExtra("fromLongitude", fromLongitude);
                         intent.putExtra("cityCode", fcityCode);
                         intent.putExtra("townCode", ftownCode);
-                        intent.putExtra("address", et_address.getText().toString() + et_address_specific.getText().toString());
+                        intent.putExtra("address", et_address.getText().toString() + " · " + et_address_specific.getText().toString());
                         intent.putExtra("nochangefa", "1");
 
                     } else {
@@ -1750,7 +1750,7 @@ public class ReleaseActivityto extends BaseActivity {
             obj.put("fromLongitude", fromLongitude);
             obj.put("cityCode", fcityCode);
             obj.put("townCode", ftownCode);
-            obj.put("address", et_address.getText().toString() + et_address_specific.getText().toString());
+            obj.put("address", et_address.getText().toString() + " · " + et_address_specific.getText().toString());
 //			}else {
 //				obj.put("fromLatitude", getIntent().getStringExtra("fromLatitude"));
 //				obj.put("fromLongitude", getIntent().getStringExtra("fromLongitude"));
@@ -1760,7 +1760,7 @@ public class ReleaseActivityto extends BaseActivity {
 //			}
 
 
-            obj.put("addressTo", et_add_address.getText().toString() + et_add_address_specific.getText().toString());
+            obj.put("addressTo", et_add_address.getText().toString() + " · " +et_add_address_specific.getText().toString());
 //			obj.put("addressTo", et_address.getText().toString());
             obj.put("cityCodeTo", receiver_citycode);
             obj.put("toLatitude", receiver_latitude);
