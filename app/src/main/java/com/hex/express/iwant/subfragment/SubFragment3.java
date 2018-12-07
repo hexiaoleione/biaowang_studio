@@ -1,84 +1,67 @@
 package com.hex.express.iwant.subfragment;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import org.apache.http.Header;
+import android.app.AlertDialog.Builder;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-import com.baidu.location.LocationClientOption.LocationMode;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.ILoadingLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.hex.express.iwant.R;
-import com.hex.express.iwant.iWantApplication;
 import com.hex.express.iwant.R.id;
 import com.hex.express.iwant.activities.LogCompanyActivity;
-import com.hex.express.iwant.activities.LogistcaInforseActivity;
-import com.hex.express.iwant.activities.NotPermittedActivity;
 import com.hex.express.iwant.activities.ProvCityTownAcrivity;
+import com.hex.express.iwant.activities.QuestionActivity;
 import com.hex.express.iwant.activities.RoleAuthenticationActivity;
 import com.hex.express.iwant.adapters.BaseListAdapter;
-import com.hex.express.iwant.adapters.DownwindEscortAdapter;
-import com.hex.express.iwant.adapters.NearbyAdapter;
-import com.hex.express.iwant.adapters.BaseListAdapter.ViewHolder;
-import com.hex.express.iwant.bean.AreaBean;
+import com.hex.express.iwant.bean.BaseBean;
 import com.hex.express.iwant.bean.CityBean;
 import com.hex.express.iwant.bean.NearbyBean;
 import com.hex.express.iwant.bean.NearbyBean.Data;
 import com.hex.express.iwant.constance.MCUrl;
 import com.hex.express.iwant.constance.PreferenceConstants;
-import com.hex.express.iwant.helper.AreaDboperation;
 import com.hex.express.iwant.helper.CheckDbUtils;
 import com.hex.express.iwant.helper.CityDbOperation;
 import com.hex.express.iwant.helper.DbManager;
 import com.hex.express.iwant.http.AsyncHttpUtils;
 import com.hex.express.iwant.http.UrlMap;
-import com.hex.express.iwant.service.MediaplayService;
-import com.hex.express.iwant.utils.Logger;
+import com.hex.express.iwant.iWantApplication;
 import com.hex.express.iwant.utils.PreferencesUtils;
 import com.hex.express.iwant.utils.ToastUtil;
-import com.hex.express.iwant.views.LoadingProgressDialog;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import android.R.integer;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.FrameLayout.LayoutParams;
-import android.widget.TextView.OnEditorActionListener;
+import org.apache.http.Header;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -421,54 +404,106 @@ public class SubFragment3 extends Fragment {
         });
         listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+            public void onItemClick(AdapterView<?> arg0, View arg1, final int position, long arg3) {
                 // TODO Auto-generated method stub
-                Data data = (Data) adapter.list.get(position - 1);
-                Intent intent = new Intent(getActivity(), LogCompanyActivity.class);
 
                 if (PreferencesUtils.getString(getActivity(), PreferenceConstants.WLID).equals("1") ||
-                        PreferencesUtils.getString(getActivity(), PreferenceConstants.WLID).equals("2") || PreferencesUtils.getString(getActivity(), PreferenceConstants.WLID).equals("4")) {
-//					SubFragment3.this.startActivityForResult(intent, 12);
-                    intent.putExtra("recId", data.recId);//int recId;//镖件主键
-                    intent.putExtra("userId", data.userId);//发件人id
-                    intent.putExtra("cargoName", data.cargoName);//货物名称
-                    intent.putExtra("startPlace", data.startPlace);//物品起发地址
-                    intent.putExtra("entPlace", data.entPlace);//物品到达地址
-                    intent.putExtra("cargoWeight", data.weight);//物品重量
-                    intent.putExtra("cargoVolume", data.cargoVolume);//物品体积
-                    intent.putExtra("takeTime", data.takeTime);//取货时间
-                    intent.putExtra("arriveTime", data.arriveTime);//到达时间
-                    intent.putExtra("takeName", data.takeName);//收货人姓名
-                    intent.putExtra("takeMobile", data.takeMobile);//收货人地址
-                    intent.putExtra("remark", data.remark);//备注
-                    intent.putExtra("billCode", data.billCode);//单号
-                    intent.putExtra("takeCargo", data.takeCargo);//是否要取货
-                    intent.putExtra("sendCargo", data.sendCargo);//是否送取货
-                    intent.putExtra("sendName", data.sendPerson);//发货人
-                    intent.putExtra("sendMobile", data.sendPhone);//发货人手机号
-                    intent.putExtra("sendNumber", data.sendNumber);//发货次数
-                    intent.putExtra("publishTime", data.publishTime);//发布时间
-                    intent.putExtra("transferMoney", data.transferMoney);// 总钱
-                    intent.putExtra("takeCargoMoney", data.takeCargoMoney);// 取货费
-                    intent.putExtra("sendCargoMoney", data.sendCargoMoney);// 送货上门
-                    intent.putExtra("cargoTotal", data.cargoTotal);// 运费
-                    intent.putExtra("ifQuotion", data.ifQuotion);//
-                    intent.putExtra("cargoNumber", data.cargoSize);//
-                    intent.putExtra("appontSpace", data.appontSpace);//
+                        PreferencesUtils.getString(getActivity(), PreferenceConstants.WLID).equals("2") ||
+                        PreferencesUtils.getString(getActivity(), PreferenceConstants.WLID).equals("4")) {
+                    String url = UrlMap.getUrl(MCUrl.getIfHaveAnswerRecord, "answerDriverId",
+                            String.valueOf(PreferencesUtils.getInt(getActivity(), PreferenceConstants.UID)));
+                    Log.e("1111111ss", url);
+                    AsyncHttpUtils.doSimGet(url, new AsyncHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
 
-                    intent.putExtra("matWeight", data.matWeight);//
-                    intent.putExtra("length", data.length);//
-                    intent.putExtra("wide", data.wide);//
-                    intent.putExtra("high", data.high);//
+//                            不需要答题返回结果：{"errCode": 0, "success": true, "message": "已经完成答题!"}
+//                            需要答题返回结果：{"errCode": -1, " success ": true, "message": "请先完成镖师培训题目!"}
+//                            查询失败：{"errCode": -2, " success ": false, "message": "获取失败!"}
+                            BaseBean beans = new Gson().fromJson(new String(arg2), BaseBean.class);
+                            int errCode = beans.getErrCode();
+                            String message = beans.getMessage();
+
+                            if (errCode == -1) {
+                                //todo 处理答题
+                                Builder ad = new Builder(getActivity());
+                                ad.setTitle("温馨提示");
+                                ad.setMessage(message);
+                                ad.setPositiveButton("立即培训", new DialogInterface.OnClickListener() {
+
+                                    @Override
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        Intent intents = new Intent();
+                                        intents.putExtra("url", "url");
+                                        intents.setClass(getActivity(), QuestionActivity.class);
+                                        startActivity(intents);
+                                    }
+                                });
+                                ad.setNegativeButton("暂不培训", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        arg0.dismiss();
+                                    }
+                                });
+                                ad.create().show();
+
+                            } else if (errCode == -2) {
+                                ToastUtil.shortToast(getActivity(), message);
+                            } else if (errCode == 0) {
+
+                                Data data = (Data) adapter.list.get(position - 1);
+
+                                Intent intent = new Intent(getActivity(), LogCompanyActivity.class);
+
+                                //					SubFragment3.this.startActivityForResult(intent, 12);
+                                intent.putExtra("recId", data.recId);//int recId;//镖件主键
+                                intent.putExtra("userId", data.userId);//发件人id
+                                intent.putExtra("cargoName", data.cargoName);//货物名称
+                                intent.putExtra("startPlace", data.startPlace);//物品起发地址
+                                intent.putExtra("entPlace", data.entPlace);//物品到达地址
+                                intent.putExtra("cargoWeight", data.weight);//物品重量
+                                intent.putExtra("cargoVolume", data.cargoVolume);//物品体积
+                                intent.putExtra("takeTime", data.takeTime);//取货时间
+                                intent.putExtra("arriveTime", data.arriveTime);//到达时间
+                                intent.putExtra("takeName", data.takeName);//收货人姓名
+                                intent.putExtra("takeMobile", data.takeMobile);//收货人地址
+                                intent.putExtra("remark", data.remark);//备注
+                                intent.putExtra("billCode", data.billCode);//单号
+                                intent.putExtra("takeCargo", data.takeCargo);//是否要取货
+                                intent.putExtra("sendCargo", data.sendCargo);//是否送取货
+                                intent.putExtra("sendName", data.sendPerson);//发货人
+                                intent.putExtra("sendMobile", data.sendPhone);//发货人手机号
+                                intent.putExtra("sendNumber", data.sendNumber);//发货次数
+                                intent.putExtra("publishTime", data.publishTime);//发布时间
+                                intent.putExtra("transferMoney", data.transferMoney);// 总钱
+                                intent.putExtra("takeCargoMoney", data.takeCargoMoney);// 取货费
+                                intent.putExtra("sendCargoMoney", data.sendCargoMoney);// 送货上门
+                                intent.putExtra("cargoTotal", data.cargoTotal);// 运费
+                                intent.putExtra("ifQuotion", data.ifQuotion);//
+                                intent.putExtra("cargoNumber", data.cargoSize);//
+                                intent.putExtra("appontSpace", data.appontSpace);//
+
+                                intent.putExtra("matWeight", data.matWeight);//
+                                intent.putExtra("length", data.length);//
+                                intent.putExtra("wide", data.wide);//
+                                intent.putExtra("high", data.high);//
 //					intent.putExtra("cargoCost", bean.getData().get(position).cargoCost);// 货物价值
-                    intent.putExtra("luMessage", bean.getData().get(position).luMessage);//
-                    intent.putExtra("status", bean.getData().get(position).status);//
-                    intent.putExtra("yardAddress", bean.getData().get(position).yardAddress);//
-                    intent.putExtra("carType", bean.getData().get(position).carType);//
-                    intent.putExtra("carName", bean.getData().get(position).carName);//
-                    intent.putExtra("tem", bean.getData().get(position).tem);//
+                                intent.putExtra("luMessage", bean.getData().get(position).luMessage);//
+                                intent.putExtra("status", bean.getData().get(position).status);//
+                                intent.putExtra("yardAddress", bean.getData().get(position).yardAddress);//
+                                intent.putExtra("carType", bean.getData().get(position).carType);//
+                                intent.putExtra("carName", bean.getData().get(position).carName);//
+                                intent.putExtra("tem", bean.getData().get(position).tem);//
 //					startActivity(intent);
-                    startActivityForResult(intent, 12);
+                                startActivityForResult(intent, 12);
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                        }
+                    });
+
 
                 } else {
                     Builder ad = new Builder(getActivity());
@@ -504,7 +539,7 @@ public class SubFragment3 extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
-        Log.e("1111122222crequestCode  ", "" + requestCode);
+        Log.e("SubFragment3", "" + requestCode);
 //		ToastUtil.shortToast(getActivity(), "的+"+data.getStringExtra("types"));
         switch (requestCode) {
             case 1:
@@ -656,7 +691,7 @@ public class SubFragment3 extends Fragment {
                     @Override
                     public void onClick(View arg0) {
                         // TODO Auto-generated method stub
-                        Intent intent = new Intent(context, LogCompanyActivity.class);
+                        final Intent intent = new Intent(context, LogCompanyActivity.class);
                         intent.putExtra("recId", bean.getData().get(position).recId);//int recId;//镖件主键
                         intent.putExtra("userId", bean.getData().get(position).userId);//发件人id
                         intent.putExtra("cargoName", bean.getData().get(position).cargoName);//货物名称
@@ -702,11 +737,60 @@ public class SubFragment3 extends Fragment {
 //						startActivityForResult(intent, 10);
                         if (PreferencesUtils.getString(context, PreferenceConstants.WLID).equals("1") ||
                                 PreferencesUtils.getString(context, PreferenceConstants.WLID).equals("2")
-                                ||
-                                PreferencesUtils.getString(context, PreferenceConstants.WLID).equals("4")) {
+                                || PreferencesUtils.getString(context, PreferenceConstants.WLID).equals("4")) {
 //							context.startActivity(intent);
 //							context.startActivity(intent);
-                            startActivityForResult(intent, 12);
+
+                            String url = UrlMap.getUrl(MCUrl.getIfHaveAnswerRecord, "answerDriverId",
+                                    String.valueOf(PreferencesUtils.getInt(getActivity(), PreferenceConstants.UID)));
+                            Log.e("1111111ss", url);
+                            AsyncHttpUtils.doSimGet(url, new AsyncHttpResponseHandler() {
+                                @Override
+                                public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+
+//                            不需要答题返回结果：{"errCode": 0, "success": true, "message": "已经完成答题!"}
+//                            需要答题返回结果：{"errCode": -1, " success ": true, "message": "请先完成镖师培训题目!"}
+//                            查询失败：{"errCode": -2, " success ": false, "message": "获取失败!"}
+                                    BaseBean bean = new Gson().fromJson(new String(arg2), BaseBean.class);
+                                    int errCode = bean.getErrCode();
+                                    String message = bean.getMessage();
+
+                                    if (errCode == -1) {
+                                        //todo 处理答题
+                                        Builder ad = new Builder(context);
+                                        ad.setTitle("温馨提示");
+                                        ad.setMessage(message);
+                                        ad.setPositiveButton("立即培训", new DialogInterface.OnClickListener() {
+
+                                            @Override
+                                            public void onClick(DialogInterface arg0, int arg1) {
+                                                Intent intents = new Intent();
+                                                intents.putExtra("url", "url");
+                                                intents.setClass(getActivity(), QuestionActivity.class);
+                                                startActivity(intents);
+                                            }
+                                        });
+                                        ad.setNegativeButton("暂不培训", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface arg0, int arg1) {
+                                                arg0.dismiss();
+                                            }
+                                        });
+                                        ad.create().show();
+
+                                    } else if (errCode == -2) {
+                                        ToastUtil.shortToast(getActivity(), message);
+                                    } else if (errCode == 0) {
+                                        startActivityForResult(intent, 12);
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                                }
+                            });
+
+
                         } else {
                             Builder ad = new Builder(context);
                             ad.setTitle("温馨提示");

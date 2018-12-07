@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.Header;
+import org.json.JSONObject;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -24,6 +25,7 @@ import com.hex.express.iwant.activities.DownWindTimeLimitedActivity;
 import com.hex.express.iwant.activities.MylogisticakActivity;
 import com.hex.express.iwant.activities.NewMyWalletActivity;
 import com.hex.express.iwant.activities.PostLimitedDownwindTaskActivity;
+import com.hex.express.iwant.activities.QuestionActivity;
 import com.hex.express.iwant.activities.RechargeActivity;
 import com.hex.express.iwant.activities.RoleAuthenticationActivity;
 import com.hex.express.iwant.adapters.DownwindEscortAdapter;
@@ -78,6 +80,8 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.PopupWindow.OnDismissListener;
 import android.widget.TextView.OnEditorActionListener;
+
+import net.sf.json.JSON;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -312,7 +316,7 @@ public class SubFragment1 extends Fragment {
 
             @Override
             public void onClick(View arg0) {
-                getHttpOwnerRequst(false, true, 1, false, sortType,carType);
+                getHttpOwnerRequst(false, true, 1, false, sortType, carType);
             }
         });
     }
@@ -463,157 +467,132 @@ public class SubFragment1 extends Fragment {
                 {
                     showPaywindow();
                 } else {
-                    Intent intent = new Intent(getActivity(), DownEscortDetialsActivity.class);
-//				intent.putExtra("recId", String.valueOf(data.recId));
-//				intent.putExtra("publishTime", data.publishTime);
-//				intent.putExtra("mobile", data.mobile);
-//				intent.putExtra("address", data.address.replace("中国", ""));
-//				intent.putExtra("addressTo", data.addressTo.replace("中国", ""));
-//				intent.putExtra("matName", data.matName);
-////				intent.putExtra("transferMoney", String.valueOf(data.transferMoney));
-//				intent.putExtra("transferMoney", data.transferMoney);
-//				intent.putExtra("matRemark", data.matRemark);
-//				intent.putExtra("matImageUrl", data.matImageUrl);
-//				intent.putExtra("fromLatitude", String.valueOf(data.fromLatitude));
-//				intent.putExtra("fromLongitude", String.valueOf(data.fromLongitude));
-//				intent.putExtra("toLatitude", String.valueOf(data.toLatitude));
-//				intent.putExtra("toLongitude", String.valueOf(data.toLongitude));
-////				intent.putExtra("length", data.length);
-////				intent.putExtra("wide", data.wide);
-////				intent.putExtra("high", data.high);
-//				intent.putExtra("matWeight", data.matWeight);
-//				intent.putExtra("replaceMoney", data.replaceMoney);
-//				intent.putExtra("ifReplaceMoney", data.ifReplaceMoney);
-//				intent.putExtra("ifTackReplace", data.ifTackReplace);
-//				intent.putExtra("limitTime", data.limitTime);
-//		 		Log.e("limitTime", data.limitTime + "");
-                    intent.putExtra("recId", String.valueOf(data.recId));
-                    intent.putExtra("publishTime", data.publishTime);
-                    intent.putExtra("mobile", data.mobile);
-                    intent.putExtra("address", data.address.replace("中国", ""));
-                    intent.putExtra("addressTo", data.addressTo.replace("中国", ""));
-                    intent.putExtra("matName", data.matName);
-//				intent.putExtra("transferMoney", String.valueOf(data.transferMoney));
-                    intent.putExtra("transferMoney", data.transferMoney);
-                    intent.putExtra("matRemark", data.matRemark);
-                    intent.putExtra("matImageUrl", data.matImageUrl);
-                    intent.putExtra("fromLatitude", String.valueOf(data.fromLatitude));
-                    intent.putExtra("fromLongitude", String.valueOf(data.fromLongitude));
-                    intent.putExtra("toLatitude", String.valueOf(data.toLatitude));
-                    intent.putExtra("toLongitude", String.valueOf(data.toLongitude));
-//				intent.putExtra("length", data.length);
-//				intent.putExtra("wide", data.wide);
-//				intent.putExtra("high", data.high);
-                    intent.putExtra("matWeight", data.matWeight);
-                    intent.putExtra("replaceMoney", data.replaceMoney);
-                    intent.putExtra("ifReplaceMoney", data.ifReplaceMoney);
-                    intent.putExtra("ifTackReplace", data.ifTackReplace);
-                    intent.putExtra("limitTime", data.limitTime);
-                    intent.putExtra("carLength", data.carLength);
-                    intent.putExtra("matVolume", data.matVolume);
-                    intent.putExtra("useTime", data.useTime);
-//				startActivity(intent);
-//				if (!data.status.equals("1")) {
-//					ToastUtil.shortToast(getActivity(), "该单已被抢");
-//				}else {
-//					startActivityForResult(intent, 11);
-//				}
-                    if (!data.status.equals("1")) {
-                        ToastUtil.shortToast(getActivity(), "该单已被抢");
-                    } else {
-                        if ("true".equals(data.ifReplaceMoney)) {
-                            Builder ad = new Builder(getActivity());
-                            ad.setTitle("温馨提示");
-                            ad.setMessage("此订单为代收款订单，接单后将冻结您账户相应金额，待收款成功后，冻结金额会支付给发货人。请务必在用户要求时间内到达");
-                            ad.setPositiveButton("确认接单", new DialogInterface.OnClickListener() {
 
-                                @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-//									getHttpMessages(true, false, 1, false);
-                                    addEscortreuslt(data.recId, data);
+                    String url = UrlMap.getUrl(MCUrl.getIfHaveAnswerRecord, "answerDriverId",
+                            String.valueOf(PreferencesUtils.getInt(getActivity(), PreferenceConstants.UID)));
+                    dialog.show();
+                    Log.e("1111111ss", url);
+                    AsyncHttpUtils.doSimGet(url, new AsyncHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                            dialog.dismiss();
+
+//                            不需要答题返回结果：{"errCode": 0, "success": true, "message": "已经完成答题!"}
+//                            需要答题返回结果：{"errCode": -1, " success ": true, "message": "请先完成镖师培训题目!"}
+//                            查询失败：{"errCode": -2, " success ": false, "message": "获取失败!"}
+                            BaseBean bean = new Gson().fromJson(new String(arg2), BaseBean.class);
+                            int errCode = bean.getErrCode();
+                            String message = bean.getMessage();
+
+                            if (errCode == -1) {
+                                //todo 处理答题
+                                Builder ad = new Builder(getActivity());
+                                ad.setTitle("温馨提示");
+                                ad.setMessage(message);
+                                ad.setPositiveButton("立即培训", new DialogInterface.OnClickListener() {
+
+                                    @Override
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        Intent intents = new Intent();
+                                        intents.putExtra("url", "url");
+                                        intents.setClass(getActivity(), QuestionActivity.class);
+                                        startActivity(intents);
+
+                                    }
+                                });
+                                ad.setNegativeButton("暂不培训", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        arg0.dismiss();
+                                    }
+                                });
+                                ad.create().show();
+                            } else if (errCode == -2) {
+                                ToastUtil.shortToast(getActivity(), message);
+                            } else if (errCode == 0) {
+
+                                Intent intent = new Intent(getActivity(), DownEscortDetialsActivity.class);
+                                intent.putExtra("recId", String.valueOf(data.recId));
+                                intent.putExtra("publishTime", data.publishTime);
+                                intent.putExtra("mobile", data.mobile);
+                                intent.putExtra("address", data.address.replace("中国", ""));
+                                intent.putExtra("addressTo", data.addressTo.replace("中国", ""));
+                                intent.putExtra("matName", data.matName);
+                                intent.putExtra("transferMoney", data.transferMoney);
+                                intent.putExtra("matRemark", data.matRemark);
+                                intent.putExtra("matImageUrl", data.matImageUrl);
+                                intent.putExtra("fromLatitude", String.valueOf(data.fromLatitude));
+                                intent.putExtra("fromLongitude", String.valueOf(data.fromLongitude));
+                                intent.putExtra("toLatitude", String.valueOf(data.toLatitude));
+                                intent.putExtra("toLongitude", String.valueOf(data.toLongitude));
+                                intent.putExtra("matWeight", data.matWeight);
+                                intent.putExtra("replaceMoney", data.replaceMoney);
+                                intent.putExtra("ifReplaceMoney", data.ifReplaceMoney);
+                                intent.putExtra("ifTackReplace", data.ifTackReplace);
+                                intent.putExtra("limitTime", data.limitTime);
+                                intent.putExtra("carLength", data.carLength);
+                                intent.putExtra("matVolume", data.matVolume);
+                                intent.putExtra("useTime", data.useTime);
+
+                                if (!data.status.equals("1")) {
+                                    ToastUtil.shortToast(getActivity(), "该单已被抢");
+                                } else {
+                                    if ("true".equals(data.ifReplaceMoney)) {
+                                        Builder ad = new Builder(getActivity());
+                                        ad.setTitle("温馨提示");
+                                        ad.setMessage("此订单为代收款订单，接单后将冻结您账户相应金额，待收款成功后，冻结金额会支付给发货人。请务必在用户要求时间内到达");
+                                        ad.setPositiveButton("确认接单", new DialogInterface.OnClickListener() {
+
+                                            @Override
+                                            public void onClick(DialogInterface arg0, int arg1) {
+                                                addEscortreuslt(data.recId, data);
+                                            }
+                                        });
+                                        ad.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface arg0, int arg1) {
+                                                arg0.dismiss();
+
+                                            }
+                                        });
+                                        ad.create().show();
+                                    } else {
+                                        Builder ad = new Builder(getActivity());
+                                        ad.setTitle("温馨提示");
+                                        ad.setMessage("请务必在用户要求时间内到达");
+
+                                        ad.setPositiveButton("确认接单", new DialogInterface.OnClickListener() {
+
+                                            @Override
+                                            public void onClick(DialogInterface arg0, int arg1) {
+                                                addEscortreuslt(data.recId, data);
+                                            }
+                                        });
+
+                                        ad.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface arg0, int arg1) {
+                                                arg0.dismiss();
+
+                                            }
+                                        });
+                                        ad.create().show();
+                                    }
                                 }
-                            });
-                            ad.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-                                    arg0.dismiss();
-
-                                }
-                            });
-                            ad.create().show();
-                        } else {
-                            Builder ad = new Builder(getActivity());
-                            ad.setTitle("温馨提示");
-                            ad.setMessage("请务必在用户要求时间内到达");
-
-                            ad.setPositiveButton("确认接单", new DialogInterface.OnClickListener() {
-
-                                @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-//									getHttpMessages(true, false, 1, false);
-                                    addEscortreuslt(data.recId, data);
-                                }
-                            });
-
-                            ad.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-                                    arg0.dismiss();
-
-                                }
-                            });
-                            ad.create().show();
+                            }
                         }
-                    }
+
+                        @Override
+                        public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                            dialog.dismiss();
+                        }
+                    });
                 }
             }
 
         });
 
     }
-//		escoreListView.setOnItemLongClickListener(new OnItemLongClickListener() {
-//
-//			@Override
-//			public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-//				Data data = (Data) escoreAdapter.list.get(arg2 - 1);
-//				lin_xuanze.setVisibility(View.GONE);
-//				if (PreferencesUtils.getString(getActivity(), PreferenceConstants.USERTYPE).equals("1"))//如果为普通用户
-//				{
-//					showPaywindow();
-//				}else {
-//				Intent intent = new Intent(getActivity(), DownEscortDetialsActivity.class);
-//				intent.putExtra("recId", String.valueOf(data.recId));
-//				intent.putExtra("publishTime", data.publishTime);
-//				intent.putExtra("mobile", data.mobile);
-//				intent.putExtra("address", data.address.replace("中国", ""));
-//				intent.putExtra("addressTo", data.addressTo.replace("中国", ""));
-//				intent.putExtra("matName", data.matName);
-////				intent.putExtra("transferMoney", String.valueOf(data.transferMoney));
-//				intent.putExtra("transferMoney", data.transferMoney);
-//				intent.putExtra("matRemark", data.matRemark);
-//				intent.putExtra("matImageUrl", data.matImageUrl);
-//				intent.putExtra("fromLatitude", String.valueOf(data.fromLatitude));
-//				intent.putExtra("fromLongitude", String.valueOf(data.fromLongitude));
-//				intent.putExtra("toLatitude", String.valueOf(data.toLatitude));
-//				intent.putExtra("toLongitude", String.valueOf(data.toLongitude));
-////				intent.putExtra("length", data.length);
-////				intent.putExtra("wide", data.wide);
-////				intent.putExtra("high", data.high);
-//				intent.putExtra("matWeight", data.matWeight);
-//				intent.putExtra("replaceMoney", data.replaceMoney);
-//				intent.putExtra("ifReplaceMoney", data.ifReplaceMoney);
-//				intent.putExtra("ifTackReplace", data.ifTackReplace);
-//				intent.putExtra("limitTime", data.limitTime);
-//		 		Log.e("limitTime", data.limitTime + "");
-////				startActivity(intent);
-//		 		startActivityForResult(intent, 11);
-//			}
-//				return true;
-//				}
-//			
-//		});
-
-//	}
 
     /**
      * 显示提示信息

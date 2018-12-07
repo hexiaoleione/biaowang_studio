@@ -1,15 +1,14 @@
 package com.hex.express.iwant.activities;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
-import com.hex.express.iwant.R;
-import com.hex.express.iwant.views.TitleBarView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
+
+import com.hex.express.iwant.R;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class ComActivity extends BaseActivity {
 	@Bind(R.id.webview) WebView webview;

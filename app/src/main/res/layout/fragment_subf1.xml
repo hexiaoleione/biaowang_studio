@@ -2,172 +2,178 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-       android:background="@color/graywhite"
-    android:orientation="vertical" >
-     <FrameLayout
+    android:background="@color/graywhite"
+    android:orientation="vertical">
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
-        
-    <RelativeLayout
-          android:layout_width="match_parent"
-         android:layout_height="match_parent"
-        android:background="@color/graywhite"
-          >
-    <RelativeLayout
-          android:layout_width="match_parent"
-         android:layout_height="match_parent"
-        android:background="@color/graywhite"
-          android:orientation="vertical" >
-    <RelativeLayout 
-        android:id="@+id/ss"
-      android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:paddingBottom="5dp"
-        android:background="@color/white"
-    >
+        android:orientation="vertical">
 
-     <TextView
-         android:id="@+id/subxuan"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignParentRight="true"
-         android:layout_alignParentTop="true"
-         android:layout_marginRight="15dp"
-         android:textColor="@color/black"
-                 android:visibility="gone"
-         android:text="筛选车型>>" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/graywhite">
 
-     <EditText
-         android:id="@+id/edi_sou"
-         android:layout_width="wrap_content"
-         android:layout_height="30dp"
-         android:layout_centerHorizontal="true"
-         android:layout_centerVertical="true"
-         android:background="@drawable/edit_new_bg"
-         android:hint="     搜索目的地"
-         android:paddingLeft="3dp"
-            android:layout_marginTop="5dp"
-              android:imeOptions="actionDone"
-            android:lines="1"
-            android:singleLine="true"
-           android:textSize="13sp"
-         android:drawableLeft="@drawable/circle_icon_box_04"
-         android:ems="11" />
-
-    </RelativeLayout>
-    
-
-   <LinearLayout
-                android:id="@+id/owner_content"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/ss"
-                android:background="@color/white"
-                android:orientation="vertical" >
+                android:background="@color/graywhite"
+                android:orientation="vertical">
 
-                <include layout="@layout/null_message" />
+                <RelativeLayout
+                    android:id="@+id/ss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="10dp">
 
-                <include layout="@layout/view_load_failed" />
+                    <TextView
+                        android:id="@+id/subxuan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="15dp"
+                        android:text="筛选车型>>"
+                        android:textColor="@color/black"
+                        android:visibility="gone" />
 
-                <com.handmark.pulltorefresh.library.PullToRefreshListView
-                    android:id="@+id/escort_listview"
+                    <EditText
+                        android:id="@+id/edi_sou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_new_bg"
+                        android:drawableLeft="@drawable/circle_icon_box_04"
+                        android:ems="11"
+                        android:hint="     搜索目的地"
+                        android:imeOptions="actionDone"
+                        android:lines="1"
+                        android:paddingLeft="3dp"
+                        android:singleLine="true"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/owner_content"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:cacheColorHint="#00000000"
-                    android:divider="@null"
-                    android:dividerHeight="10dp"
-                    android:listSelector="#00000000"
-                    android:scrollbars="none" >
-                </com.handmark.pulltorefresh.library.PullToRefreshListView>
+                    android:layout_below="@+id/ss"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/null_message" />
+
+                    <include layout="@layout/view_load_failed" />
+
+                    <com.handmark.pulltorefresh.library.PullToRefreshListView
+                        android:id="@+id/escort_listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:cacheColorHint="#00000000"
+                        android:divider="@null"
+                        android:dividerHeight="10dp"
+                        android:listSelector="#00000000"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_xuanze"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/text_radius_yuan"
+                android:orientation="vertical"
+                android:padding="1dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/my_xiaomian"
+                    style="@style/btn_orgener_white_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="小型面包"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/grayview1" />
+
+                <TextView
+                    android:id="@+id/my_zhongmian"
+                    style="@style/btn_orgener_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="中型面包"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/grayview1" />
+
+                <TextView
+                    android:id="@+id/my_xiaohuo"
+                    style="@style/btn_orgener_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="小型货车"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/grayview1" />
+
+                <TextView
+                    android:id="@+id/my_zhonghuo"
+                    style="@style/btn_orgener_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:text="中型货车"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/grayview1" />
+
+                <TextView
+                    android:id="@+id/my_other"
+                    style="@style/btn_orgener_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:text="其他"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
             </LinearLayout>
-</RelativeLayout>
-<LinearLayout
-        android:id="@+id/lin_xuanze"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-         android:layout_alignParentRight="true"
-         android:layout_marginRight="10dp"
-       android:layout_marginTop="35dp"
-        android:background="@drawable/text_radius_yuan"
-        android:orientation="vertical"
-        android:padding="1dp"
-        android:visibility="gone"
-         >
-
-        <TextView
-            android:id="@+id/my_xiaomian"
-            style="@style/btn_orgener_white_top"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="小型面包"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="5dp"
-            android:background="@color/grayview1" />
-
-        <TextView
-            android:id="@+id/my_zhongmian"
-            style="@style/btn_orgener_white"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="中型面包"
-          android:textColor="@color/black"
-            android:textSize="14sp" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="5dp"
-            android:background="@color/grayview1" />
-         <TextView
-            android:id="@+id/my_xiaohuo"
-            style="@style/btn_orgener_white"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="小型货车"
-           android:textColor="@color/black"
-            android:textSize="14sp" />
-         <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="5dp"
-            android:background="@color/grayview1" />
-          <TextView
-            android:id="@+id/my_zhonghuo"
-            style="@style/btn_orgener_white"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="中型货车"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-          <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="5dp"
-            android:background="@color/grayview1" />
-           <TextView
-            android:id="@+id/my_other"
-            style="@style/btn_orgener_white"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:gravity="center"
-             android:layout_marginLeft="5dp"
-             android:layout_marginRight="5dp"
-            android:text="其他"
-           android:textColor="@color/black"
-            android:textSize="14sp" />
-    </LinearLayout>
-    </RelativeLayout>
-</FrameLayout>
+        </RelativeLayout>
+    </FrameLayout>
 </LinearLayout>

@@ -575,6 +575,7 @@
         <activity android:name="com.hex.express.iwant.activities.FunctionActivity"/>
         <activity android:name="com.hex.express.iwant.activities.JudgeSmsActivity"/>
         <activity android:name="com.hex.express.iwant.activities.ComActivity"/>
+        <activity android:name="com.hex.express.iwant.activities.QuestionActivity"/>
         <activity android:name="com.hex.express.iwant.activities.ServiceActivity"/>
         <activity android:name="com.hex.express.iwant.activities.PublicDetailShowActivity"/>
         <!-- 我的接单 -->

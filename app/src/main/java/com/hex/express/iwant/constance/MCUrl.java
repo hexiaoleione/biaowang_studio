@@ -268,5 +268,10 @@ public class MCUrl {
     public static final String getSmscode = BASE + "/users/getSmscode";// 新的短信验证
     public static final String upDatePaypassword = BASE + "/users/upDatePaypassword";// 新的短信验证
 
+    public static final String getIfHaveAnswerRecord = BASE + "/system/question/getIfHaveAnswerRecord";// 查询镖师接单时是否需要先完成答题培训
+    public static final String saveAnswerResult = BASE + "/system/question/saveAnswerResult";// 答完培训题目后保存接口地址   （post请求）
+    public static final String getLatesAddress = BASE + "/system/question/getLatesAddress";// 获取用户最近一次发单地址   （post请求）
+
+
 
 }

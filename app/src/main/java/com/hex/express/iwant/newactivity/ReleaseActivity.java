@@ -34,6 +34,7 @@ import com.hex.express.iwant.bean.AreaBean;
 import com.hex.express.iwant.bean.Beancar;
 import com.hex.express.iwant.bean.CityBean;
 import com.hex.express.iwant.bean.DownSpecialBean;
+import com.hex.express.iwant.bean.LatesAddressBean;
 import com.hex.express.iwant.bean.RegisterBean;
 import com.hex.express.iwant.bean.ReleaseBean;
 import com.hex.express.iwant.bean.ShopBean;
@@ -247,6 +248,7 @@ public class ReleaseActivity extends BaseActivity {
         setOnClick();
         getrequstBalance();
         weather();
+        getLatesAddress();
 //		 obj.put("fromLatitude", ""+getIntent().getDoubleExtra("fromLatitude", 0.0));
 //			obj.put("fromLongitude", getIntent().getDoubleExtra("fromLongitude", 0.0));
 //			obj.put("cityCode", getIntent().getStringExtra("cityCode"));
@@ -403,6 +405,7 @@ public class ReleaseActivity extends BaseActivity {
             @Override
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
+                et_address_specific.setText("");
                 startActivityForResult(new Intent(ReleaseActivity.this, LocationDemo.class), 15);
                 submit.setVisibility(View.VISIBLE);
                 sa.setVisibility(View.GONE);
@@ -1905,6 +1908,34 @@ public class ReleaseActivity extends BaseActivity {
                     }
                 });
 
+    }
+
+    private void getLatesAddress(){
+        String url = UrlMap.getUrl(MCUrl.getLatesAddress, "userId",
+                String.valueOf(PreferencesUtils.getInt(getApplicationContext(), PreferenceConstants.UID)));
+        dialog.show();
+        Log.e("1111111ss", url);
+        AsyncHttpUtils.doSimGet(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                dialog.dismiss();
+                LatesAddressBean bean = new Gson().fromJson(new String(arg2), LatesAddressBean.class);
+                int errCode = bean.getErrCode();
+                if (errCode == 0 && bean.getData().size() >0) {
+                    fromLatitude = bean.data.get(0).fromLatitude;
+                    fromLongitude = bean.data.get(0).fromLongitude;
+                    fcityCode = bean.data.get(0).cityCode;
+                    ftownCode = bean.data.get(0).cityName;
+                    et_address.setText(bean.data.get(0).locationAddress);
+                    et_address_specific.setText(bean.data.get(0).address);
+                }
+            }
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                dialog.dismiss();
+            }
+        });
     }
 
     public int sunmit(int a, int b) {
