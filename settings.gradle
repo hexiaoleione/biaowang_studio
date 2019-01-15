@@ -1,1 +1,1 @@
-include ':app', ':Library', ':pulltorefreshlibrary'
+include ':app', ':Library', ':pulltorefreshlibrary', 'ocr_ui'

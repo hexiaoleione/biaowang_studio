@@ -243,7 +243,7 @@ public class ReleaseActivityto extends BaseActivity {
         initView();
         initData();
         setOnClick();
-        getrequstBalance();
+//        getrequstBalance();
         getLatesAddress();
 //		 obj.put("fromLatitude", ""+getIntent().getDoubleExtra("fromLatitude", 0.0));
 //			obj.put("fromLongitude", getIntent().getDoubleExtra("fromLongitude", 0.0));

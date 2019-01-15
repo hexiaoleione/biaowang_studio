@@ -705,6 +705,10 @@
             android:name="com.hex.express.iwant.newmain.MainTab"
             android:launchMode="singleTask"
             android:windowSoftInputMode="stateHidden|adjustPan"/>
+        <activity android:name="com.baidu.ocr.ui.camera.CameraActivity"
+            android:configChanges="screenSize|orientation"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            tools:targetApi="honeycomb" />
 
         <!-- 环信相关 -->
 

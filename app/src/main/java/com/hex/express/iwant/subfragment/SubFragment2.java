@@ -1,6 +1,7 @@
 package com.hex.express.iwant.subfragment;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -137,6 +138,7 @@ public class SubFragment2 extends Fragment {
     private double myLatitude;// 纬度
     private double myLongitude;// 经度
     private LocationClient client;
+    private Data tempData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -632,6 +634,7 @@ public class SubFragment2 extends Fragment {
         window02.setFocusable(true);
         // 实例化一个ColorDrawable颜色为半透明
         // ColorDrawable dw = new ColorDrawable(R.color.transparent01);
+        @SuppressLint("ResourceAsColor")
         ColorDrawable dw = new ColorDrawable(android.R.color.white);
         window02.setBackgroundDrawable(dw);
         window02.setOutsideTouchable(false);// 这是点击外部不消失
@@ -678,7 +681,12 @@ public class SubFragment2 extends Fragment {
         // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
         Logger.e("11111s", "requestCode" + requestCode + "resultCode" + resultCode + "data" + data);
-        switch (requestCode) {
+        switch (resultCode) {
+            case 4:
+                if (tempData != null){
+                    addEscortreuslt(tempData.recId,tempData);
+                }
+                break;
             case 11:
                 if (resultCode == -1) {
                     if (data != null) {
@@ -700,6 +708,8 @@ public class SubFragment2 extends Fragment {
      * 镖师接镖
      */
     private void addEscortreuslt(int reid, final Data data) {
+
+        tempData = data;
         Log.e("url",
                 UrlMap.getTwo(MCUrl.DOWNROBORDER, "userId",
                         String.valueOf(PreferencesUtils.getInt(getActivity(), PreferenceConstants.UID)),
@@ -863,7 +873,7 @@ public class SubFragment2 extends Fragment {
                                 public void onClick(DialogInterface arg0, int arg1) {
 //									getHttpMessages(true, false, 1, false);
                                     Intent intent = new Intent();
-                                    startActivity(intent.setClass(getActivity(), InsuranceActivity.class));
+                                    startActivityForResult(intent.setClass(getActivity(), InsuranceActivity.class),4);
                                 }
                             });
                             ad.setNegativeButton("取消", new DialogInterface.OnClickListener() {

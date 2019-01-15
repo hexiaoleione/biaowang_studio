@@ -268,6 +268,9 @@
 -keep class com.viewpagerindicator.* {*;}
 # 讯飞
 -keep class com.iflytek.**{*;}
+#baidu.ocr
+-keep class com.baidu.ocr.sdk.**{*;}
+-dontwarn com.baidu.ocr.**
 
 #sharesdk
 -keep class cn.sharesdk.**{*;}

@@ -8,7 +8,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 97
-        versionName "3.44"
+        versionName "3.45"
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
         multiDexEnabled true
         ndk {
@@ -51,12 +51,20 @@ android {
     }
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':Library')
     implementation project(':pulltorefreshlibrary')
-    compile 'com.tencent.bugly:crashreport:latest.release'
-    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    implementation project(path: ':ocr_ui')
+    //noinspection GradleDependency
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //noinspection GradleDependency
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
 }

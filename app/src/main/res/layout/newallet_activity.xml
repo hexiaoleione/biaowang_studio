@@ -351,6 +351,7 @@
    android:layout_alignBottom="@+id/view3"
         android:layout_marginBottom="3dp"
          android:gravity="center"
+        android:visibility="gone"
         android:orientation="vertical" >
 
         <ImageView

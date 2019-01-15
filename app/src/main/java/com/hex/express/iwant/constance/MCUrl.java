@@ -3,10 +3,7 @@ package com.hex.express.iwant.constance;
 
 public class MCUrl {
     //	http://123.57.239.64:8080/appservice-1.0-SNAPSHOT/webapi
-//	public static final String BASE ="http://192.168.1.120:8080/appservice/webapi";//阿峰的本地服务器
-//	public static final String BASE ="http://192.168.0.188:8080/appservice/webapi";//霍志强服务器 
-//	public static final String BASE ="http://192.168.0.104:8080/appservice/webapi";//周爽服务器
-//	public static final String BASE ="http://192.168.2.227:8080/appservice/webapi";//张旭服务器
+//	public static final String BASE ="http://192.168.1.102:8080/appservice/webapi";//本地服务器
 //    public static final String BASE = "http://116.90.87.32:8888/appservice-1.0-SNAPSHOT/webapi";//增宝服务器
 	public static final String BASE ="http://www.efamax.com:8888/appservice-1.0-SNAPSHOT/webapi";//线上 服务器
 //	public static final String BASE ="http://beta.efamax.com:8888/appservice-1.0-SNAPSHOT/webapi";//beta 服务器
@@ -92,7 +89,8 @@ public class MCUrl {
     public static final String DOWNWINDTASKLIST = BASE + "/downwind/task/downwindTask";// 附近的用户发布的镖件列表
     public static final String FindDOWNWINDTASKLIST = BASE + "/downwind/task/driverFindDownwindTask";// 附近的用户发布的镖件列表
 
-    public static final String DOWNROBORDER = BASE + "/downwind/task/robOrder";// 镖师抢单接口;
+//    public static final String DOWNROBORDER = BASE + "/downwind/task/robOrder";// 镖师抢单接口;
+    public static final String DOWNROBORDER = BASE + "/downwind/task/robOrderNew";// 镖师抢单接口;
     public static final String DOWNGETTASK = BASE + "/downwind/task/getTask";// 货主发布总单数接口;
     public static final String DRIVERTASKROUTELIST = BASE + "/driver/downwindTaskRouteList";// 镖师接的总单数接口;
     public static final String downwindTaskRouteListType = BASE + "/driver/downwindTaskRouteListType";   //镖师查询所有已接的顺风
@@ -271,6 +269,7 @@ public class MCUrl {
     public static final String getIfHaveAnswerRecord = BASE + "/system/question/getIfHaveAnswerRecord";// 查询镖师接单时是否需要先完成答题培训
     public static final String saveAnswerResult = BASE + "/system/question/saveAnswerResult";// 答完培训题目后保存接口地址   （post请求）
     public static final String getLatesAddress = BASE + "/system/question/getLatesAddress";// 获取用户最近一次发单地址
+    public static final String updateIfHaveBuyInsure = BASE + "system/question/updateIfHaveBuyInsure";// 是否购买意外险
 
 
 

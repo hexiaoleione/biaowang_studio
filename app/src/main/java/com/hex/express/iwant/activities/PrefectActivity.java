@@ -1,6 +1,7 @@
 package com.hex.express.iwant.activities;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,9 +24,11 @@ import android.os.Environment;
 import android.os.Message;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -42,15 +45,28 @@ import android.widget.PopupWindow.OnDismissListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.ocr.sdk.OCR;
+import com.baidu.ocr.sdk.OnResultListener;
+import com.baidu.ocr.sdk.exception.OCRError;
+import com.baidu.ocr.sdk.model.AccessToken;
+import com.baidu.ocr.sdk.model.BankCardParams;
+import com.baidu.ocr.sdk.model.BankCardResult;
+import com.baidu.ocr.sdk.model.IDCardParams;
+import com.baidu.ocr.sdk.model.IDCardResult;
+import com.baidu.ocr.ui.camera.CameraActivity;
+import com.baidu.ocr.ui.camera.CameraNativeHelper;
+import com.baidu.ocr.ui.camera.CameraView;
 import com.google.gson.Gson;
 import com.hex.express.iwant.R;
 import com.hex.express.iwant.bean.IconBean;
+import com.hex.express.iwant.bean.OrcModel;
 import com.hex.express.iwant.bean.RegisterBean;
 import com.hex.express.iwant.constance.MCUrl;
 import com.hex.express.iwant.constance.MsgConstants;
 import com.hex.express.iwant.constance.PreferenceConstants;
 import com.hex.express.iwant.http.AsyncHttpUtils;
 import com.hex.express.iwant.newsmain.NewMainActivity;
+import com.hex.express.iwant.utils.FileUtil;
 import com.hex.express.iwant.utils.IDUtils;
 import com.hex.express.iwant.utils.PreferencesUtils;
 import com.hex.express.iwant.utils.ToastUtil;
@@ -93,8 +109,8 @@ public class PrefectActivity extends BaseActivity {
     private Bitmap head;
     private String fileName = path + "head.png";
     private static String path = "/sdcard/myHead/";// sd路径
-    private Map map = new HashMap<String, String>();
-    private Map map_file = new HashMap<String, File>();
+    private Map<String,String> map = new HashMap<>();
+    private Map<String, File> map_file = new HashMap<>();
     private String result;
     private String icon = "";
     private boolean flag;
@@ -135,6 +151,8 @@ public class PrefectActivity extends BaseActivity {
     @Bind(R.id.pre_tishi)
     TextView pre_tishi;
     String type = "0";
+    private static final int REQUEST_CODE_CAMERA = 102;
+    private String imgBase46 = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,6 +163,7 @@ public class PrefectActivity extends BaseActivity {
         initView();
         initData();
         setOnClick();
+        initAccessTokenWithAkSk();
     }
 
     private Options getBitmapOption(int inSampleSize) {
@@ -155,6 +174,209 @@ public class PrefectActivity extends BaseActivity {
         return options;
     }
 
+
+    private void initAccessTokenWithAkSk() {
+        OCR.getInstance(this).initAccessTokenWithAkSk(
+                new OnResultListener<AccessToken>() {
+                    @Override
+                    public void onResult(AccessToken result) {
+
+                        // 本地自动识别需要初始化
+                        initLicense();
+
+                        Log.d("MainActivity", "onResult: " + result.toString());
+//                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "初始化认证成功", Toast.LENGTH_SHORT).show());
+                    }
+
+                    @Override
+                    public void onError(OCRError error) {
+                        error.printStackTrace();
+                        Log.e("MainActivity", "onError: " + error.getMessage());
+//                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "初始化认证失败,请检查 key", Toast.LENGTH_SHORT).show());
+                    }
+                }, getApplicationContext(),
+                "Ot8BzGBPOrAGSBnZKVwef41G",
+                "MKK2Ce9uzy2GGBmurNzx4Yp8CrBNHuAx");
+    }
+
+    private void initLicense() {
+        CameraNativeHelper.init(this, OCR.getInstance(this).getLicense(),
+                (errorCode, e) -> {
+                    final String msg;
+                    switch (errorCode) {
+                        case CameraView.NATIVE_SOLOAD_FAIL:
+                            msg = "加载so失败，请确保apk中存在ui部分的so";
+                            break;
+                        case CameraView.NATIVE_AUTH_FAIL:
+                            msg = "授权本地质量控制token获取失败";
+                            break;
+                        case CameraView.NATIVE_INIT_FAIL:
+                            msg = "本地质量控制";
+                            break;
+                        default:
+                            msg = String.valueOf(errorCode);
+                    }
+//                    runOnUiThread(() -> Toast.makeText(MainActivity.this,
+//                            "本地质量控制初始化错误，错误原因： " + msg, Toast.LENGTH_SHORT).show());
+                });
+    }
+
+    // 身份证正面
+    private void scanIdCardFront() {
+        Intent intent = new Intent(PrefectActivity.this, CameraActivity.class);
+        intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
+                FileUtil.getSaveFile(getApplication()).getAbsolutePath());
+        intent.putExtra(CameraActivity.KEY_NATIVE_ENABLE, true);
+        // KEY_NATIVE_MANUAL设置了之后CameraActivity中不再自动初始化和释放模型
+        // 请手动使用CameraNativeHelper初始化和释放模型
+        // 推荐这样做，可以避免一些activity切换导致的不必要的异常
+        intent.putExtra(CameraActivity.KEY_NATIVE_MANUAL, true);
+        intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
+        startActivityForResult(intent, REQUEST_CODE_CAMERA);
+    }
+
+    /**
+     * 解析身份证图片
+     *
+     * @param idCardSide 身份证正反面
+     * @param filePath   图片路径
+     */
+    private void recIDCard(String idCardSide, String filePath) {
+        IDCardParams param = new IDCardParams();
+        param.setImageFile(new File(filePath));
+        // 设置身份证正反面
+        param.setIdCardSide(idCardSide);
+        // 设置方向检测
+        param.setDetectDirection(true);
+        // 设置图像参数压缩质量0-100, 越大图像质量越好但是请求时间越长。 不设置则默认值为20
+        param.setImageQuality(40);
+        OCR.getInstance(this).recognizeIDCard(param, new OnResultListener<IDCardResult>() {
+            @Override
+            public void onResult(IDCardResult result) {
+                if (result != null) {
+                    OrcModel orcModel = new OrcModel("00");
+                    orcModel.setImageData(filePath);
+                    if (IDCardParams.ID_CARD_SIDE_FRONT.equals(idCardSide)) {
+                        orcModel.setType(1);
+                        String name = "";
+                        String sex = "";
+                        String nation = "";
+                        String num = "";
+                        String address = "";
+                        if (result.getName() != null) {
+                            name = result.getName().toString();
+                            orcModel.setName(name);
+                        }
+                        if (result.getGender() != null) {
+                            sex = result.getGender().toString();
+                            orcModel.setGender(sex);
+                        }
+                        if (result.getEthnic() != null) {
+                            nation = result.getEthnic().toString();
+                            orcModel.setNation(nation);
+                        }
+                        if (result.getIdNumber() != null) {
+                            num = result.getIdNumber().toString();
+                            orcModel.setCode(num);
+                        }
+                        if (result.getAddress() != null) {
+                            address = result.getAddress().toString();
+                            orcModel.setAddress(address);
+                        }
+
+//                        param.getImageFile().getAbsolutePath()
+//                        BitmapFactory.Options options = new BitmapFactory.Options();
+//                        options.inJustDecodeBounds = true;
+                        head = BitmapFactory.decodeFile(filePath);
+                        /**
+                         * 上传服务器代码 //TODO 实现头衔上传
+                         */
+                        setPicToView(head);
+                        map.put("userId", PreferencesUtils.getInt(getApplicationContext(), PreferenceConstants.UID) + "");
+                        map.put("fileName", "蒙娜丽莎");
+                        map_file.put("file", new File(fileName));
+                        sendEmptyBackgroundMessage(MsgConstants.MSG_01);
+                        img_headportrait.setBackgroundDrawable(null);// 将原背景图片置空，避免与新图片叠加显示，尤其是在上面图层圆角或者有透明度时；
+                        img_headportrait.setImageBitmap(head);
+
+                        et_name.setText(orcModel.getName());
+                        et_card.setText(orcModel.getCode());
+
+                        Log.i("PrefectActivity","姓名: " + name + "\n" +
+                                "性别: " + sex + "\n" +
+                                "民族: " + nation + "\n" +
+                                "身份证号码: " + num + "\n" +
+                                "住址: " + address + "\n");
+                    } else if (IDCardParams.ID_CARD_SIDE_BACK.equals(idCardSide)) {
+                        orcModel.setType(2);
+                        if (null != result.getIssueAuthority()) {
+                            orcModel.setIssue(result.getIssueAuthority() + "");
+                        }
+                        if (null != result.getSignDate() && null != result.getExpiryDate()) {
+                            orcModel.setValid(result.getSignDate() + "-" + result.getExpiryDate());
+                        }
+                        Log.i("PrefectActivity","签发机关: " + result.getIssueAuthority() + "\n" +
+                                "签发日期：" + result.getSignDate() + "\n" +
+                                "有效期：" + result.getExpiryDate());
+                    }
+                    Log.i("PrefectActivity","orcModel = " + orcModel.toString());
+
+                }
+            }
+
+            @Override
+            public void onError(OCRError error) {
+                Log.d("PrefectActivity", "onError: " + error.getMessage());
+            }
+        });
+    }
+    /**
+     * 解析银行卡
+     *
+     * @param filePath 图片路径
+     */
+    private void recCreditCard(String filePath) {
+        // 银行卡识别参数设置
+        BankCardParams param = new BankCardParams();
+        param.setImageFile(new File(filePath));
+
+        // 调用银行卡识别服务
+        OCR.getInstance(this).recognizeBankCard(param, new OnResultListener<BankCardResult>() {
+            @Override
+            public void onResult(BankCardResult result) {
+                if (result != null) {
+                    OrcModel orcModel = new OrcModel("00");
+                    String type = "";
+                    if (result.getBankCardType() == BankCardResult.BankCardType.Credit) {
+                        type = "信用卡";
+                    } else if (result.getBankCardType() == BankCardResult.BankCardType.Debit) {
+                        type = "借记卡";
+                    } else {
+                        type = "未识别";
+                    }
+                    orcModel.setBankType(type);
+                    if (null != result.getBankCardNumber()) {
+                        orcModel.setBankNumber(result.getBankCardNumber());
+                    }
+                    if (null != result.getBankName()) {
+                        orcModel.setBankName(result.getBankName());
+                    }
+                    if (null != imgBase46) {
+                        orcModel.setImageData(imgBase46);
+                    }
+                    Log.i("PrefectActivity","银行卡号: " + (!TextUtils.isEmpty(result.getBankCardNumber()) ? result.getBankCardNumber() : "") + "\n" +
+                            "银行名称: " + (!TextUtils.isEmpty(result.getBankName()) ? result.getBankName() : "") + "\n" +
+                            "银行类型: " + type + "\n");
+                    Log.i("PrefectActivity","orcModel = " + orcModel.toString());
+                }
+            }
+
+            @Override
+            public void onError(OCRError error) {
+                Log.d("MainActivity", "onError: " + error.getMessage());
+            }
+        });
+    }
     // 点击事件;
     @Override
     public void onWeightClick(View v) {
@@ -163,7 +385,7 @@ public class PrefectActivity extends BaseActivity {
 //			addCourierPost(MCUrl.CHECKADDCHECKINFO);
 //			break;
             case R.id.img_headportrait:// 上传头像
-                showPopwindow();// 显示pupwindown
+                scanIdCardFront();// 显示pupwindown
                 break;
         }
     }
@@ -340,7 +562,8 @@ public class PrefectActivity extends BaseActivity {
                 iv_xiaomian4.setBackgroundResource(R.drawable.xuanzhongoff);
                 iv_xiaomian5.setBackgroundResource(R.drawable.xuanzhongoff);
                 iv_xiaomian6.setBackgroundResource(R.drawable.xuanzhongon);
-                pre_tishi.setText("上传身份证或者驾照");
+//                pre_tishi.setText("上传身份证或者驾照");
+                pre_tishi.setText("上传身份证");
 
                 break;
             default:
@@ -393,10 +616,7 @@ public class PrefectActivity extends BaseActivity {
                     } else {
                         addCourierPost(MCUrl.CHECKADDCHECKINFO);
                     }
-
                 }
-
-
             }
         });
 
@@ -419,6 +639,7 @@ public class PrefectActivity extends BaseActivity {
         // 设置popWindow弹出窗体可点击，这句话必须添加，并且是true
         window.setFocusable(true);
         // 实例化一个ColorDrawable颜色为半透明
+        @SuppressLint("ResourceAsColor")
         ColorDrawable dw = new ColorDrawable(R.color.transparent);
         window.setBackgroundDrawable(dw);
         window.setOutsideTouchable(false);// 这是点击外部不消失
@@ -592,6 +813,8 @@ public class PrefectActivity extends BaseActivity {
         }
         return result;
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -644,13 +867,34 @@ public class PrefectActivity extends BaseActivity {
                     }
                 }
                 break;
+            case REQUEST_CODE_CAMERA:
+                if (data != null) {
+                    String contentType = data.getStringExtra(CameraActivity.KEY_CONTENT_TYPE);
+                    String filePath = FileUtil.getSaveFile(getApplicationContext()).getAbsolutePath();
+                    Log.d("PrefectActivity","############################## filepath :##############################" + filePath);
+                    if (!TextUtils.isEmpty(contentType)) {
+//                        try {
+//                            imgBase46 = FileUtil.encodeBase64File(filePath);
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                            Log.d("PrefectActivity","文件转base64失败");
+//                        }
+                        if (CameraActivity.CONTENT_TYPE_ID_CARD_FRONT.equals(contentType)) {
+                            recIDCard(IDCardParams.ID_CARD_SIDE_FRONT, filePath);
+                        } else if (CameraActivity.CONTENT_TYPE_ID_CARD_BACK.equals(contentType)) {
+                            recIDCard(IDCardParams.ID_CARD_SIDE_BACK, filePath);
+                        } else if (CameraActivity.CONTENT_TYPE_BANK_CARD.equals(contentType)) {
+                            recCreditCard(filePath);
+                        }
+                    }
+                }
+                break;
             default:
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    ;
 
     @Override
     public void handleBackgroundMessage(Message msg) {
@@ -726,7 +970,7 @@ public class PrefectActivity extends BaseActivity {
     /**
      * 保存裁剪之后的图片数据
      *
-     * @param head2
+     * @param
      */
 
     private void setPicToView(Bitmap mBitmap) {
