@@ -321,12 +321,15 @@ public class PrefectActivity extends BaseActivity {
                     }
                     Log.i("PrefectActivity","orcModel = " + orcModel.toString());
 
+                }else {
+                    ToastUtil.longToast(PrefectActivity.this, "身份证识别失败，请重新操作");
                 }
             }
 
             @Override
             public void onError(OCRError error) {
                 Log.d("PrefectActivity", "onError: " + error.getMessage());
+                ToastUtil.longToast(PrefectActivity.this, "身份证识别失败，请重新操作");
             }
         });
     }
@@ -374,6 +377,7 @@ public class PrefectActivity extends BaseActivity {
             @Override
             public void onError(OCRError error) {
                 Log.d("MainActivity", "onError: " + error.getMessage());
+                ToastUtil.longToast(PrefectActivity.this, "身份证识别失败，请重新操作");
             }
         });
     }
