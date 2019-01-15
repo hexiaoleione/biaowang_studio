@@ -376,18 +376,14 @@ public class RoleAuthenticationActivity extends BaseActivity implements OnClickL
 			if ("2" == IDENTIFY_CODE) {// 镖师认证
 				// ToastUtil.shortToast(RoleAuthenticationActivity.this,
 				// "暂未开放");
-
-				intent.putExtra("IDENTIFY_CODE", IDENTIFY_CODE);
-				startActivity(intent.setClass(getApplicationContext(), PrefectActivity.class));
-				finish();
-//				if (PreferencesUtils.getString(getApplicationContext(), PreferenceConstants.USERTYPE).equals("2")
-//						|| PreferencesUtils.getString(getApplicationContext(), PreferenceConstants.USERTYPE).equals("3")) {
-//					ToastUtil.shortToast(RoleAuthenticationActivity.this, "您已具备镖师资格");
-//				} else {
-//					intent.putExtra("IDENTIFY_CODE", IDENTIFY_CODE);
-//					startActivity(intent.setClass(getApplicationContext(), PrefectActivity.class));
-//					finish();
-//				}
+				if (PreferencesUtils.getString(getApplicationContext(), PreferenceConstants.USERTYPE).equals("2")
+						|| PreferencesUtils.getString(getApplicationContext(), PreferenceConstants.USERTYPE).equals("3")) {
+					ToastUtil.shortToast(RoleAuthenticationActivity.this, "您已具备镖师资格");
+				} else {
+					intent.putExtra("IDENTIFY_CODE", IDENTIFY_CODE);
+					startActivity(intent.setClass(getApplicationContext(), PrefectActivity.class));
+					finish();
+				}
 			} else if ("1" == IDENTIFY_CODE) {// 认证类型 1 快递员 2 镖师
 				if (PreferencesUtils.getString(getApplicationContext(), PreferenceConstants.USERTYPE).equals("2")) {
 					ToastUtil.shortToast(RoleAuthenticationActivity.this, "您已经认证了快递员");
