@@ -6,9 +6,10 @@ android {
     defaultConfig {
         applicationId "com.hex.express.iwant"
         minSdkVersion 14
+        //noinspection OldTargetApi
         targetSdkVersion 23
         versionCode 97
-        versionName "3.46"
+        versionName "3.47"
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
         multiDexEnabled true
         ndk {
