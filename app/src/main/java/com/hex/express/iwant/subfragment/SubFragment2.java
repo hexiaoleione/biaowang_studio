@@ -55,14 +55,11 @@ import com.hex.express.iwant.constance.PreferenceConstants;
 import com.hex.express.iwant.http.AsyncHttpUtils;
 import com.hex.express.iwant.http.UrlMap;
 import com.hex.express.iwant.newactivity.DepositsActivity;
-import com.hex.express.iwant.newactivity.InsuranceActivity;
 import com.hex.express.iwant.utils.Logger;
 import com.hex.express.iwant.utils.PreferencesUtils;
 import com.hex.express.iwant.utils.ToastUtil;
 import com.hex.express.iwant.views.LoadingProgressDialog;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-
-import net.sf.json.JSONObject;
 
 import org.apache.http.Header;
 
@@ -534,7 +531,6 @@ public class SubFragment2 extends Fragment {
      *
      * @param isFirst
      * @param isRefresh
-     * @param pageNo
      * @param isPull
      */
     @SuppressWarnings("unchecked")
@@ -865,15 +861,17 @@ public class SubFragment2 extends Fragment {
 //							ToastUtil.shortToast(DownEscortDetialsActivity.this, bean.getMessage());
                             Builder ad = new Builder(getActivity());
                             ad.setTitle("温馨提示");
-                            ad.setMessage(bean.getMessage());
+                            ad.setMessage("镖师接单，必须已经在保险机构购买交通意外险。");
 
-                            ad.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            ad.setPositiveButton("本人自己解决意外险问题", new DialogInterface.OnClickListener() {
 
                                 @Override
                                 public void onClick(DialogInterface arg0, int arg1) {
 //									getHttpMessages(true, false, 1, false);
-                                    Intent intent = new Intent();
-                                    startActivityForResult(intent.setClass(getActivity(), InsuranceActivity.class),4);
+//                                    Intent intent = new Intent();
+//                                    startActivityForResult(intent.setClass(getActivity(), InsuranceActivity.class),4);
+
+                                    updateIfHaveBuyInsure();
                                 }
                             });
                             ad.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -896,5 +894,39 @@ public class SubFragment2 extends Fragment {
                     }
                 });
 
+    }
+
+    private void updateIfHaveBuyInsure(){
+        String url = UrlMap.getUrl(MCUrl.updateIfHaveBuyInsure, "userId",
+                String.valueOf(PreferencesUtils.getInt(getContext(), PreferenceConstants.UID)));
+        dialog.show();
+        url += "&ifHaveBuyInsure=1";
+        Log.e("1111111ss", url);
+        AsyncHttpUtils.doSimGet(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+                dialog.dismiss();
+
+                Log.e("oppo", new String(arg2));
+                BaseBean beans = new Gson().fromJson(new String(arg2), BaseBean.class);
+                int errCode = beans.getErrCode();
+                String message = beans.getMessage();
+
+                if (errCode == 0) {
+                    //int resultCode, 结果码,用于区分到底是哪个的返回数据
+                    if (tempData != null){
+                        addEscortreuslt(tempData.recId,tempData);
+                    }
+                } else if (errCode == -1) {
+                    ToastUtil.shortToast(getContext(), message);
+                }
+            }
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+                Log.e("1111111ss", new String(arg2));
+                dialog.dismiss();
+            }
+        });
     }
 }

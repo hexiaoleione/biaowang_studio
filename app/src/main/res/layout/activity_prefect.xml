@@ -194,7 +194,7 @@
         <com.hex.express.iwant.views.RoundCornerImageView
             android:id="@+id/img_headportrait"
             style="@style/image"
-            android:background="@drawable/qwq" />
+            android:background="@drawable/pla" />
 
         <TextView
             android:id="@+id/pre_tishi"

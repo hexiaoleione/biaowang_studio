@@ -381,6 +381,8 @@ public class PrefectActivity extends BaseActivity {
             }
         });
     }
+
+
     // 点击事件;
     @Override
     public void onWeightClick(View v) {

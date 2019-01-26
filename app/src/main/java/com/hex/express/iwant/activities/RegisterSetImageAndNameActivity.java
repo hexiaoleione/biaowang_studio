@@ -1,6 +1,70 @@
 package com.hex.express.iwant.activities;
 
-import java.io.ByteArrayOutputStream;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff.Mode;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.Message;
+import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.PopupWindow.OnDismissListener;
+import android.widget.TextView;
+
+import com.baidu.ocr.sdk.OCR;
+import com.baidu.ocr.sdk.OnResultListener;
+import com.baidu.ocr.sdk.exception.OCRError;
+import com.baidu.ocr.sdk.model.AccessToken;
+import com.baidu.ocr.sdk.model.IDCardParams;
+import com.baidu.ocr.sdk.model.IDCardResult;
+import com.baidu.ocr.ui.camera.CameraActivity;
+import com.baidu.ocr.ui.camera.CameraNativeHelper;
+import com.baidu.ocr.ui.camera.CameraView;
+import com.google.gson.Gson;
+import com.hex.express.iwant.R;
+import com.hex.express.iwant.bean.IconBean;
+import com.hex.express.iwant.bean.OrcModel;
+import com.hex.express.iwant.bean.RegisterBean;
+import com.hex.express.iwant.constance.MCUrl;
+import com.hex.express.iwant.constance.MsgConstants;
+import com.hex.express.iwant.constance.PreferenceConstants;
+import com.hex.express.iwant.http.AsyncHttpUtils;
+import com.hex.express.iwant.newsmain.NewMainActivity;
+import com.hex.express.iwant.utils.FileUtil;
+import com.hex.express.iwant.utils.IDUtils;
+import com.hex.express.iwant.utils.Logger;
+import com.hex.express.iwant.utils.PreferencesUtils;
+import com.hex.express.iwant.utils.ToastUtil;
+import com.hex.express.iwant.views.RoundCornerImageView;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,70 +79,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.http.Header;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.R.bool;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Bitmap.Config;
-import android.graphics.PorterDuff.Mode;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.os.Looper;
-import android.os.Message;
-import android.provider.MediaStore;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.PopupWindow;
-import android.widget.PopupWindow.OnDismissListener;
-import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
-import com.google.gson.Gson;
-import com.hex.express.iwant.R;
-import com.hex.express.iwant.bean.IconBean;
-import com.hex.express.iwant.bean.RegisterBean;
-import com.hex.express.iwant.constance.MCUrl;
-import com.hex.express.iwant.constance.MsgConstants;
-import com.hex.express.iwant.constance.PreferenceConstants;
-import com.hex.express.iwant.http.AsyncHttpUtils;
-import com.hex.express.iwant.newmain.MainTab;
-import com.hex.express.iwant.newsmain.NewMainActivity;
-import com.hex.express.iwant.utils.IDUtils;
-import com.hex.express.iwant.utils.Logger;
-import com.hex.express.iwant.utils.PreferencesUtils;
-import com.hex.express.iwant.utils.StringUtil;
-import com.hex.express.iwant.utils.ToastUtil;
-import com.hex.express.iwant.views.RoundCornerImageView;
-import com.hex.express.iwant.views.TitleBarView;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
-import com.squareup.picasso.Picasso;
 
 /**
  * 注册3/3完成
@@ -112,6 +114,7 @@ public class RegisterSetImageAndNameActivity extends BaseActivity {
 	private String idcard;
 	private String tiaoguoString;
 	private boolean uyt;
+	private static final int REQUEST_CODE_CAMERA = 102;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -122,8 +125,167 @@ public class RegisterSetImageAndNameActivity extends BaseActivity {
 		initView();
 		initData();
 		setOnClick();
+		initAccessTokenWithAkSk();
 	}
 
+	private void initAccessTokenWithAkSk() {
+		OCR.getInstance(this).initAccessTokenWithAkSk(
+				new OnResultListener<AccessToken>() {
+					@Override
+					public void onResult(AccessToken result) {
+
+						// 本地自动识别需要初始化
+						initLicense();
+
+						Log.d("MainActivity", "onResult: " + result.toString());
+//                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "初始化认证成功", Toast.LENGTH_SHORT).show());
+					}
+
+					@Override
+					public void onError(OCRError error) {
+						error.printStackTrace();
+						Log.e("MainActivity", "onError: " + error.getMessage());
+//                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "初始化认证失败,请检查 key", Toast.LENGTH_SHORT).show());
+					}
+				}, getApplicationContext(),
+				"Ot8BzGBPOrAGSBnZKVwef41G",
+				"MKK2Ce9uzy2GGBmurNzx4Yp8CrBNHuAx");
+	}
+
+	private void initLicense() {
+		CameraNativeHelper.init(this, OCR.getInstance(this).getLicense(),
+				(errorCode, e) -> {
+					final String msg;
+					switch (errorCode) {
+						case CameraView.NATIVE_SOLOAD_FAIL:
+							msg = "加载so失败，请确保apk中存在ui部分的so";
+							break;
+						case CameraView.NATIVE_AUTH_FAIL:
+							msg = "授权本地质量控制token获取失败";
+							break;
+						case CameraView.NATIVE_INIT_FAIL:
+							msg = "本地质量控制";
+							break;
+						default:
+							msg = String.valueOf(errorCode);
+					}
+//                    runOnUiThread(() -> Toast.makeText(MainActivity.this,
+//                            "本地质量控制初始化错误，错误原因： " + msg, Toast.LENGTH_SHORT).show());
+				});
+	}
+
+	// 身份证正面
+	private void scanIdCardFront() {
+		Intent intent = new Intent(RegisterSetImageAndNameActivity.this, CameraActivity.class);
+		intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
+				FileUtil.getSaveFile(getApplication()).getAbsolutePath());
+		intent.putExtra(CameraActivity.KEY_NATIVE_ENABLE, true);
+		// KEY_NATIVE_MANUAL设置了之后CameraActivity中不再自动初始化和释放模型
+		// 请手动使用CameraNativeHelper初始化和释放模型
+		// 推荐这样做，可以避免一些activity切换导致的不必要的异常
+		intent.putExtra(CameraActivity.KEY_NATIVE_MANUAL, true);
+		intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_FRONT);
+		startActivityForResult(intent, REQUEST_CODE_CAMERA);
+	}
+
+	/**
+	 * 解析身份证图片
+	 *
+	 * @param idCardSide 身份证正反面
+	 * @param filePath   图片路径
+	 */
+	private void recIDCard(String idCardSide, String filePath) {
+		IDCardParams param = new IDCardParams();
+		param.setImageFile(new File(filePath));
+		// 设置身份证正反面
+		param.setIdCardSide(idCardSide);
+		// 设置方向检测
+		param.setDetectDirection(true);
+		// 设置图像参数压缩质量0-100, 越大图像质量越好但是请求时间越长。 不设置则默认值为20
+		param.setImageQuality(40);
+		OCR.getInstance(this).recognizeIDCard(param, new OnResultListener<IDCardResult>() {
+			@Override
+			public void onResult(IDCardResult result) {
+				if (result != null) {
+					OrcModel orcModel = new OrcModel("00");
+					orcModel.setImageData(filePath);
+					if (IDCardParams.ID_CARD_SIDE_FRONT.equals(idCardSide)) {
+						orcModel.setType(1);
+						String name = "";
+						String sex = "";
+						String nation = "";
+						String num = "";
+						String address = "";
+						if (result.getName() != null) {
+							name = result.getName().toString();
+							orcModel.setName(name);
+						}
+						if (result.getGender() != null) {
+							sex = result.getGender().toString();
+							orcModel.setGender(sex);
+						}
+						if (result.getEthnic() != null) {
+							nation = result.getEthnic().toString();
+							orcModel.setNation(nation);
+						}
+						if (result.getIdNumber() != null) {
+							num = result.getIdNumber().toString();
+							orcModel.setCode(num);
+						}
+						if (result.getAddress() != null) {
+							address = result.getAddress().toString();
+							orcModel.setAddress(address);
+						}
+
+//                        param.getImageFile().getAbsolutePath()
+//                        BitmapFactory.Options options = new BitmapFactory.Options();
+//                        options.inJustDecodeBounds = true;
+						head = BitmapFactory.decodeFile(filePath);
+						/**
+						 * 上传服务器代码 //TODO 实现头衔上传
+						 */
+						setPicToView(head);
+						map.put("userId", PreferencesUtils.getInt(getApplicationContext(), PreferenceConstants.UID) + "");
+						map.put("fileName", "蒙娜丽莎");
+						map_file.put("file", new File(fileName));
+						sendEmptyBackgroundMessage(MsgConstants.MSG_01);
+						img_headportrait.setBackgroundDrawable(null);// 将原背景图片置空，避免与新图片叠加显示，尤其是在上面图层圆角或者有透明度时；
+						img_headportrait.setImageBitmap(head);
+
+						et_name.setText(orcModel.getName());
+						et_card.setText(orcModel.getCode());
+
+						Log.i("PrefectActivity","姓名: " + name + "\n" +
+								"性别: " + sex + "\n" +
+								"民族: " + nation + "\n" +
+								"身份证号码: " + num + "\n" +
+								"住址: " + address + "\n");
+					} else if (IDCardParams.ID_CARD_SIDE_BACK.equals(idCardSide)) {
+						orcModel.setType(2);
+						if (null != result.getIssueAuthority()) {
+							orcModel.setIssue(result.getIssueAuthority() + "");
+						}
+						if (null != result.getSignDate() && null != result.getExpiryDate()) {
+							orcModel.setValid(result.getSignDate() + "-" + result.getExpiryDate());
+						}
+						Log.i("PrefectActivity","签发机关: " + result.getIssueAuthority() + "\n" +
+								"签发日期：" + result.getSignDate() + "\n" +
+								"有效期：" + result.getExpiryDate());
+					}
+					Log.i("PrefectActivity","orcModel = " + orcModel.toString());
+
+				}else {
+					ToastUtil.longToast(RegisterSetImageAndNameActivity.this, "身份证识别失败，请重新操作");
+				}
+			}
+
+			@Override
+			public void onError(OCRError error) {
+				Log.d("PrefectActivity", "onError: " + error.getMessage());
+				ToastUtil.longToast(RegisterSetImageAndNameActivity.this, "身份证识别失败，请重新操作");
+			}
+		});
+	}
 	@Override
 	public void onWeightClick(View v) {
 		switch (v.getId()) {
@@ -321,9 +483,11 @@ public class RegisterSetImageAndNameActivity extends BaseActivity {
 			break;
 		case R.id.img_headportrait:// 上传头像
 			if (PreferencesUtils.getString(getApplicationContext(), PreferenceConstants.REALMANAUTH).equals("Y")) {
-				
-			}else {
-				showPopwindow();// 显示pupwindown
+
+			}else
+				{
+//				showPopwindow();// 显示pupwindown
+				scanIdCardFront();
 			}
 			
 			break;
@@ -341,6 +505,7 @@ public class RegisterSetImageAndNameActivity extends BaseActivity {
 		btn_complete = (Button) findViewById(R.id.btn_complete);
 	}
 
+	@SuppressLint("SetTextI18n")
 	@Override
 	public void initData() {
 //		this.tbv_show.setTitleText(R.string.next3);
@@ -491,6 +656,7 @@ public class RegisterSetImageAndNameActivity extends BaseActivity {
 		// 设置popWindow弹出窗体可点击，这句话必须添加，并且是true
 		window.setFocusable(true);
 		// 实例化一个ColorDrawable颜色为半透明
+		@SuppressLint("ResourceAsColor")
 		ColorDrawable dw = new ColorDrawable(R.color.transparent);
 		window.setBackgroundDrawable(dw);
 		window.setOutsideTouchable(false);// 这是点击外部不消失
@@ -559,6 +725,7 @@ public class RegisterSetImageAndNameActivity extends BaseActivity {
 		});
 	}
 
+	@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch (requestCode) {
@@ -602,6 +769,20 @@ public class RegisterSetImageAndNameActivity extends BaseActivity {
 				}
 			}
 			break;
+			case REQUEST_CODE_CAMERA:
+				if (data != null) {
+					String contentType = data.getStringExtra(CameraActivity.KEY_CONTENT_TYPE);
+					String filePath = FileUtil.getSaveFile(getApplicationContext()).getAbsolutePath();
+					Log.d("PrefectActivity","############################## filepath :##############################" + filePath);
+					if (!TextUtils.isEmpty(contentType)) {
+						if (CameraActivity.CONTENT_TYPE_ID_CARD_FRONT.equals(contentType)) {
+							recIDCard(IDCardParams.ID_CARD_SIDE_FRONT, filePath);
+						} else if (CameraActivity.CONTENT_TYPE_ID_CARD_BACK.equals(contentType)) {
+							recIDCard(IDCardParams.ID_CARD_SIDE_BACK, filePath);
+						}
+					}
+				}
+				break;
 		default:
 			break;
 		}
@@ -672,9 +853,7 @@ public class RegisterSetImageAndNameActivity extends BaseActivity {
 	
 	/**
 	 * 保存裁剪之后的图片数据
-	 * 
-	 * @param head2
-	 */
+	 **/
 
 	private void setPicToView(Bitmap mBitmap) {
 		String sdStatus = Environment.getExternalStorageState();
