@@ -56,7 +56,7 @@
             android:id="@+id/img_headportrait"
             android:layout_width="180dp"
             android:layout_height="100dp"
-            android:background="@drawable/ind_idcar"
+            android:background="@drawable/pla"
             android:gravity="center" />
 
         <TextView

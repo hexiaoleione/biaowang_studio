@@ -550,7 +550,7 @@ public class RegisterSetImageAndNameActivity extends BaseActivity {
 				loader.displayImage(PreferencesUtils.getString(getApplicationContext(), PreferenceConstants.ICON_PATH), img_headportrait);
 			img_headportrait.setBackgroundDrawable(null);
 			}else {
-				img_headportrait.setBackgroundResource(R.drawable.ind_idcar);
+				img_headportrait.setBackgroundResource(R.drawable.pla);
 			}
 //		}
 		if (PreferencesUtils.getString(getApplicationContext(), PreferenceConstants.USERNAME) != null

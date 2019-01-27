@@ -221,23 +221,24 @@ public class DepositActivity extends BaseActivity {
 
                         double wantMoney = Double.parseDouble(editMoney.getText().toString());
                         double withdrawableMoney = bean.data.get(0).withdrawableMoney;
-
+                        String tips ="提现有手续费（费率见右上角，点问号），您的费用不足，请减少提现金额再试。";
                         if (withdrawableMoney >= wantMoney) {
 
+
                             if (withdrawableMoney < 100 && wantMoney > withdrawableMoney * 0.98) {
-                                ToastUtil.shortToast(DepositActivity.this, "您没有这么多可提现哦");
+                                ToastUtil.shortToast(DepositActivity.this, tips);
                                 return;
                             } else if (withdrawableMoney >= 100 && withdrawableMoney < 1000 && wantMoney > withdrawableMoney * 0.99) {
-                                ToastUtil.shortToast(DepositActivity.this, "您没有这么多可提现哦");
+                                ToastUtil.shortToast(DepositActivity.this, tips);
                                 return;
                             } else if (withdrawableMoney >= 1000 && withdrawableMoney < 2000 && wantMoney > withdrawableMoney * 0.995) {
-                                ToastUtil.shortToast(DepositActivity.this, "您没有这么多可提现哦");
+                                ToastUtil.shortToast(DepositActivity.this, tips);
                                 return;
                             } else if (withdrawableMoney >= 2000 && withdrawableMoney < 5000 && wantMoney > withdrawableMoney * 0.997) {
-                                ToastUtil.shortToast(DepositActivity.this, "您没有这么多可提现哦");
+                                ToastUtil.shortToast(DepositActivity.this, tips);
                                 return;
                             } else if (withdrawableMoney >= 5000 && wantMoney > withdrawableMoney * 0.998) {
-                                ToastUtil.shortToast(DepositActivity.this, "您没有这么多可提现哦");
+                                ToastUtil.shortToast(DepositActivity.this, tips);
                                 return;
                             }
                             // dialog.show();
@@ -268,7 +269,7 @@ public class DepositActivity extends BaseActivity {
 
                             // PostHttpRequst();//提现申请
                         } else {
-                            ToastUtil.shortToast(DepositActivity.this, "您没有这么多可提现哦");
+                            ToastUtil.shortToast(DepositActivity.this, tips);
                         }
 
                     } else {

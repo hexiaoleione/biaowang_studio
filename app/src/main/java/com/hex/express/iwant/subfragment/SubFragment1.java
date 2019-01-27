@@ -699,6 +699,7 @@ public class SubFragment1 extends Fragment {
                         Log.e("msg", new String(arg2));
                         dialog.dismiss();
                         BaseBean bean = new Gson().fromJson(new String(arg2), BaseBean.class);
+                        bean.setErrCode(-4);
                         if (bean.getErrCode() == 0) {
                             ToastUtil.shortToast(getActivity(), bean.getMessage());
 //							AlertDialog.Builder ad = new Builder(getActivity());
@@ -843,7 +844,8 @@ public class SubFragment1 extends Fragment {
 //							ToastUtil.shortToast(DownEscortDetialsActivity.this, bean.getMessage());
                             Builder ad = new Builder(getActivity());
                             ad.setTitle("温馨提示");
-                            ad.setMessage("镖师接单，必须已经在保险机构购买交通意外险。");
+                            ad.setMessage(bean.getMessage());
+//                            ad.setMessage("镖师接单，必须已经在保险机构购买交通意外险。");
 
                             ad.setPositiveButton("本人自己解决意外险问题", new DialogInterface.OnClickListener() {
 
@@ -857,14 +859,16 @@ public class SubFragment1 extends Fragment {
 
                                 }
                             });
-                            ad.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-                                    arg0.dismiss();
-
-                                }
-                            });
+//                            ad.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+//                                @Override
+//                                public void onClick(DialogInterface arg0, int arg1) {
+//                                    arg0.dismiss();
+//
+//                                }
+//                            });
                             ad.create().show();
+                        } else if (bean.getErrCode() == -9) {
+                            ToastUtil.shortToast(getActivity(), bean.getMessage());
                         } else {
                             ToastUtil.shortToast(getActivity(), bean.getMessage());
                         }
