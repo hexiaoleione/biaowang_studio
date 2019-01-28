@@ -699,7 +699,6 @@ public class SubFragment1 extends Fragment {
                         Log.e("msg", new String(arg2));
                         dialog.dismiss();
                         BaseBean bean = new Gson().fromJson(new String(arg2), BaseBean.class);
-                        bean.setErrCode(-4);
                         if (bean.getErrCode() == 0) {
                             ToastUtil.shortToast(getActivity(), bean.getMessage());
 //							AlertDialog.Builder ad = new Builder(getActivity());
