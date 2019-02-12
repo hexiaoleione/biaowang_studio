@@ -1,42 +1,65 @@
 package com.hex.express.iwant.newsmain;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import org.apache.http.Header;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.annotation.SuppressLint;
+import android.app.AlertDialog.Builder;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
+import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.PopupWindow.OnDismissListener;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.BaiduMapOptions;
-import com.baidu.mapapi.map.BitmapDescriptor;
-import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.BaiduMap.OnMapClickListener;
+import com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener;
 import com.baidu.mapapi.map.MapPoi;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.Marker;
-import com.baidu.mapapi.map.MarkerOptions;
-import com.baidu.mapapi.map.MyLocationData;
-import com.baidu.mapapi.map.OverlayOptions;
-import com.baidu.mapapi.map.BaiduMap.OnMapClickListener;
-import com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.core.PoiInfo;
-import com.baidu.mapapi.search.geocode.GeoCodeResult;
 import com.baidu.mapapi.search.geocode.GeoCoder;
 import com.google.gson.Gson;
 import com.hex.express.iwant.R;
-import com.hex.express.iwant.iWantApplication;
 import com.hex.express.iwant.activities.DrawCardActivity;
 import com.hex.express.iwant.activities.HAdvertActivity;
 import com.hex.express.iwant.activities.LogiNumberActivity;
@@ -48,25 +71,21 @@ import com.hex.express.iwant.bean.AdvertBean;
 import com.hex.express.iwant.bean.AreaBean;
 import com.hex.express.iwant.bean.BaseBean;
 import com.hex.express.iwant.bean.CityBean;
-import com.hex.express.iwant.bean.Demobean;
 import com.hex.express.iwant.bean.Loginuberbean;
 import com.hex.express.iwant.bean.RegisterBean;
 import com.hex.express.iwant.bean.VersionBean;
 import com.hex.express.iwant.constance.MCUrl;
 import com.hex.express.iwant.constance.PreferenceConstants;
-import com.hex.express.iwant.fragment.FragmentHome;
 import com.hex.express.iwant.helper.AreaDboperation;
 import com.hex.express.iwant.helper.CheckDbUtils;
 import com.hex.express.iwant.helper.CityDbOperation;
 import com.hex.express.iwant.helper.DbManager;
-import com.hex.express.iwant.homfragment.HomSubFragment1;
 import com.hex.express.iwant.http.AsyncHttpUtils;
 import com.hex.express.iwant.http.UrlMap;
+import com.hex.express.iwant.iWantApplication;
 import com.hex.express.iwant.imageview.ImageCycleView;
 import com.hex.express.iwant.imageview.ImageCycleView.ImageCycleViewListener;
 import com.hex.express.iwant.newactivity.AnswerActivity;
-import com.hex.express.iwant.newactivity.DepositNewActivity;
-import com.hex.express.iwant.newactivity.LogisewindActivity;
 import com.hex.express.iwant.newactivity.NewDepositActivity;
 import com.hex.express.iwant.newactivity.PickActivity;
 import com.hex.express.iwant.newactivity.PickToActivity;
@@ -74,13 +93,11 @@ import com.hex.express.iwant.newactivity.ReleaseActivity;
 import com.hex.express.iwant.newactivity.ReleaseActivityto;
 import com.hex.express.iwant.newbaidu.AroundPoiAdapter;
 import com.hex.express.iwant.newbaidu.BaiduMapUtilByRacer;
+import com.hex.express.iwant.newbaidu.BaiduMapUtilByRacer.GeoCodePoiListener;
+import com.hex.express.iwant.newbaidu.BaiduMapUtilByRacer.LocateListener;
 import com.hex.express.iwant.newbaidu.LocationBean;
 import com.hex.express.iwant.newbaidu.LocationDemo;
 import com.hex.express.iwant.newbaidu.SearchPoiAdapter;
-import com.hex.express.iwant.newbaidu.BaiduMapUtilByRacer.GeoCodePoiListener;
-import com.hex.express.iwant.newbaidu.BaiduMapUtilByRacer.LocateListener;
-import com.hex.express.iwant.newmain.MainTab;
-import com.hex.express.iwant.service.MediaplayService;
 import com.hex.express.iwant.slidingview.SlidingFragmentActivity;
 import com.hex.express.iwant.slidingview.SlidingMenu;
 import com.hex.express.iwant.utils.Logger;
@@ -97,50 +114,14 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
-import android.R.integer;
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.media.MediaPlayer;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Display;
-import android.view.Gravity;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.PopupWindow.OnDismissListener;
+import org.apache.http.Header;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.TagAliasCallback;
@@ -264,6 +245,9 @@ public class NewMainActivity extends SlidingFragmentActivity implements
         mBaiduMap.getUiSettings().setZoomGesturesEnabled(true);// 缩放手势
         // 开启定位图层
         mBaiduMap.setMyLocationEnabled(true);
+
+        checkSelfPermission();
+
         locate();
         //添加解决问题的就是这行代码
         getVersions();
@@ -543,6 +527,35 @@ public class NewMainActivity extends SlidingFragmentActivity implements
             ImageLoader.getInstance().displayImage(imageURL, imageView);// 使用ImageLoader对图片进行加装！
         }
     };
+
+    private void checkSelfPermission() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+            List<String> permissions = new ArrayList<>();
+            permissions.add(android.Manifest.permission.READ_CONTACTS);
+            permissions.add(android.Manifest.permission.CALL_PHONE);
+            permissions.add(android.Manifest.permission.CAMERA);
+            permissions.add(android.Manifest.permission.RECORD_AUDIO);
+            permissions.add(android.Manifest.permission.ACCESS_COARSE_LOCATION);
+            permissions.add(android.Manifest.permission.ACCESS_FINE_LOCATION);
+            permissions.add(android.Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS);
+            permissions.add(android.Manifest.permission.READ_EXTERNAL_STORAGE);
+            permissions.add(android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+            List<String> requestPermissions = new ArrayList<>();
+
+            for (String permission : permissions) {
+                if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED){
+                    requestPermissions.add(permission);
+                }
+            }
+
+            if (!requestPermissions.isEmpty()){
+                ActivityCompat.requestPermissions(this, (String[]) requestPermissions.toArray(new String[0]), 102);
+            }
+        }
+    }
 
     //定时器
     @SuppressLint("HandlerLeak")
@@ -1212,6 +1225,7 @@ public class NewMainActivity extends SlidingFragmentActivity implements
         });
     }
 
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -1518,6 +1532,7 @@ public class NewMainActivity extends SlidingFragmentActivity implements
         BaiduMapUtilByRacer.getPoisByGeoCode(ll.latitude, ll.longitude,
                 new GeoCodePoiListener() {
 
+                    @SuppressLint("SetTextI18n")
                     public void onGetSucceed(LocationBean locationBean,
                                              List<PoiInfo> poiList) {
                         mLocationBean = (LocationBean) locationBean.clone();
@@ -1589,6 +1604,7 @@ public class NewMainActivity extends SlidingFragmentActivity implements
 
 
     private static Animation hyperspaceJumpAnimation = null;
+    @SuppressLint("HandlerLeak")
     Handler loadingHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

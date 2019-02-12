@@ -246,7 +246,7 @@
                     android:layout_toRightOf="@+id/textView14"
                     android:background="@null"
                     android:ems="10"
-                    android:hint="请填写推荐人手机号码"
+                    android:hint="请填写推荐人手机号码,可以不填"
                     android:inputType="phone"
                     android:singleLine="true"
                        android:maxLength="11"

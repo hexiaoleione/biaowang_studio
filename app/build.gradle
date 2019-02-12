@@ -9,7 +9,7 @@ android {
         //noinspection OldTargetApi
         targetSdkVersion 23
         versionCode 97
-        versionName "3.49"
+        versionName "3.50"
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
         multiDexEnabled true
         ndk {
